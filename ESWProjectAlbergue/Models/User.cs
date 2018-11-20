@@ -11,6 +11,8 @@ namespace ESWProjectAlbergue.Models
 
     {
         public int ID { get; set; }
+
+        public Address Address { get; set; }
       
 
         [MinLength(9)]
@@ -19,6 +21,7 @@ namespace ESWProjectAlbergue.Models
         public string Contact { get; set; }
 
       
+
        
 
     }
