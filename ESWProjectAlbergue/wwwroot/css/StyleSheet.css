@@ -1,0 +1,29 @@
+﻿body {
+}
+
+.nav-green {
+    color: black;
+    background-color: #02A69E;
+    border-bottom: 5px solid grey;
+}
+
+.nav-black {
+    color: black;
+    background-color: grey;
+   
+}
+
+.black{
+    color: black;
+}
+
+.navbar-nav {
+    margin: 7.5px -15px;
+}
+
+    .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 20px;
+        color: black;
+    }
