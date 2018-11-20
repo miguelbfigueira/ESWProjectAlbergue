@@ -1,7 +1,9 @@
 @using Microsoft.AspNetCore.Identity
+@using ESWProjectAlbergue.Areas.Identity.Data
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
     <img src="~/images/Quinta.jpg" />
     Quinta do Mião
