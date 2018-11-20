@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ESWProjectAlbergue.Models
 {
-    public class ESWProjectAlbergueContext : IdentityDbContext<User>
+    public class ESWProjectAlbergueContext : IdentityDbContext<Utilizador>
     {
         public ESWProjectAlbergueContext(DbContextOptions<ESWProjectAlbergueContext> options)
             : base(options)

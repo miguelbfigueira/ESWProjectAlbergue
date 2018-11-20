@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using ESWProjectAlbergue.Areas.Identity.Data;
+using ESWProjectAlbergue.Models;
 
 namespace ESWProjectAlbergue
 {
@@ -29,12 +30,12 @@ namespace ESWProjectAlbergue
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ESWProjectAlbergueContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<User>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<Utilizador>()
+                .AddEntityFrameworkStores<ESWProjectAlbergueContext>();
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -90,7 +91,7 @@ namespace ESWProjectAlbergue
             app.UseCookiePolicy();
 
             app.UseAuthentication();
-
+            app.UseCookiePolicy();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

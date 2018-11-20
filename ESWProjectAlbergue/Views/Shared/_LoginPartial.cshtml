@@ -2,8 +2,8 @@
 @using ESWProjectAlbergue.Areas.Identity.Data
 
 
-@inject SignInManager<User> SignInManager
-@inject UserManager<User> UserManager
+@inject SignInManager<Utilizador> SignInManager
+@inject UserManager<Utilizador> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {

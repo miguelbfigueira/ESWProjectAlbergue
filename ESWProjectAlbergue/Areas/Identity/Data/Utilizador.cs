@@ -3,7 +3,7 @@ using System;
 
 namespace ESWProjectAlbergue.Areas.Identity.Data
 {
-    public class User : IdentityUser
+    public class Utilizador : IdentityUser
     {
         [PersonalData]
         public string Name { get; set; }
