@@ -26,6 +26,14 @@
     line-height: 20px;
     color: white;
 }
+.navbar-nav > li > button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    color: white;
+    text-decoration:none;
+
+}
 
 footer {
     background: var(--dark-grey);

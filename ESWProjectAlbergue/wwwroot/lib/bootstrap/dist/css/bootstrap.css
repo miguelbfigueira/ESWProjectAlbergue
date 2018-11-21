@@ -3030,12 +3030,12 @@ select[multiple].input-lg {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.btn:hover,
-.btn:focus,
-.btn.focus {
-  color: #333;
-  text-decoration: none;
-}
+    .btn:hover,
+    .btn:focus,
+    .btn.focus {
+        color: ##02A69E;
+        text-decoration: none;
+    }
 .btn:active,
 .btn.active {
   background-image: none;
