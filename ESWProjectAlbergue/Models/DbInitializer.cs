@@ -29,6 +29,7 @@ namespace MediatecaEst.Models
                 await roleManager.CreateAsync(usersRole);
             }
             //TESTE
+            //TESTE2nuncaantesvisto
             var adminsRole = new IdentityRole("admins");
             if (!await roleManager.RoleExistsAsync(adminsRole.Name))
             {
