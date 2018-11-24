@@ -54,6 +54,12 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             public string Address { get; set; }
 
             [Required]
+            [Display(Name = "Código Postal")]
+            [DataType(DataType.PostalCode)]
+            [Range(0, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
+            public string PostalCode { get; set; }
+
+            [Required]
             [Display(Name = "Data De Nascimento")]
             public DateTime BirthDate { get; set; }
 
@@ -79,7 +85,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new Utilizador { UserName = Input.Email, Email = Input.Email, Address = Input.Address, BirthDate = Input.BirthDate, Name = Input.Name};
+                var user = new Utilizador { UserName = Input.Email, Email = Input.Email, Address = Input.Address, Postalcode = Input.PostalCode, BirthDate = Input.BirthDate, Name = Input.Name};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

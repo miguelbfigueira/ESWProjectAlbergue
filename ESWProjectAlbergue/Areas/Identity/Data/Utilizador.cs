@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ESWProjectAlbergue.Areas.Identity.Data
 {
@@ -14,6 +15,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Data
         [PersonalData]
         public string Address { get; set; }
 
-        
+        [DataType(DataType.PostalCode)]
+        public virtual string Postalcode { get; set; }
     }
 }

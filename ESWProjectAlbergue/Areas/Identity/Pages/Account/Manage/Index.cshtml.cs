@@ -58,11 +58,15 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             [DataType(DataType.DateTime)]
             public DateTime BirthDate { get; set; }
 
-
             [Required]
             [DataType(DataType.Text)]
             [Display(Name = "Morada")]
             public string Address { get; set; }
+
+            [Required]
+            [DataType(DataType.PostalCode)]
+            [Display(Name = "Código Postal")]
+            public string PostalCode { get; set; }
 
 
         }
@@ -86,6 +90,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
                 Name = user.Name,
                 Address = user.Address,
                 BirthDate = user.BirthDate,
+                PostalCode = user.Postalcode,
                 Email = email,
                 PhoneNumber = phoneNumber
             };
