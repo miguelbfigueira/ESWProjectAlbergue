@@ -55,7 +55,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
 
             [Required]
             [Display(Name = "Data De Nascimento")]
-            [DataType(DataType.Date)]
+            [DataType(DataType.DateTime)]
             public DateTime BirthDate { get; set; }
 
 
