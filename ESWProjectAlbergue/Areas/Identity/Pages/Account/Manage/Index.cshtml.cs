@@ -48,22 +48,22 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Campo obrigatório. Insira o seu nome completo.")]
             [DataType(DataType.Text)]
             [Display(Name = "Nome Completo")]
             public string Name { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Campo obrigatório. Insira a sua data de nascimento.")]
             [Display(Name = "Data De Nascimento")]
             [DataType(DataType.DateTime)]
             public DateTime BirthDate { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Campo obrigatório. Insira a sua morada.")]
             [DataType(DataType.Text)]
             [Display(Name = "Morada")]
             public string Address { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Campo obrigatório. Insira o seu nome completo.")]
             [DataType(DataType.PostalCode)]
             [Display(Name = "Código Postal")]
             public string PostalCode { get; set; }

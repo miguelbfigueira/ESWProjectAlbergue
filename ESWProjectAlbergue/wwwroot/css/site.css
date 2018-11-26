@@ -508,7 +508,7 @@ html, body {
 }
 
 .invite-form input[type=text] {
-    width: 22.2vw;
+    width: 100%;
     padding: 6px 10px;
     display: inline-block;
     border: 1px solid #ccc;
@@ -597,7 +597,7 @@ html, body {
 }
 
 .login-form input[type=email], input[type="password"], #input-pw {
-    width: 25.4vw;
+    width: 100%;
     padding: 2% 3%;
     display: inline-block;
     border: 1px solid #ccc;
@@ -702,7 +702,7 @@ html, body {
 }
 
 .fyp-form input[type=email], input[type="password"] {
-    width: 22.2vw;
+    width: 20%;
     padding: 2% 3%;
     display: inline-block;
     border: 1px solid #ccc;

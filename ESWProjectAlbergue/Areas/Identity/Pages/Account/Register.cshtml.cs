@@ -40,20 +40,20 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage = "Insira o seu e-mail.")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Insira o seu nome completo.")]
             [Display(Name = "Nome Completo")]
             public string Name { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Insira o a sua Morada.")]
             [Display(Name = "Morada")]
             public string Address { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Insira o seu código postal.")]
             [Display(Name = "Código Postal")]
             [DataType(DataType.PostalCode)]
             [Range(0, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
@@ -63,7 +63,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             [Display(Name = "Data De Nascimento")]
             public DateTime BirthDate { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Password inválida. Necessita de uma maiúscula, um valor númerico e um caracter alternativo.")]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -71,7 +71,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "A password de confirmação não corresponde à password inserida anteriormente.")]
             public string ConfirmPassword { get; set; }
         }
 
