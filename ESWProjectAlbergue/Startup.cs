@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using ESWProjectAlbergue.Areas.Identity.Data;
 using ESWProjectAlbergue.Models;
 
+
 namespace ESWProjectAlbergue
 {
     public class Startup
@@ -68,8 +69,8 @@ namespace ESWProjectAlbergue
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";
                 options.SlidingExpiration = true;
             });
-
-            services.AddMvc();
+     
+           services.AddMvc();
 
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
