@@ -15,7 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using ESWProjectAlbergue.Areas.Identity.Data;
 using ESWProjectAlbergue.Models;
-
+using ESWProjectAlbergue.Services;
 
 namespace ESWProjectAlbergue
 {
@@ -69,7 +69,7 @@ namespace ESWProjectAlbergue
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";
                 options.SlidingExpiration = true;
             });
-     
+            
            services.AddMvc();
 
         }

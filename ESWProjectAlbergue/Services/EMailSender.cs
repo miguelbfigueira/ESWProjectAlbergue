@@ -3,7 +3,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.UI.Services;
-/*
+
 namespace ESWProjectAlbergue.Services
 {
     public class EmailSender : IEmailSender
@@ -15,22 +15,23 @@ namespace ESWProjectAlbergue.Services
             smtpClient.UseDefaultCredentials = false;
             smtpClient.EnableSsl = true;
 
-            MailMessage mail = new MailMessage();
-
-            mail.From = new MailAddress("quintamiaoalbergue@gmail.com");
+            MailMessage mail = new MailMessage
+            {
+                From = new MailAddress("quintamiaoalbergue@gmail.com")
+            };
             mail.To.Add(strToEmail);
             mail.Body = strBody;
             mail.Subject = strSubject;
             mail.IsBodyHtml = true;
-                
-             smtpClient.Send(mail);
+
+            smtpClient.Send(mail);
             return Task.CompletedTask;
-           
+
         }
 
         public async Task SendRegistrationEmail(string strEmailStudent)
         {
-            string strSubject = "[QUINTA-DO-MIAO] Registo na Quinta do Mi";
+            string strSubject = "[QUINTA-DO-MIAO] Registo na Quinta do Miao";
 
 
             var strbBody = new StringBuilder();
@@ -39,8 +40,10 @@ namespace ESWProjectAlbergue.Services
 
 
             strbBody.AppendLine("Cumprimentos, <br> A Equipa da Quinta do Miao.");
-            SendEmailAsync(strEmailStudent, strSubject, strbBody.ToString());
+            await SendEmailAsync(strEmailStudent, strSubject, strbBody.ToString());
         }
+    }
+}
 
-    }*/
+    
 
