@@ -61,7 +61,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "Data De Nascimento")]
-            public DateTime BirthDate { get; set; }
+            public DateTime BirthDate { get; set; } 
 
             [Required(ErrorMessage = "Password inválida. Necessita de uma maiúscula, um valor númerico e um caracter alternativo.")]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
