@@ -561,6 +561,55 @@ html, body {
 /*
     AUTENTICAR
 */
+
+.registertitle {
+    font-family: "Pacifico";
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    margin-top: 3%;
+    color: #FFFFFF;
+}
+
+.row {
+    padding-left: 350px;
+    padding-bottom: 10px;
+    width: 1350px;
+}
+
+.registercontainer {
+    width: 1000px;
+    height: 100%;
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    display: inline-block;
+    background-color: #333333;
+    border-radius: 25px;
+    display: block;
+    position: center;
+    margin-left: 50px;
+}
+
+.btnregister {
+    background-color: #02A69E;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+    .btnregister:hover {
+        background-color: gray;
+        color: white;
+    }
+
 .logintitle {
     font-family: "Pacifico";
     font-size: 38px;
