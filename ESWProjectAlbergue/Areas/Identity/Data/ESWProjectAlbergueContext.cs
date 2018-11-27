@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ESWProjectAlbergue.Areas.Identity.Data;
+using ESWProjectAlbergue.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ESWProjectAlbergue.Models
+namespace ESWProjectAlbergue.Areas.Identity.Data
 {
     public class ESWProjectAlbergueContext : IdentityDbContext<Utilizador>
     {

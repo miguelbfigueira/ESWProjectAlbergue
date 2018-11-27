@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ESWProjectAlbergue.Areas.Identity.Data;
-using ESWProjectAlbergue.Models;
-
 using Microsoft.AspNetCore.Identity;
 
-namespace MediatecaEst.Models
+namespace ESWProjectAlbergue.Models
 {
     public class DbInitializer
     {

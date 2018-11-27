@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ESWProjectAlbergue.Areas.Identity.Data;
 using ESWProjectAlbergue.Models;
-using MediatecaEst.Models;
+
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
