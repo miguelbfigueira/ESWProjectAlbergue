@@ -571,13 +571,15 @@ html, body {
     color: #FFFFFF;
 }
 
-.row {
+.registerrows {
     padding-left: 350px;
     padding-bottom: 10px;
     width: 1350px;
 }
 
 .registercontainer {
+    align-content: center;
+    align-items: center;
     width: 1000px;
     height: 100%;
     margin-top: 5px;

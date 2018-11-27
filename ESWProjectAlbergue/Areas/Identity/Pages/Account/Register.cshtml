@@ -5,51 +5,54 @@
 }
 <link href="css/site.css" rel="stylesheet" type="text/css" />
 <div class="registercontainer">
-    <div class="row">
-        <div class="col-md-4">
-            <h1 class="registertitle">Registo</h1> <br>
-            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                <p style="color:#FFFFFF;text-align:left;">Preencha o formulário abaixo para criar uma nova conta.</p> 
+    <div class="registerrows">
+        <div class="row">
 
-                <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="col-md-4">
+                <h1 class="registertitle">Registo</h1> <br>
+                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <p style="color:#FFFFFF;text-align:left;">Preencha o formulário abaixo para criar uma nova conta.</p>
 
-                <div class="form-group">
-                    <label asp-for="Input.Name" style="color:#FFFFFF;"></label>
-                    <input asp-for="Input.Name" class="form-control" style="font-size:13pt;width:300px;" />
-                    <span asp-validation-for="Input.Name" class="text-danger"></span>
-                </div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
 
-                <div class="form-group">
-                    <label asp-for="Input.Email" style="color:#FFFFFF;"></label>
-                    <input asp-for="Input.Email" class="form-control" style="font-size:13pt;width:300px;" />
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Address" style="color:#FFFFFF;"></label>
-                    <input asp-for="Input.Address" class="form-control" style="font-size:13pt;width:300px;" />
-                    <span asp-validation-for="Input.Address" class="text-danger"></span>
-                </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Name" style="color:#FFFFFF;"></label>
+                        <input asp-for="Input.Name" class="form-control" style="font-size:13pt;width:300px;" />
+                        <span asp-validation-for="Input.Name" class="text-danger"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Input.BirthDate" style="color:#FFFFFF;"></label>
-                    <input asp-for="Input.BirthDate" class="form-control" style="font-size:13pt;width:300px;" />
-                    <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Password" style="color:#FFFFFF;"></label>
-                    <input asp-for="Input.Password" class="form-control" style="font-size:13pt;width:300px;" />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.ConfirmPassword" style="color:#FFFFFF;"></label>
-                    <input asp-for="Input.ConfirmPassword" class="form-control" style="font-size:13pt;width:300px;" />
-                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                </div>
-                <div  style="text-align:center;">
-                    <button type="submit" class="btnregister">REGISTAR</button>
-                </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email" style="color:#FFFFFF;"></label>
+                        <input asp-for="Input.Email" class="form-control" style="font-size:13pt;width:300px;" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Address" style="color:#FFFFFF;"></label>
+                        <input asp-for="Input.Address" class="form-control" style="font-size:13pt;width:300px;" />
+                        <span asp-validation-for="Input.Address" class="text-danger"></span>
+                    </div>
 
-            </form>
+                    <div class="form-group">
+                        <label asp-for="Input.BirthDate" style="color:#FFFFFF;"></label>
+                        <input asp-for="Input.BirthDate" class="form-control" style="font-size:13pt;width:300px;" />
+                        <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password" style="color:#FFFFFF;"></label>
+                        <input asp-for="Input.Password" class="form-control" style="font-size:13pt;width:300px;" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.ConfirmPassword" style="color:#FFFFFF;"></label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control" style="font-size:13pt;width:300px;" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div style="text-align:center;">
+                        <button type="submit" class="btnregister">REGISTAR</button>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
 </div>
