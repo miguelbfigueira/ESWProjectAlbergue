@@ -38,7 +38,7 @@ namespace ESWProjectAlbergue.Models
                 await userManager.AddToRoleAsync(admin, "admins");
             }
 
-            await context.SaveChangesAsync();
+            context.SaveChanges();
         }
     }
 }
