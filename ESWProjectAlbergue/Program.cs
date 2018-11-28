@@ -44,8 +44,5 @@ namespace ESWProjectAlbergue
   .Build();
     }
 
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
-    }
+   
 }
