@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ESWProjectAlbergue.Areas.Identity.Data;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ESWProjectAlbergue.Models
 {
-    public class ESWProjectAlbergueContext : IdentityDbContext<Utilizador>
+    public class ESWProjectAlbergueContext : IdentityDbContext<ApplicationUser>
     {
         public ESWProjectAlbergueContext(DbContextOptions<ESWProjectAlbergueContext> options)
             : base(options)
