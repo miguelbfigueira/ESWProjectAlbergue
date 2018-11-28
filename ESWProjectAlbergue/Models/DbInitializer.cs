@@ -37,6 +37,8 @@ namespace MediatecaEst.Models
             {
                 await userManager.AddToRoleAsync(admin, "admins");
             }
+
+            await context.SaveChangesAsync();
         }
     }
 }
