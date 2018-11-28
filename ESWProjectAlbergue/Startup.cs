@@ -7,9 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity.UI.Services;
 
-using Teste2.Services;
-using ESWProjectAlbergue.Models;
 using ESWProjectAlbergue.Services;
+using ESWProjectAlbergue.Models;
+
 
 namespace ESWProjectAlbergue
 {
