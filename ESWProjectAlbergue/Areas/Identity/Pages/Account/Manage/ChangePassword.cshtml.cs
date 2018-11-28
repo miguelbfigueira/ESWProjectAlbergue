@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using ESWProjectAlbergue.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -12,15 +13,18 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<ChangePasswordModel> _logger;
+        private readonly IEmailSender _emailSender;
 
         public ChangePasswordModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            ILogger<ChangePasswordModel> logger)
+            ILogger<ChangePasswordModel> logger,
+            IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _emailSender = emailSender;
         }
 
         [BindProperty]
@@ -69,6 +73,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
         {
             if (!ModelState.IsValid)
             {
+
                 return Page();
             }
 
@@ -88,9 +93,14 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
                 return Page();
             }
 
+            await _emailSender.SendEmailAsync(user.Email, "Alteração Password",
+                        $"A sua password foi alterada");
+
+
             await _signInManager.RefreshSignInAsync(user);
             _logger.LogInformation("User changed their password successfully.");
             StatusMessage = "Your password has been changed.";
+
 
             return RedirectToPage();
         }
