@@ -2,9 +2,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ESWProjectAlbergue.Areas.Identity.Data
+namespace ESWProjectAlbergue.Models
 {
-    public class Utilizador : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         [PersonalData]
         public string Name { get; set; }
