@@ -3,7 +3,7 @@ using ESWProjectAlbergue.Models;
 
 using Microsoft.AspNetCore.Identity;
 
-namespace MediatecaEst.Models
+namespace ESWProjectAlbergue.Models
 {
     public class DbInitializer
     {

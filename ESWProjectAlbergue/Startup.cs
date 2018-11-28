@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 using ESWProjectAlbergue.Services;
 using ESWProjectAlbergue.Models;
-
+using MediatecaEst.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ESWProjectAlbergue
 {
@@ -40,6 +41,8 @@ namespace ESWProjectAlbergue
                 .AddEntityFrameworkStores<ESWProjectAlbergueContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            
 
             services.AddTransient<IEmailSender, EmailSender>(i =>
                 new EmailSender(
