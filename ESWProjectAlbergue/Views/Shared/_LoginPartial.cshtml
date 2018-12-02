@@ -1,9 +1,8 @@
 @using Microsoft.AspNetCore.Identity
-@using ESWProjectAlbergue.Areas.Identity.Data
 
 
-@inject SignInManager<Utilizador> SignInManager
-@inject UserManager<Utilizador> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using ESWProjectAlbergue.Areas.Identity.Data;
 using ESWProjectAlbergue.Models;
-using MediatecaEst.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -26,9 +24,7 @@ namespace ESWProjectAlbergue
                 try
                 {
                     var context = services.GetRequiredService<ESWProjectAlbergueContext>();
-
-                    // Obter os gestores de utilizadores e de papeis
-                    var userManager = services.GetRequiredService<UserManager<Utilizador>>();
+                    var userManager = scope.ServiceProvider.GetService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
                     DbInitializer.Initialize(context, userManager, roleManager).Wait();
@@ -43,9 +39,10 @@ namespace ESWProjectAlbergue
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
-
+  WebHost.CreateDefaultBuilder(args)
+  .UseStartup<Startup>()
+  .Build();
     }
+
+   
 }
