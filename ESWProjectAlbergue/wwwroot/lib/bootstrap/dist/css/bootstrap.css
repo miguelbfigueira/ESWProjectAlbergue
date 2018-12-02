@@ -67,6 +67,7 @@ mark {
   color: #000;
   background: #ff0;
 }
+
 small {
   font-size: 80%;
 }
@@ -4181,7 +4182,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-collapse {
-  padding-right: 15px;
+  padding-right: 30px;
   padding-left: 15px;
   overflow-x: visible;
   -webkit-overflow-scrolling: touch;
@@ -4201,7 +4202,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-collapse.collapse {
     display: block !important;
-    height: auto !important;
+    height: 50px !important;
     padding-bottom: 0;
     overflow: visible !important;
   }
@@ -4325,7 +4326,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin: 7.5px -15px;
 }
 .navbar-nav > li > a {
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
   line-height: 20px;
 }
