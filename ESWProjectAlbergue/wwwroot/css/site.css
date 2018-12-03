@@ -1156,3 +1156,10 @@ footer {
 #margin-menu{
     margin-top: 20px;
 }
+
+.col-md-9{
+    border-radius: 25px;
+    border: 2px solid;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
