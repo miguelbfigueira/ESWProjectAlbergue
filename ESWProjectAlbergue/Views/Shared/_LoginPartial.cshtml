@@ -12,7 +12,9 @@
                 <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)</a>
             </li>
             <li>
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Logout</a>
+                <a asp-area="Identity" asp-page="/" title="Manage">
+                    <button type="submit" class="buttonLogout">Logout</button>
+                </a>
             </li>
         </ul>
     </form>
