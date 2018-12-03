@@ -49,13 +49,3 @@ footer {
     z-index: 800;
 }
 
-.buttonLogout {
-    background: none;
-    border: none;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    color: white;
-    font: inherit;
-    cursor: pointer;
-}
