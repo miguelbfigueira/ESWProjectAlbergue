@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ESWProjectAlbergue.Models;
 
 namespace ESWProjectAlbergue.Models
 {
@@ -17,5 +18,7 @@ namespace ESWProjectAlbergue.Models
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<ESWProjectAlbergue.Models.User> User { get; set; }
     }
 }

@@ -34,6 +34,8 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
 
         public static string PersonalDataNavClass(ViewContext viewContext) => PageNavClass(viewContext, PersonalData);
 
+        public static string AllUsersNavClass(ViewContext viewContext) => PageNavClass(viewContext, PersonalData);
+
         public static string TwoFactorAuthenticationNavClass(ViewContext viewContext) => PageNavClass(viewContext, TwoFactorAuthentication);
     
         public static string PageNavClass(ViewContext viewContext, string page)

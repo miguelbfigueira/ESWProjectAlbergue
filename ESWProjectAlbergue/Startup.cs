@@ -9,8 +9,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 using ESWProjectAlbergue.Services;
 using ESWProjectAlbergue.Models;
-using MediatecaEst.Models;
-using Microsoft.AspNetCore.Identity;
+
 
 namespace ESWProjectAlbergue
 {
