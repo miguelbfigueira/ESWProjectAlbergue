@@ -33,9 +33,11 @@
     </nav>
 
     <partial name="_CookieConsentPartial" />
-
     <div class="container">
         @RenderBody()
+    </div>
+    <div class="container-fluid">
+
         <hr />
 
 
@@ -51,8 +53,8 @@
 
     </div>
 
-    
+
     @RenderSection("Scripts", required: false)
-    
+
 </body>
 </html>
