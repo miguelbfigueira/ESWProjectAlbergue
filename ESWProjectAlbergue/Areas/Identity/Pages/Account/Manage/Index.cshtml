@@ -27,8 +27,8 @@
                 }
                 else
                 {
-                    <input asp-for="Input.Email" class="form-control" disabled />
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">Validar e-mail</button>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">Send verification email</button>
                 }
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
@@ -45,12 +45,10 @@
                     <label asp-for="Input.Address"></label>
                     <input asp-for="Input.Address" class="form-control" />
                 </div>
-                <!--
-                <div class="form-group">
+                <div class="form-group" style="display: none;">
                     <label asp-for="Input.PostalCode"></label>
                     <input asp-for="Input.PostalCode" class="form-control" />
                 </div>
-                    -->
                 <div>
                     <label asp-for="Input.PhoneNumber">Contacto</label>
                     <input asp-for="Input.PhoneNumber" class="form-control" />
