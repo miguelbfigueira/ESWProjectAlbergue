@@ -139,14 +139,14 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
                 Name = Input.Name,
                 Address = Input.Address,
                 BirthDate = Input.BirthDate,
-                PostalCode = Input.PostalCode,
+               
                
             };
             
             user.Name = Input.Name;
             user.Address = Input.Address;
             user.BirthDate = Input.BirthDate;
-            user.Postalcode = Input.PostalCode;
+           // user.Postalcode = Input.PostalCode;
 
             await _userManager.UpdateAsync(user);
 
