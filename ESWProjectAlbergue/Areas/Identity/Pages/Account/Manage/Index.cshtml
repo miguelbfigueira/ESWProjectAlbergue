@@ -11,24 +11,24 @@
         <form id="profile-form" method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <!--
-    <div class="form-group">
-        <label asp-for="Username"></label>
-        <input asp-for="Username" class="form-control" disabled />
-    </div>
-        -->
+            <div class="form-group">
+                <label asp-for="Username"></label>
+                <input asp-for="Username" class="form-control" disabled />
+            </div>
+                -->
             <div class="form-group">
                 <label asp-for="Input.Email"></label>
                 @if (Model.IsEmailConfirmed)
                 {
                     <div class="input-group">
-                        <input asp-for="Input.Email" class="form-control"/>
+                        <input asp-for="Input.Email" class="form-control" />
                         <span class="input-group-addon" aria-hidden="true"><span class="glyphicon glyphicon-ok text-success"></span></span>
                     </div>
                 }
                 else
                 {
                     <input asp-for="Input.Email" class="form-control" disabled />
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">Send verification email</button>
+                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">Validar e-mail</button>
                 }
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
@@ -45,10 +45,12 @@
                     <label asp-for="Input.Address"></label>
                     <input asp-for="Input.Address" class="form-control" />
                 </div>
+                <!--
                 <div class="form-group">
                     <label asp-for="Input.PostalCode"></label>
                     <input asp-for="Input.PostalCode" class="form-control" />
                 </div>
+                    -->
                 <div>
                     <label asp-for="Input.PhoneNumber">Contacto</label>
                     <input asp-for="Input.PhoneNumber" class="form-control" />

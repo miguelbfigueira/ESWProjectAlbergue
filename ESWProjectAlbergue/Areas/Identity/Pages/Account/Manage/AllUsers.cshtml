@@ -23,9 +23,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Input.Address)
             </th>
+            <!--
             <th>
                 @Html.DisplayNameFor(model => model.Input.PostalCode)
             </th>
+                -->
             <th>
                 @Html.DisplayNameFor(model => model.Input.PhoneNumber)
             </th>
@@ -33,28 +35,31 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.users) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Postalcode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-          
-        </tr>
+        @foreach (var item in Model.users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <!--
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Postalcode)
+                    </td>
+                -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+
+            </tr>
         }
     </tbody>
 </table>
