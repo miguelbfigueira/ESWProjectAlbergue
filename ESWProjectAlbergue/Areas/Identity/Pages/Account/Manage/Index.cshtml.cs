@@ -163,9 +163,9 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             await _emailSender.SendEmailAsync(
                 email,
                 "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                $" <p> Olá caro(a) utilizador(a), obrigado por ter criado uma conta na quinta do mião. </p> <p> Para finalizar o seu registo é necessário confirmar o seu endereço de e-mail. Para confirmar <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>. </p> <p>Não responda a este e-mail, pois é um serviço automatizado.</p> <br> <br> <p>A equipa Quinta Do Mião</p> <p> <a href='https://eswprojectalberguedevelopment.azurewebsites.net'>eswprojectalberguedevelopment.azurewebsites.net</a> </p> ");
 
-            StatusMessage = "Verification email sent. Please check your email.";
+            StatusMessage = "E-mail de confirmação enviado, por favor verifique o seu e-mail (poderá demorar alguns minutos)";
             return RedirectToPage();
         }
     }
