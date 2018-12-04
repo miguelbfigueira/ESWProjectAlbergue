@@ -61,10 +61,10 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Morada")]
             public string Address { get; set; }
 
-            [Required(ErrorMessage = "Campo obrigatório. Insira o seu nome completo.")]
+            /*[Required(ErrorMessage = "Campo obrigatório. Insira o seu nome completo.")]
             [DataType(DataType.PostalCode)]
             [Display(Name = "Código Postal")]
-            public string PostalCode { get; set; }
+            public string PostalCode { get; set; }*/
 
 
         }
@@ -88,7 +88,6 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
                 Name = user.Name,
                 Address = user.Address,
                 BirthDate = user.BirthDate,
-                PostalCode = user.Postalcode,
                 Email = email,
                 PhoneNumber = phoneNumber
             };
@@ -139,14 +138,12 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
                 Name = Input.Name,
                 Address = Input.Address,
                 BirthDate = Input.BirthDate,
-                PostalCode = Input.PostalCode,
 
             };
 
             user.Name = Input.Name;
             user.Address = Input.Address;
             user.BirthDate = Input.BirthDate;
-            user.Postalcode = Input.PostalCode;
 
             await _userManager.UpdateAsync(user);
 
