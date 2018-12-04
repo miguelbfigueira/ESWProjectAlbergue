@@ -22,12 +22,7 @@ namespace ESWProjectAlbergue.Controllers
             return View();
         }
 
-        public IActionResult ListaUtilizadores()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View(_context.Users.ToList());
-        }
+      
 
         public IActionResult About()
         {
