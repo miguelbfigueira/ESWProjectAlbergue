@@ -14,47 +14,81 @@
 
 </head>
 <body>
-    <div class="nav-green container-fluid center-block">
-        <img src="~/images/Quinta.jpg" />
-        <h1 style="display:inline-block; font-family:'Pacifico'; color:white;  "> Quinta do Mião</h1>
-    </div>
-    <nav>
+<div class="nav-green container-fluid center-block">
+    <img src="~/images/Quinta.jpg" />
+    <h1 style="display:inline-block; font-family:'Pacifico'; color:white;  "> Quinta do Mião</h1>
+</div>
+<nav>
 
 
-        <div class="nav-black container navbar-collapse collapse navbar-fixed">
-            <ul class="nav navbar-nav ">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-            </ul>
-            <partial name="_LoginPartial" />
-        </div>
-
-    </nav>
-
-    <partial name="_CookieConsentPartial" />
-    <div class="container">
-        @RenderBody()
-    </div>
-    <div class="container-fluid">
-
-        <hr />
-
-
-
-        <footer>
-            <p>Horário de atendimento ao público: </p>
-            <p>Segunda a Sexta-feira, das 14:00h às 17:00h</p>
-            <p>Sábados, das 10:00h às 13:00h.</p>
-            <p> T: 212068625</p>
-
-            <p>&copy; 2018 - ESWProjectAlbergue</p>
-        </footer>
-
+    <div class="nav-black container navbar-collapse collapse navbar-fixed">
+        <ul class="nav navbar-nav ">
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+        </ul>
+        <partial name="_LoginPartial" />
     </div>
 
+</nav>
 
-    @RenderSection("Scripts", required: false)
+<partial name="_CookieConsentPartial" />
+<div class="container">
+    @RenderBody()
+</div>
+<div class="container-fluid">
+
+    <hr />
+
+
+
+        
+
+</div>
+
+
+@RenderSection("Scripts", required: false)
 
 </body>
+
+<footer class="page-footer font-small teal pt-4">
+
+
+    <div class="container-fluid text-center text-md-left">
+
+        <div class="row">
+
+            <div class="col-md-6 mt-md-0 mt-3">
+
+
+                <h5 class="text-uppercase font-weight-bold" style="color: #B2B2B2">Serviço</h5>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p style="color: #B2B2B2">Hórario de atendimento ao público:</p>
+                <p style="color: #B2B2B2">Segunda a sexta-feira, das 14:00h às 17:00h</p>
+                <p style="color: #B2B2B2">Sábados, das 10:00h às 13:00h</p>
+                <p style="color: #B2B2B2">Telefone: 212068625</p>
+
+            </div>
+
+            <div class="vl" style="border-left: 6px solid #b2b2b2; height: 130px; position: absolute; left: 50%; bottom: 50px"> </div>
+
+            <div class="col-md-6 mb-md-0 mb-3">
+
+                <h5 class="text-uppercase font-weight-bold" style="color: #B2B2B2">Categorias</h5>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p style="color: #B2B2B2">Início</p>
+                <p style="color: #B2B2B2">Quem Somos</p>
+                <p style="color: #B2B2B2">Animais</p>
+                <p style="color: #B2B2B2">Sobre a Adoção</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright text-center py-3">© 2018 Quinta do Mião
+       
+    </div>
+  
+
+</footer>
+
 </html>
