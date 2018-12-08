@@ -29,6 +29,7 @@
 .navbar-nav > li > button {
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-right: 40px;
     line-height: 20px;
     color: white;
     text-decoration:none;
@@ -47,3 +48,4 @@ footer {
     left: 0;
     z-index: 800;
 }
+

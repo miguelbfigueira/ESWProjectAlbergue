@@ -1,19 +1,20 @@
 @using Microsoft.AspNetCore.Identity
-@using ESWProjectAlbergue.Areas.Identity.Data
 
 
-@inject SignInManager<Utilizador> SignInManager
-@inject UserManager<Utilizador> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Bem-vindo @UserManager.GetUserName(User)!</a>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)</a>
             </li>
             <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+                <a asp-area="Identity" asp-page="/" title="Manage">
+                    <button type="submit" class="buttonLogout">Logout</button>
+                </a>
             </li>
         </ul>
     </form>

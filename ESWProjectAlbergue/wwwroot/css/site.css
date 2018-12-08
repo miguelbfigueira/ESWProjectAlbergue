@@ -1,4 +1,5 @@
-﻿:root {
+﻿
+:root {
     --main-blue: #597EAA;
     --blue-var1: #9FC5F8;
     --blue-var2: #6FA8DC;
@@ -12,6 +13,7 @@
     --main-red: #cc0000;
     --red-var1: #ff0033;
 }
+    
 
 html, body {
     margin: 0;
@@ -561,23 +563,192 @@ html, body {
 /*
     AUTENTICAR
 */
-.page-title-login {
-    font-size: 1.75vmax;
+
+.registertitle {
+    font-family: "Pacifico";
+    font-size: 40px;
     width: 100%;
     text-align: center;
-    position: absolute;
     margin-top: 3%;
+    color: #FFFFFF;
 }
 
+.registerrows {
+    padding-left: 350px;
+    padding-bottom: 10px;
+    width: 1350px;
+}
 
-.main-container-login {
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    width: 35%;
-    margin-left: 33%;
-    min-height: 44.5vh;
+.registercontainer {
+    align-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 100%;
+    margin-top: 5px;
     margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    display: inline-block;
+    background-color: #333333;
+    border-radius: 25px;
+    display: block;
+    position: center;
+    margin-left: 50px;
 }
+
+.btnregister {
+    background-color: #02A69E;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+    .btnregister:hover {
+        background-color: gray;
+        color: white;
+    }
+
+.bold {
+    font-weight: bold;
+
+}
+.red{
+    color: red;
+}
+    
+.box {
+    width: 40%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+}
+
+.button {
+    font-size: 1em;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #06D85F;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+    .button:hover {
+        background: #06D85F;
+    }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+    .overlay:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+    .popup h2 {
+        margin-top: 0;
+        color: #333;
+        font-family: Tahoma, Arial, sans-serif;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+    }
+
+        .popup .close:hover {
+            color: #06D85F;
+        }
+
+    .popup .content {
+        max-height: 30%;
+        overflow: auto;
+    }
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+
+    .popup {
+        width: 70%;
+    }
+}
+
+.logintitle {
+    font-family: "Pacifico";
+    font-size: 38px;
+    width: 100%;
+    text-align: center;
+    margin-top: 3%;
+    color: #FFFFFF;
+
+}
+
+
+.logintotal {
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 70px 0;
+    text-align:center;
+}
+.main-container-login {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    display: inline-block;
+    width: 390px;
+    background-color: #333333;
+    border-radius: 25px;
+  
+    
+   
+}
+.logincontent {
+    display: block;
+    position: center;
+    margin-left: 50px;
+    width: 300px;
+}
+
+
 
 .main-container-login table tr{
     line-height:5vh;
@@ -923,6 +1094,7 @@ footer {
     text-decoration: none;
 }
 
+
 .hyperlink:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -961,3 +1133,33 @@ footer {
         cursor: pointer;
         border: 0.7px solid var(--blue-var4);
     }
+
+.navbar-nav > li > a {
+
+    padding-top: 17px;
+    padding-bottom: 17px;
+
+}
+
+.buttonLogout {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+#margin-menu{
+    margin-top: 20px;
+}
+
+.col-md-9{
+    border-radius: 25px;
+    border: 2px solid;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}

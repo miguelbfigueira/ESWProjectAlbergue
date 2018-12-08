@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace ESWProjectAlbergue.Areas.Identity.Data
+namespace ESWProjectAlbergue.Models
 {
-    public class Utilizador : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         [PersonalData]
         public string Name { get; set; }
@@ -14,6 +15,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Data
         [PersonalData]
         public string Address { get; set; }
 
-        
+        [DataType(DataType.PostalCode)]
+        public virtual string Postalcode { get; set; }
     }
 }

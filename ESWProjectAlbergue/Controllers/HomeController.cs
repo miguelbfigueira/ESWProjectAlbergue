@@ -10,14 +10,23 @@ namespace ESWProjectAlbergue.Controllers
 {
     public class HomeController : Controller
     {
+        private ESWProjectAlbergueContext _context;
+        public HomeController(ESWProjectAlbergueContext context)
+        {
+            _context = context;
+        }
+
+
         public IActionResult Index()
         {
             return View();
         }
 
+      
+
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Sobre nos";
 
             return View();
         }

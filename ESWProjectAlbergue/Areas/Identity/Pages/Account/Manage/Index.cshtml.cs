@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using ESWProjectAlbergue.Areas.Identity.Data;
+using ESWProjectAlbergue.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -14,13 +12,13 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
-        private readonly UserManager<Utilizador> _userManager;
-        private readonly SignInManager<Utilizador> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
 
         public IndexModel(
-            UserManager<Utilizador> userManager,
-            SignInManager<Utilizador> signInManager,
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;
@@ -48,21 +46,25 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Campo obrigatório. Insira o seu nome completo.")]
             [DataType(DataType.Text)]
             [Display(Name = "Nome Completo")]
             public string Name { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Campo obrigatório. Insira a sua data de nascimento.")]
             [Display(Name = "Data De Nascimento")]
-            [DataType(DataType.Date)]
+            [DataType(DataType.DateTime)]
             public DateTime BirthDate { get; set; }
 
-
-            [Required]
+            [Required(ErrorMessage = "Campo obrigatório. Insira a sua morada.")]
             [DataType(DataType.Text)]
             [Display(Name = "Morada")]
             public string Address { get; set; }
+
+            /*[Required(ErrorMessage = "Campo obrigatório. Insira o seu nome completo.")]
+            [DataType(DataType.PostalCode)]
+            [Display(Name = "Código Postal")]
+            public string PostalCode { get; set; }*/
 
 
         }
@@ -130,6 +132,21 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
                 }
             }
 
+
+            Input = new InputModel
+            {
+                Name = Input.Name,
+                Address = Input.Address,
+                BirthDate = Input.BirthDate,
+
+            };
+
+            user.Name = Input.Name;
+            user.Address = Input.Address;
+            user.BirthDate = Input.BirthDate;
+
+            await _userManager.UpdateAsync(user);
+
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();
@@ -160,9 +177,9 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             await _emailSender.SendEmailAsync(
                 email,
                 "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                $" <p> Olá caro(a) utilizador(a), obrigado por ter criado uma conta na quinta do mião. </p> <p> Para finalizar o seu registo é necessário confirmar o seu endereço de e-mail. Para confirmar <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>. </p> <p>Não responda a este e-mail, pois é um serviço automatizado.</p> <br> <br> <p>A equipa Quinta Do Mião</p> <p> <a href='https://eswprojectalberguedevelopment.azurewebsites.net'>eswprojectalberguedevelopment.azurewebsites.net</a> </p> ");
 
-            StatusMessage = "Verification email sent. Please check your email.";
+            StatusMessage = "E-mail de confirmação enviado, por favor verifique o seu e-mail (poderá demorar alguns minutos)";
             return RedirectToPage();
         }
     }

@@ -1,0 +1,65 @@
+﻿@page
+@model AllUsersModel
+@{
+    ViewData["Title"] = "Utilizadores";
+}
+
+<h4>@ViewData["Title"]</h4>
+<p>
+    <!-- <a asp-action="Create">Create New</a> -->
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Input.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Input.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Input.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Input.Address)
+            </th>
+            <!--
+            <th>
+                @Html.DisplayNameFor(model => model.Input.PostalCode)
+            </th>
+                -->
+            <th>
+                @Html.DisplayNameFor(model => model.Input.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <!--
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Postalcode)
+                    </td>
+                -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

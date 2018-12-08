@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ESWProjectAlbergue.Areas.Identity.Data;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ESWProjectAlbergue.Models;
 
 namespace ESWProjectAlbergue.Models
 {
-    public class ESWProjectAlbergueContext : IdentityDbContext<Utilizador>
+    public class ESWProjectAlbergueContext : IdentityDbContext<ApplicationUser>
     {
         public ESWProjectAlbergueContext(DbContextOptions<ESWProjectAlbergueContext> options)
             : base(options)
@@ -23,5 +18,7 @@ namespace ESWProjectAlbergue.Models
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<ESWProjectAlbergue.Models.User> User { get; set; }
     }
 }

@@ -1,0 +1,68 @@
+﻿@page
+@model LoginModel
+
+
+
+<link href="css/site.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<style>
+
+    
+</style>
+<body>
+    <div class="logintotal">
+        <div class="main-container-login">
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <section>
+                        <form method="post">
+                            <div class="logincontent">
+                                <h1 class="logintitle">Login</h1><br>
+
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Input.Email" style="color:#FFFFFF;"></label><br>
+                                    <input asp-for="Input.Email" class="form-control" style="font-size:13pt;width:300px;" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Input.Password" style="color:#FFFFFF;"></label><br>
+                                    <input asp-for="Input.Password" class="form-control" style="font-size:13pt;width:300px;" />
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label asp-for="Input.RememberMe" style="color:#FFFFFF;">
+                                            <input asp-for="Input.RememberMe" />
+                                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="text-align:center;">
+                                    <button type="submit"  class="btnregister">LOG IN</button>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <p>
+                                        <a asp-page="./ForgotPassword">Esqueceu-se da sua password?</a>
+                                    </p>
+                                    <p>
+                                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Não tem conta? Registe-se</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+        </div>
+</body>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
