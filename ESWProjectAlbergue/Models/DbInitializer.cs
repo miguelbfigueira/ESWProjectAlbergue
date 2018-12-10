@@ -24,6 +24,12 @@ namespace ESWProjectAlbergue.Models
             {
                 await roleManager.CreateAsync(usersRole);
             }
+
+            var funcionarioRole = new IdentityRole("funcionarios");
+            if(!await roleManager.RoleExistsAsync(funcionarioRole.Name))
+            {
+                await roleManager.CreateAsync(funcionarioRole);
+            }
            
             var adminsRole = new IdentityRole("admins");
             if (!await roleManager.RoleExistsAsync(adminsRole.Name))
@@ -36,6 +42,7 @@ namespace ESWProjectAlbergue.Models
             if (result.Succeeded)
             {
                 await userManager.AddToRoleAsync(admin, "admins");
+                
             }
 
             context.SaveChanges();
