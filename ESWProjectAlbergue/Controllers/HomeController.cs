@@ -33,12 +33,17 @@ namespace ESWProjectAlbergue.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Página de Contactos";
 
             return View();
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Funcionarios()
         {
             return View();
         }
