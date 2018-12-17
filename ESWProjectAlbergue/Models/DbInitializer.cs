@@ -44,9 +44,9 @@ namespace ESWProjectAlbergue.Models
             }
 
 
-            var admin = new ApplicationUser {Name = "admin", UserName = "admin@ips.pt", Email = "admin@ips.pt"};
+            var admin = new ApplicationUser {Name = "admin", UserName = "admin@ips.pt", Email = "admin@ips.pt", EmailConfirmed = true};
             await userManager.CreateAsync(admin, "123456");
-            var result = await userManager.CreateAsync(admin, "123456");
+            var result = await userManager.CreateAsync(admin, "Quinta_5");
             if (result.Succeeded)
             {
 
