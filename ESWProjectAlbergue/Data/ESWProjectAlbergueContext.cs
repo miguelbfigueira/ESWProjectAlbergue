@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ESWProjectAlbergue.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ESWProjectAlbergue.Models
 {
@@ -14,24 +15,18 @@ namespace ESWProjectAlbergue.Models
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<ApplicationUserRole>(userRole =>
+            builder.Entity<IdentityRole>(userRole =>
             {
-                userRole.HasKey(ur => new { ur.UserId, ur.RoleId });
-
-                userRole.HasOne(ur => ur.Role)
-                    .WithMany(r => r.UserRoles)
-                    .HasForeignKey(ur => ur.RoleId)
-                    .IsRequired();
-
-                userRole.HasOne(ur => ur.User)
-                    .WithMany(r => r.UserRoles)
-                    .HasForeignKey(ur => ur.UserId)
-                    .IsRequired();
+             
             });
         }
      // Add your customizations after calling base.OnModelCreating(builder);
 
 
         public DbSet<ESWProjectAlbergue.Models.User> User { get; set; }
+     // Add your customizations after calling base.OnModelCreating(builder);
+
+
+        public DbSet<ESWProjectAlbergue.Models.Reminder> Reminder { get; set; }
     }
 }
