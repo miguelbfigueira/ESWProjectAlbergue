@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181218175642_3")]
+    partial class _3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,15 +98,11 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<string>("Title");
 
-                    b.Property<string>("UserCreaterIdId");
+                    b.Property<int>("UserCreaterId");
 
-                    b.Property<string>("UserReminderIdId");
+                    b.Property<int>("UserReminderId");
 
                     b.HasKey("ReminderId");
-
-                    b.HasIndex("UserCreaterIdId");
-
-                    b.HasIndex("UserReminderIdId");
 
                     b.ToTable("Reminder");
                 });
@@ -236,17 +234,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.Reminder", b =>
-                {
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserCreaterId")
-                        .WithMany()
-                        .HasForeignKey("UserCreaterIdId");
-
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserReminderId")
-                        .WithMany()
-                        .HasForeignKey("UserReminderIdId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

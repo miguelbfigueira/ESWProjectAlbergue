@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ESWProjectAlbergue;
+using ESWProjectAlbergue.Controllers;
 using ESWProjectAlbergue.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace MediatecaEst
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
                     DbInitializer.Initialize(context, userManager, roleManager).Wait();
+                 //   RemindersController.(context, userManager);
                 }
                 catch (Exception ex)
                 {

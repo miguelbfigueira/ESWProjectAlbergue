@@ -13,6 +13,12 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.UserCreaterId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserReminderId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.DateCreate)
             </th>
             <th>
@@ -36,6 +42,12 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.UserCreaterId.Name)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.UserReminderId.Name)
+            </th>
             <td>
                 @Html.DisplayFor(modelItem => item.DateCreate)
             </td>
@@ -49,10 +61,24 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsEvent)
+                @if (item.IsEvent){
+                    <img src="~/images/check.png" width="16px" height="16px" />
+                }
+                else
+                {
+                    <img src="~/images/cross.png" width="16px" height="16px" />
+                }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsDone)
+                @if (item.IsDone)
+                {
+                    <img src="~/images/check.png" width="16px" height="16px" />
+                }
+                else
+                {
+                    <img src="~/images/cross.png" width="16px" height="16px" />
+                }
+              
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ReminderId">Edit</a> |
