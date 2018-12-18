@@ -37,10 +37,19 @@ namespace ESWProjectAlbergue.Models
                 await roleManager.CreateAsync(adminsRole);
             }
 
-            var admin = new ApplicationUser {Name = "admin", UserName = "admin@ips.pt", Email = "admin@ips.pt"};
-            var result = await userManager.CreateAsync(admin, "123456");
+            var voluntariosRole = new IdentityRole("voluntarios");
+            if (!await roleManager.RoleExistsAsync(adminsRole.Name))
+            {
+                await roleManager.CreateAsync(voluntariosRole);
+            }
+
+
+            var admin = new ApplicationUser {Name = "admin", UserName = "admin@ips.pt", Email = "admin@ips.pt", EmailConfirmed = true};
+            await userManager.CreateAsync(admin, "123456");
+            var result = await userManager.CreateAsync(admin, "Quinta_5");
             if (result.Succeeded)
             {
+
                 await userManager.AddToRoleAsync(admin, "admins");
                 
             }

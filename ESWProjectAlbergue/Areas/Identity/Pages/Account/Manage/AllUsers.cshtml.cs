@@ -79,7 +79,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
 
         public async Task<IActionResult> OnGetAsync()
         {
-            users = _userManager.Users.ToList();
+            users =  _userManager.Users.ToList();
             return Page();
         }
 
@@ -90,7 +90,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
              var user = await _userManager.GetUserAsync(User);
              if (user == null)
              {
-                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                 return NotFoun d($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
              }
 
              var userName = await _userManager.GetUserNameAsync(user);
