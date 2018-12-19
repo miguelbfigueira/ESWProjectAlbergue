@@ -65,7 +65,8 @@ namespace ESWProjectAlbergue.Controllers
            
             reminder.UserCreaterId = await _userManager.FindByNameAsync(User.Identity.Name);
             reminder.DateCreate = DateTime.Now;
-            reminder.UserReminderId = await _userManager.FindByEmailAsync(reminder.UserReminderId.Email); 
+            reminder.UserReminderId = await _userManager.FindByEmailAsync(reminder.UserReminderId.Email);
+            reminder.IsDone = false;
             if (ModelState.IsValid)
             {
                 _context.Add(reminder);
