@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    
 }
 
 <h2>Create</h2>
@@ -13,9 +14,9 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DateCreate" class="control-label"></label>
-                <input asp-for="DateCreate" class="form-control" />
-                <span asp-validation-for="DateCreate" class="text-danger"></span>
+                <label asp-for="UserReminderId.Email" class="control-label"></label>
+                <select asp-for="UserReminderId.Email" asp-items="@ViewBag.users" id="toReminde"></select>
+                <span asp-validation-for="UserReminderId.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateEnd" class="control-label"></label>
@@ -28,17 +29,11 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label>Descrição</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="IsEvent" /> @Html.DisplayNameFor(model => model.IsEvent)
-                    </label>
-                </div>
-            </div>
+          
             <div class="form-group">
                 <div class="checkbox">
                     <label>
@@ -50,6 +45,7 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>
+
     </div>
 </div>
 

@@ -13,14 +13,16 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ReminderId" />
+            <input type="hidden" asp-for="UserCreaterId" />
+            <input type="hidden" asp-for="DateCreate" />
             <div class="form-group">
-                <label asp-for="DateCreate" class="control-label"></label>
-                <input asp-for="DateCreate" class="form-control" />
-                <span asp-validation-for="DateCreate" class="text-danger"></span>
+                <label asp-for="UserReminderId.Email" class="control-label"></label>
+                <select asp-for="UserReminderId.Email" asp-items="@ViewBag.users" id="toReminde"></select>
+                <span asp-validation-for="UserReminderId.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateEnd" class="control-label"></label>
-                <input asp-for="DateEnd" class="form-control" />
+                <input asp-for="DateEnd" class="form-control" type="date" />
                 <span asp-validation-for="DateEnd" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -29,7 +31,7 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label>Descrição</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>

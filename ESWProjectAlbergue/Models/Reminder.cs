@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,15 +10,23 @@ namespace ESWProjectAlbergue.Models
     public class Reminder
     {
         public int ReminderId { get; set; }
-        public ApplicationUser Creater { get; set; }
+        [DisplayName("Autor")]
+        public ApplicationUser UserCreaterId { get; set; }
+        [DisplayName("Data Criação")]
         public DateTime DateCreate { get; set; }
-        public DateTime DateEnd { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public bool IsEvent { get; set; }
-        public bool IsDone { get; set; }
 
-        public ApplicationUser UserToReminder { get; set; }
+        [DisplayName("Prazo para a Realização")]
+        public DateTime DateEnd { get; set; }
+        [DisplayName("Título")]
+        public string Title { get; set; }
+        [DisplayName("Descrição")]
+        public string Description { get; set; }
+        [DisplayName("É um evento")]
+        public bool IsEvent { get; set; }
+        [DisplayName("Feito?")]
+        public bool IsDone { get; set; }
+        [DisplayName("Destinatário")]
+        public ApplicationUser UserReminderId { get; set; }
 
     }
 }

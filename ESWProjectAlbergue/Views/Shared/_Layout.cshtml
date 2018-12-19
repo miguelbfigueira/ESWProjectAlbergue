@@ -24,12 +24,17 @@
     <div class="nav-black container navbar-collapse collapse navbar-fixed">
         <ul class="nav navbar-nav ">
             <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-            <li><a asp-area="" asp-controller="Reminders" asp-action="Index">Lembretes</a></li>
-            <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers">Utilizadores</a></li> 
-
-
+            @if (!User.IsInRole("admins") || !User.IsInRole("funcionarios"))
+            {
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+            }
+            @if (User.IsInRole("admins"))
+            {
+                <li><a asp-area="" asp-controller="Reminders" asp-action="Index">Lembretes</a></li>
+            
+            <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers">Utilizadores</a></li>
+            }
         </ul>
         <partial name="_LoginPartial" />
     </div>
