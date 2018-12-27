@@ -1,4 +1,5 @@
-﻿@page
+﻿
+@page
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
@@ -71,7 +72,7 @@
                         -->
                     <div class="form-group">
                         <label asp-for="Input.BirthDate" style="color:#FFFFFF;"></label>
-                        <input asp-for="Input.BirthDate"  data-val="true" class="form-control" type="date" style="font-size:13pt;width:300px;" />
+                        <input asp-for="Input.BirthDate" data-val="true" class="form-control" type="date" style="font-size:13pt;width:300px;" />
                         <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
                     </div>
                     <div class="form-group">

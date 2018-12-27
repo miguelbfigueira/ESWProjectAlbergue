@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using ESWProjectAlbergue.Models;
+using ESWProjectAlbergue.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -104,7 +105,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
                         protocol: Request.Scheme);
 
                     await _emailSender.SendEmailAsync(Input.Email, "Quinta do Mião- Confirmar E-mail",
-                $" <p> Olá caro(a) utilizador(a), obrigado por ter criado uma conta na quinta do mião. </p> <p> Para finalizar o seu registo é necessário confirmar o seu endereço de e-mail. Para confirmar <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>. </p> <p>Não responda a este e-mail, pois é um serviço automatizado.</p> <br> <br> <p>A equipa Quinta Do Mião</p> <p> <a href='https://eswprojectalberguedevelopment.azurewebsites.net'>eswprojectalberguedevelopment.azurewebsites.net</a> </p> ");
+               $" <p> Olá caro(a) utilizador(a), obrigado por ter criado uma conta na quinta do mião. </p> <p> Para finalizar o seu registo é necessário confirmar o seu endereço de e-mail. Para confirmar <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>. </p> <p>Não responda a este e-mail, pois é um serviço automatizado.</p> <br> <br> <p>A equipa Quinta Do Mião</p> <p> <a href='https://eswprojectalberguedevelopment.azurewebsites.net'>eswprojectalberguedevelopment.azurewebsites.net</a> </p> ");
 
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
