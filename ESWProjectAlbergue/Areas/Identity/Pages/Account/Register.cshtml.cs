@@ -77,6 +77,8 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "A password de confirmação não corresponde à password inserida anteriormente.")]
             public string ConfirmPassword { get; set; }
+
+            public string Role { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -90,7 +92,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, Address = Input.Address/*, Postalcode = Input.PostalCode*/, BirthDate = Input.BirthDate, Name = Input.Name};
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, Address = Input.Address/*, Postalcode = Input.PostalCode*/, BirthDate = Input.BirthDate, Name = Input.Name, Role = "users"};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

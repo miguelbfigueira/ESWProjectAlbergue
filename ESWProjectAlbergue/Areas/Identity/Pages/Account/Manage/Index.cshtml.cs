@@ -182,5 +182,11 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             StatusMessage = "E-mail de confirmação enviado, por favor verifique o seu e-mail (poderá demorar alguns minutos)";
             return RedirectToPage();
         }
+
+        [Route("Identity/Account/")]
+        public IActionResult IDRedirect(string ReturnUrl)
+        {
+            return Redirect("/Identity/Account/?ReturnUrl=" + ReturnUrl);
+        }
     }
 }

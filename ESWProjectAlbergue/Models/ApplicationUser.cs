@@ -22,5 +22,7 @@ namespace ESWProjectAlbergue.Models
         [DataType(DataType.PostalCode)]
         public virtual string Postalcode { get; set; }
 
+        public string Role { get; set; }
+
     }
 }

@@ -1,12 +1,12 @@
 ﻿@page
-@model AllUsersModel
+@model AllFuncionariosModel
 @{
-    ViewData["Title"] = "Utilizadores";
+    ViewData["Title"] = "Funcionários";
 }
 
 <h4>@ViewData["Title"]</h4>
 <p>
-    @Html.ActionLink("Funcionários", "AllFuncionarios", "Identity/Account/Manage",null, null)
+
 </p>
 <table class="table">
     <thead>
@@ -38,7 +38,7 @@
        
         @foreach (var item in Model.users)
         {
-            @if (item.Role == "users")
+            @if (item.Role == "funcionarios")
             {
         <tr>
             <td>
@@ -61,9 +61,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Promover</a> |
-            </td>
+          
             
         </tr>
                 }
