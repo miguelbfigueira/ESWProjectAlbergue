@@ -7,9 +7,13 @@
 
   <ItemGroup>
     <Compile Remove="Areas\Identity\Services\**" />
+    <Compile Remove="Views\Funcionario\**" />
     <Content Remove="Areas\Identity\Services\**" />
+    <Content Remove="Views\Funcionario\**" />
     <EmbeddedResource Remove="Areas\Identity\Services\**" />
+    <EmbeddedResource Remove="Views\Funcionario\**" />
     <None Remove="Areas\Identity\Services\**" />
+    <None Remove="Views\Funcionario\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,7 +43,7 @@
   <ItemGroup>
     <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Services\" />
-    <Folder Include="Views\Funcionario\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
