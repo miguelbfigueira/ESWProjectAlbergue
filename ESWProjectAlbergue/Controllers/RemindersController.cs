@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ESWProjectAlbergue.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace ESWProjectAlbergue.Controllers
 {
@@ -14,12 +15,15 @@ namespace ESWProjectAlbergue.Controllers
     {
         private readonly ESWProjectAlbergueContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
-       // private readonly RoleManager<ApplicationUser> _userRole;
+        private readonly IEmailSender _emailSender;
 
-        public RemindersController(ESWProjectAlbergueContext context, UserManager<ApplicationUser> userManager)
+        // private readonly RoleManager<ApplicationUser> _userRole;
+
+        public RemindersController(ESWProjectAlbergueContext context, UserManager<ApplicationUser> userManager, IEmailSender emailSender)
         {
             _context = context;
             _userManager = userManager;
+            _emailSender = emailSender;
             //_userRole = userRole;
         }
 
@@ -71,8 +75,16 @@ namespace ESWProjectAlbergue.Controllers
             {
                 _context.Add(reminder);
                 await _context.SaveChangesAsync();
+                Console.WriteLine(reminder.UserReminderId.Email);
+
+                await _emailSender.SendEmailAsync(reminder.UserReminderId.Email, "Novo Lembrete",
+                   $"<h1> Novo Lembrete </h1> " +
+                   $"<h4> Tem um novo lembrete </h4> " +
+                   $"<p> {reminder.Title} - {reminder.DateEnd} </p> " +
+                   $"<p> {reminder.Description} </p>");
                 return RedirectToAction(nameof(Index));
             }
+           
             return View(reminder);
         }
 
@@ -112,6 +124,11 @@ namespace ESWProjectAlbergue.Controllers
                     reminder.UserReminderId = await _userManager.FindByEmailAsync(reminder.UserReminderId.Email);
                     _context.Update(reminder);
                     await _context.SaveChangesAsync();
+                    await _emailSender.SendEmailAsync(reminder.UserReminderId.Email, "ATUALIZAÇÃO! - Lembrete",
+                  $"<h1> Atualização Lembrete </h1> " +
+                  $"<h4> O seu lembrete foi atualizado </h4> " +
+                  $"<p> {reminder.Title} - {reminder.DateEnd} </p> " +
+                  $"<p> {reminder.Description} </p>");
                 }
                 catch (DbUpdateConcurrencyException)
                 {

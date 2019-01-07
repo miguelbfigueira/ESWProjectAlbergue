@@ -58,6 +58,8 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<string>("Postalcode");
 
+                    b.Property<string>("Role");
+
                     b.Property<string>("SecurityStamp");
 
                     b.Property<bool>("TwoFactorEnabled");
@@ -107,21 +109,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasIndex("UserReminderIdId");
 
                     b.ToTable("Reminder");
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.User", b =>
-                {
-                    b.Property<int>("UserID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Morada");
-
-                    b.Property<string>("Nome");
-
-                    b.HasKey("UserID");
-
-                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

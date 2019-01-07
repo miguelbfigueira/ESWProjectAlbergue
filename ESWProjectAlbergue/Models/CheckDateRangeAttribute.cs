@@ -15,7 +15,7 @@ namespace ESWProjectAlbergue.Models
             {
                 DateTime _birthJoin = Convert.ToDateTime(value);
                 
-                if (CalculateAge(_birthJoin) >= 18 )
+                if (CalculateAge(_birthJoin) <= 18 )
                 {
                     return new ValidationResult("Tem de ter mais de 18 anos");
                 }
