@@ -56,7 +56,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             [DataType(DataType.DateTime)]
             public DateTime BirthDate { get; set; }
 
-            [Required(ErrorMessage = "Campo obrigatório. Insira a sua morada.")]
+           
             [DataType(DataType.Text)]
             [Display(Name = "Morada")]
             public string Address { get; set; }
