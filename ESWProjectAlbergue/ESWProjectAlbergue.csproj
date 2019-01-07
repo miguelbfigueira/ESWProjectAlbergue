@@ -6,9 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Identity\Data\**" />
     <Compile Remove="Areas\Identity\Services\**" />
+    <Content Remove="Areas\Identity\Data\**" />
     <Content Remove="Areas\Identity\Services\**" />
+    <EmbeddedResource Remove="Areas\Identity\Data\**" />
     <EmbeddedResource Remove="Areas\Identity\Services\**" />
+    <None Remove="Areas\Identity\Data\**" />
     <None Remove="Areas\Identity\Services\**" />
   </ItemGroup>
 
@@ -37,7 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Services\" />
   </ItemGroup>
 
