@@ -11,7 +11,10 @@ namespace ESWProjectAlbergue.Models
     {
         public int ReminderId { get; set; }
         [DisplayName("Autor")]
+        public string UserCreater { get; set; }
+
         public ApplicationUser UserCreaterId { get; set; }
+
         [DisplayName("Data Criação")]
         public DateTime DateCreate { get; set; }
 
@@ -26,7 +29,8 @@ namespace ESWProjectAlbergue.Models
         [DisplayName("Feito?")]
         public bool IsDone { get; set; }
         [DisplayName("Destinatário")]
-        public ApplicationUser UserReminderId { get; set; }
+        public string UserReminder { get; set; }
 
+        public ApplicationUser UserReminderId { get; set; }
     }
 }

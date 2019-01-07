@@ -24,13 +24,13 @@ namespace ESWProjectAlbergue.Controllers
             _context = context;
             _userManager = userManager;
             _emailSender = emailSender;
-            //_userRole = userRole;
+       
         }
 
         // GET: Reminders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Reminder.ToListAsync());
+            return View(await _context.Reminder.Include(c => c.UserReminderId).Include(r => r.UserCreaterId).ToListAsync());
         }
 
         // GET: Reminders/Details/5

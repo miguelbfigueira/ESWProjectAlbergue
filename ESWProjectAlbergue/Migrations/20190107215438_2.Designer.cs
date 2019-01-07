@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190107215438_2")]
+    partial class _2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,19 +100,15 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<string>("Title");
 
-                    b.Property<string>("UserCreater");
+                    b.Property<string>("UserCreaterId");
 
-                    b.Property<string>("UserCreaterIdId");
-
-                    b.Property<string>("UserReminder");
-
-                    b.Property<string>("UserReminderIdId");
+                    b.Property<string>("UserReminderId");
 
                     b.HasKey("ReminderId");
 
-                    b.HasIndex("UserCreaterIdId");
+                    b.HasIndex("UserCreaterId");
 
-                    b.HasIndex("UserReminderIdId");
+                    b.HasIndex("UserReminderId");
 
                     b.ToTable("Reminder");
                 });
@@ -231,13 +229,13 @@ namespace ESWProjectAlbergue.Data.Migrations
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Reminder", b =>
                 {
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserCreaterId")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserCreater")
                         .WithMany()
-                        .HasForeignKey("UserCreaterIdId");
+                        .HasForeignKey("UserCreaterId");
 
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserReminderId")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserReminder")
                         .WithMany()
-                        .HasForeignKey("UserReminderIdId");
+                        .HasForeignKey("UserReminderId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
