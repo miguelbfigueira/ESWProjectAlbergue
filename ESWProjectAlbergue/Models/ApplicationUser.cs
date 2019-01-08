@@ -13,7 +13,7 @@ namespace ESWProjectAlbergue.Models
 
         [DataType(DataType.Date)]
         [PersonalData]
-        [CheckDateRange(ErrorMessage = "A data de nascimento tem de ser anterior a hoje.")]
+        [CheckDateRange(ErrorMessage = "A data de nascimento tem de ser anterior a hoje.")] 
         public DateTime BirthDate { get; set; }
 
         [PersonalData]
@@ -25,5 +25,5 @@ namespace ESWProjectAlbergue.Models
         [PersonalData]
         public string Role { get; set; }
 
-    }
+       }
 }

@@ -91,9 +91,17 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             return await OnGetAsync();
         }
 
-        public IActionResult Promote()
+        public void Promote(string id)
         {
-            return Page();
+            foreach(ApplicationUser user in users)
+            {
+                if(user.Id == id)
+                {
+                    user.Role = "funcionarios";
+                    _userManager.AddToRoleAsync(user, "funcionarios");
+                }
+            }
+            
         }
 
         
