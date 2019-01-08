@@ -14,14 +14,14 @@ using Microsoft.Extensions.Logging;
 
 namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
 {
-    public partial class AllUsersModel : PageModel
+    public partial class AllFuncionariosModel : PageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger<ApplicationUser> _logger;
 
-        public AllUsersModel(
+        public AllFuncionariosModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender)
@@ -42,7 +42,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
         public InputModel Input { get; set; }
 
         public List<ApplicationUser> users { get; set; }
-        
+
 
         public class InputModel
         {
@@ -79,24 +79,18 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
 
         public async Task<IActionResult> OnGetAsync()
         {
-            users =  _userManager.Users.ToList();
+            users = _userManager.Users.ToList();
             return Page();
         }
 
-        
-        public async Task<IActionResult> FiltrarFuncionarios()
-        {
-            var funcs = _userManager.Users.ToList();
-            users = (from u in funcs where u.Role == "funcionarios" select u).ToList();
-            return await OnGetAsync();
-        }
 
+       
         public IActionResult Promote()
         {
             return Page();
         }
 
-        
+
 
         /* public async Task<IActionResult> OnGetAsync()
          {
@@ -127,6 +121,6 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
              return Page();
          }*/
 
-       
+
     }
 }

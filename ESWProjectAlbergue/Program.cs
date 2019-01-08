@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using ESWProjectAlbergue;
+using ESWProjectAlbergue.Controllers;
 using ESWProjectAlbergue.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -11,10 +13,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace ESWProjectAlbergue
+namespace MediatecaEst
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
             var host = BuildWebHost(args);
@@ -24,10 +27,12 @@ namespace ESWProjectAlbergue
                 try
                 {
                     var context = services.GetRequiredService<ESWProjectAlbergueContext>();
-                    var userManager = scope.ServiceProvider.GetService<UserManager<ApplicationUser>>();
+
+                    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
                     DbInitializer.Initialize(context, userManager, roleManager).Wait();
+                 //   RemindersController.(context, userManager);
                 }
                 catch (Exception ex)
                 {
@@ -35,14 +40,14 @@ namespace ESWProjectAlbergue
                     logger.LogError(ex, "An error occurred while seeding the database.");
                 }
             }
+
             host.Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-  WebHost.CreateDefaultBuilder(args)
-  .UseStartup<Startup>()
-  .Build();
-    }
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
 
-   
+    }
 }

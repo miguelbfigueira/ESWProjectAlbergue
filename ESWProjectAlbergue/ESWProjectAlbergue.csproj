@@ -6,10 +6,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Identity\Data\**" />
     <Compile Remove="Areas\Identity\Services\**" />
+    <Compile Remove="Views\Funcionario\**" />
+    <Content Remove="Areas\Identity\Data\**" />
     <Content Remove="Areas\Identity\Services\**" />
+    <Content Remove="Views\Funcionario\**" />
+    <EmbeddedResource Remove="Areas\Identity\Data\**" />
     <EmbeddedResource Remove="Areas\Identity\Services\**" />
+    <EmbeddedResource Remove="Views\Funcionario\**" />
+    <None Remove="Areas\Identity\Data\**" />
     <None Remove="Areas\Identity\Services\**" />
+    <None Remove="Views\Funcionario\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20181218174908_3.cs" />
+    <Compile Remove="Migrations\20181218174908_3.Designer.cs" />
+    <Compile Remove="Migrations\20181218175102_4.cs" />
+    <Compile Remove="Migrations\20181218175102_4.Designer.cs" />
+    <Compile Remove="Migrations\20181218175410_3.cs" />
+    <Compile Remove="Migrations\20181218175410_3.Designer.cs" />
+    <Compile Remove="Migrations\20181218175534_3.cs" />
+    <Compile Remove="Migrations\20181218175534_3.Designer.cs" />
+    <Compile Remove="Migrations\20181218201108_4.cs" />
+    <Compile Remove="Migrations\20181218201108_4.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\check.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,12 +45,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Services\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Areas\Identity\Pages\Account\Manage\AllFuncionarios.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Areas\Identity\Pages\Account\Manage\AllUsers.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Identity\Pages\Account\RegisterFuncs.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

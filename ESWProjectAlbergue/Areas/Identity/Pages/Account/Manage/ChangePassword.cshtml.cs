@@ -94,12 +94,16 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             }
 
             await _emailSender.SendEmailAsync(user.Email, "Alteração Password",
-                        $"A sua password foi alterada");
+                        $"<h1> Password Alterada </h1>" +
+                        $"<p> A sua password foi alterada, para fazer login use as seguintes credenciais:</p>" +
+                        $"<p><span style='font-weight:bold'> Username: </span> {User.Identity.Name} </p>" +
+                        $"<p><span style='font-weight:bold'> Password: </span> {Input.NewPassword} </p>");
+
 
 
             await _signInManager.RefreshSignInAsync(user);
             _logger.LogInformation("User changed their password successfully.");
-            StatusMessage = "Your password has been changed.";
+            StatusMessage = "A sua password foi alterada com sucesso";
 
 
             return RedirectToPage();

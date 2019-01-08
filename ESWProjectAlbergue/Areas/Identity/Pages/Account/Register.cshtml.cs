@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using ESWProjectAlbergue.Models;
+using ESWProjectAlbergue.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -63,6 +64,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "Data De Nascimento")]
+            [CheckDateRange]
             public DateTime BirthDate { get; set; } 
 
             [Required(ErrorMessage = "Password inválida. Necessita de uma maiúscula, um valor númerico e um caracter alternativo.")]
@@ -75,6 +77,8 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "A password de confirmação não corresponde à password inserida anteriormente.")]
             public string ConfirmPassword { get; set; }
+
+            public string Role { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -87,10 +91,12 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, Address = Input.Address/*, Postalcode = Input.PostalCode*/, BirthDate = Input.BirthDate, Name = Input.Name};
+                
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, Address = Input.Address/*, Postalcode = Input.PostalCode*/, BirthDate = Input.BirthDate, Name = Input.Name, Role = "users"};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, "users");
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -101,10 +107,11 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
                         protocol: Request.Scheme);
 
                     await _emailSender.SendEmailAsync(Input.Email, "Quinta do Mião- Confirmar E-mail",
-                $" <p> Olá caro(a) utilizador(a), obrigado por ter criado uma conta na quinta do mião. </p> <p> Para finalizar o seu registo é necessário confirmar o seu endereço de e-mail. Para confirmar <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>. </p> <p>Não responda a este e-mail, pois é um serviço automatizado.</p> <br> <br> <p>A equipa Quinta Do Mião</p> <p> <a href='https://eswprojectalberguedevelopment.azurewebsites.net'>eswprojectalberguedevelopment.azurewebsites.net</a> </p> ");
+               $" <p> Olá caro(a) utilizador(a), obrigado por ter criado uma conta na quinta do mião. </p> <p> Para finalizar o seu registo é necessário confirmar o seu endereço de e-mail. Para confirmar <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>. </p> <p>Não responda a este e-mail, pois é um serviço automatizado.</p> <br> <br> <p>A equipa Quinta Do Mião</p> <p> <a href='https://albergueesw.azurewebsites.net'>eswprojectalberguedevelopment.azurewebsites.net</a> </p> ");
 
 
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    //await _signInManager.SignInAsync(user, isPersistent: false);
+                    
                     return LocalRedirect(returnUrl);
                 }
                 foreach (var error in result.Errors)

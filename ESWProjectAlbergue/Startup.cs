@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 using ESWProjectAlbergue.Services;
 using ESWProjectAlbergue.Models;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace ESWProjectAlbergue
 {
@@ -36,22 +36,24 @@ namespace ESWProjectAlbergue
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<ApplicationUser>()
-                .AddEntityFrameworkStores<ESWProjectAlbergueContext>();
+           
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128)
+            .AddEntityFrameworkStores<ESWProjectAlbergueContext>()
+            .AddDefaultTokenProviders();
 
-            services.AddTransient<IEmailSender, EmailSender>(i =>
-                new EmailSender(
-                    Configuration["EmailSender:Host"],
-                    Configuration.GetValue<int>("EmailSender:Port"),
-                    Configuration.GetValue<bool>("EmailSender:EnableSSL"),
-                    Configuration["EmailSender:UserName"],
-                    Configuration["EmailSender:Password"]
-                )
-            );
+            services.AddTransient<IEmailSender, Email>(i =>
+              new Email(
+                  Configuration["EmailSender:Host"],
+                  Configuration.GetValue<int>("EmailSender:Port"),
+                  Configuration.GetValue<bool>("EmailSender:EnableSSL"),
+                  Configuration["EmailSender:UserName"],
+                  Configuration["EmailSender:Password"]
+              )
+          );
+            
             services.Configure<AuthMessageSenderOptions>(Configuration);
             
         }

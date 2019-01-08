@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ESWProjectAlbergue.Models
@@ -9,7 +10,10 @@ namespace ESWProjectAlbergue.Models
         [PersonalData]
         public string Name { get; set; }
 
+
+        [DataType(DataType.Date)]
         [PersonalData]
+        [CheckDateRange(ErrorMessage = "A data de nascimento tem de ser anterior a hoje.")]
         public DateTime BirthDate { get; set; }
 
         [PersonalData]
@@ -17,5 +21,9 @@ namespace ESWProjectAlbergue.Models
 
         [DataType(DataType.PostalCode)]
         public virtual string Postalcode { get; set; }
+
+        [PersonalData]
+        public string Role { get; set; }
+
     }
 }

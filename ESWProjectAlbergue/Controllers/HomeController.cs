@@ -33,7 +33,7 @@ namespace ESWProjectAlbergue.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Página de Contactos";
 
             return View();
         }
@@ -42,6 +42,8 @@ namespace ESWProjectAlbergue.Controllers
         {
             return View();
         }
+
+     
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

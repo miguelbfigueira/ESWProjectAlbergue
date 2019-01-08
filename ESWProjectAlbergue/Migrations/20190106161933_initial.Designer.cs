@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    [Migration("20181120231729_initial")]
+    [Migration("20190106161933_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace ESWProjectAlbergue.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ESWProjectAlbergue.Areas.Identity.Data.Utilizador", b =>
+            modelBuilder.Entity("ESWProjectAlbergue.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -58,6 +58,10 @@ namespace ESWProjectAlbergue.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
+                    b.Property<string>("Postalcode");
+
+                    b.Property<string>("Role");
+
                     b.Property<string>("SecurityStamp");
 
                     b.Property<bool>("TwoFactorEnabled");
@@ -76,6 +80,37 @@ namespace ESWProjectAlbergue.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.Reminder", b =>
+                {
+                    b.Property<int>("ReminderId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateCreate");
+
+                    b.Property<DateTime>("DateEnd");
+
+                    b.Property<string>("Description");
+
+                    b.Property<bool>("IsDone");
+
+                    b.Property<bool>("IsEvent");
+
+                    b.Property<string>("Title");
+
+                    b.Property<string>("UserCreaterIdId");
+
+                    b.Property<string>("UserReminderIdId");
+
+                    b.HasKey("ReminderId");
+
+                    b.HasIndex("UserCreaterIdId");
+
+                    b.HasIndex("UserReminderIdId");
+
+                    b.ToTable("Reminder");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -192,6 +227,17 @@ namespace ESWProjectAlbergue.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("ESWProjectAlbergue.Models.Reminder", b =>
+                {
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserCreaterId")
+                        .WithMany()
+                        .HasForeignKey("UserCreaterIdId");
+
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserReminderId")
+                        .WithMany()
+                        .HasForeignKey("UserReminderIdId");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -202,7 +248,7 @@ namespace ESWProjectAlbergue.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ESWProjectAlbergue.Areas.Identity.Data.Utilizador")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -210,7 +256,7 @@ namespace ESWProjectAlbergue.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ESWProjectAlbergue.Areas.Identity.Data.Utilizador")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -223,7 +269,7 @@ namespace ESWProjectAlbergue.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Areas.Identity.Data.Utilizador")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -231,7 +277,7 @@ namespace ESWProjectAlbergue.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ESWProjectAlbergue.Areas.Identity.Data.Utilizador")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
