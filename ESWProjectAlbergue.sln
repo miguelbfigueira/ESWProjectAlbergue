@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESWProjectAlbergue", "ESWProjectAlbergue\ESWProjectAlbergue.csproj", "{3F48EFEB-6A93-47EF-A2F3-8EDED2FC2FB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESWProjectAlbergue", "ESWProjectAlbergue\ESWProjectAlbergue.csproj", "{3F48EFEB-6A93-47EF-A2F3-8EDED2FC2FB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E8AA21CD-92D1-4C29-B2D2-6E3AE8560FC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESWProjectAlbergueTest", "ESWProjectAlbergueTest\ESWProjectAlbergueTest.csproj", "{F68DAC1B-17A1-4223-8425-D3958C7B439F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{3F48EFEB-6A93-47EF-A2F3-8EDED2FC2FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F48EFEB-6A93-47EF-A2F3-8EDED2FC2FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F48EFEB-6A93-47EF-A2F3-8EDED2FC2FB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68DAC1B-17A1-4223-8425-D3958C7B439F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68DAC1B-17A1-4223-8425-D3958C7B439F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68DAC1B-17A1-4223-8425-D3958C7B439F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68DAC1B-17A1-4223-8425-D3958C7B439F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F68DAC1B-17A1-4223-8425-D3958C7B439F} = {E8AA21CD-92D1-4C29-B2D2-6E3AE8560FC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E43AAD15-AB47-4203-B36E-EA2BFB9D6C86}

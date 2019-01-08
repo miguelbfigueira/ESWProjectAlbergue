@@ -54,9 +54,10 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             [Required(ErrorMessage = "Campo obrigatório. Insira a sua data de nascimento.")]
             [Display(Name = "Data De Nascimento")]
             [DataType(DataType.DateTime)]
+            [CheckDateRange]
             public DateTime BirthDate { get; set; }
 
-            [Required(ErrorMessage = "Campo obrigatório. Insira a sua morada.")]
+           
             [DataType(DataType.Text)]
             [Display(Name = "Morada")]
             public string Address { get; set; }
