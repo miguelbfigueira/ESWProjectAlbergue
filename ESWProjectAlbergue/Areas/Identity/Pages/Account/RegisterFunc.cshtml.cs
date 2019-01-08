@@ -91,8 +91,8 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, Address = Input.Address/*, Postalcode = Input.PostalCode*/, BirthDate = Input.BirthDate, Name = Input.Name, Role = "funcionarios"};
+
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, Address = Input.Address/*, Postalcode = Input.PostalCode*/, BirthDate = Input.BirthDate, Name = Input.Name, EmailConfirmed = true, Role = "funcionarios"};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
@@ -109,8 +109,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
                     await _emailSender.SendEmailAsync(Input.Email, "Quinta do Mião- Confirmar E-mail",
                $" <p> Olá caro(a) utilizador(a), obrigado por ter criado uma conta na quinta do mião. </p> <p> Para finalizar o seu registo é necessário confirmar o seu endereço de e-mail. Para confirmar <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>. </p> <p>Não responda a este e-mail, pois é um serviço automatizado.</p> <br> <br> <p>A equipa Quinta Do Mião</p> <p> <a href='https://eswprojectalberguedevelopment.azurewebsites.net'>eswprojectalberguedevelopment.azurewebsites.net</a> </p> ");
 
-                    
-                    return LocalRedirect(returnUrl);
+                    return RedirectToAction("AllFuncionarios", "Identity/Account/Manage");
                 }
                 foreach (var error in result.Errors)
                 {
