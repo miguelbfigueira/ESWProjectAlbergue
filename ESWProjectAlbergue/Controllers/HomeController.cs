@@ -80,6 +80,27 @@ namespace ESWProjectAlbergue.Controllers
             }
         }
 
+        // POST: AllUsers/Edit/5
+        [HttpPost, ActionName("Edit")]
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                Console.WriteLine("é null");
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                var users = _userManager.Users.ToList();
+                ApplicationUser userToPromote = (from u in users where u.Id == id select u).First();
+                userToPromote.Role = "funcionarios";
+                await _userManager.AddToRoleAsync(userToPromote, "funcionarios");
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
