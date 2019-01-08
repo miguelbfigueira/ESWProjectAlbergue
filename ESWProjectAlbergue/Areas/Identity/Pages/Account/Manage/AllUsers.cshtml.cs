@@ -20,15 +20,20 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger<ApplicationUser> _logger;
+        private readonly ESWProjectAlbergueContext _context;
 
         public AllUsersModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            ILogger<ApplicationUser> logger,
+            ESWProjectAlbergueContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+            _logger = logger;
+            _context = context;
         }
 
         public string Username { get; set; }
@@ -96,37 +101,8 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage
             return Page();
         }
 
-        
+   
 
-        /* public async Task<IActionResult> OnGetAsync()
-         {
-             var user = await _userManager.GetUserAsync(User);
-             if (user == null)
-             {
-                 return NotFoun d($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-             }
 
-             var userName = await _userManager.GetUserNameAsync(user);
-             var email = await _userManager.GetEmailAsync(user);
-             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-
-             Username = userName;
-
-             Input = new InputModel
-             {
-                 Name = user.Name,
-                 Address = user.Address,
-                 BirthDate = user.BirthDate,
-                 PostalCode = user.Postalcode,
-                 Email = email,
-                 PhoneNumber = phoneNumber
-             };
-
-             IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
-
-             return Page();
-         }*/
-
-       
     }
 }
