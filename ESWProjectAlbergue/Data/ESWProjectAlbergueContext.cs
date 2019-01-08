@@ -15,7 +15,7 @@ namespace ESWProjectAlbergue.Models
 
         // Add your customizations after calling base.OnModelCreating(builder);
 
-
+   
         public DbSet<ESWProjectAlbergue.Models.ApplicationUser> User { get; set; }
         public DbSet<ESWProjectAlbergue.Models.Reminder> Reminder { get; set; }
     }
