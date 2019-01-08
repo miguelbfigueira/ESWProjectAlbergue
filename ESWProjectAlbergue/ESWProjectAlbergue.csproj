@@ -52,6 +52,9 @@
     <Content Update="Areas\Identity\Pages\Account\Manage\AllUsers.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Areas\Identity\Pages\Account\RegisterFunc.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Areas\Identity\Pages\Account\RegisterFuncs.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
