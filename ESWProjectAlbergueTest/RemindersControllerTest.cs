@@ -38,7 +38,7 @@ namespace ESWProjectAlbergueTest
                    }
 
         [Fact]
-        public void Index_ReturnsViewResult()
+        public void Index_ReturnsTask()
         {
             var controller = new RemindersController(DbContext, _userManager, _emailSender);
 
@@ -47,7 +47,57 @@ namespace ESWProjectAlbergueTest
             var viewResult = Assert.IsType<Task<IActionResult >>(result);
         }
 
+        [Fact]
+        public void Edit_ReturnsTask()
+        {
+            var controller = new RemindersController(DbContext, _userManager, _emailSender);
+
+            var result = controller.Edit(1);
+
+            var viewResult = Assert.IsType<Task<IActionResult>>(result);
+        }
         
+        [Fact]
+        public void Delete_ReturnsTask()
+        {
+            var controller = new RemindersController(DbContext, _userManager, _emailSender);
+
+            var result = controller.Delete(1);
+
+            var viewResult = Assert.IsType<Task<IActionResult>>(result);
+        }
+
+        [Fact]
+        public void Create_ReturnsTask()
+        {
+            var controller = new RemindersController(DbContext, _userManager, _emailSender);
+            Reminder reminder = new Reminder();
+            var result = controller.Create(reminder);
+
+            var viewResult = Assert.IsType<Task<IActionResult>>(result);
+        }
+
+        [Fact]
+        public void Edit_ReturnsResult()
+        {
+            var controller = new RemindersController(DbContext, _userManager, _emailSender);
+            Reminder reminder = new Reminder();
+            var result = controller.Edit(1, reminder);
+
+            var viewResult = Assert.IsType<Task<IActionResult>>(result);
+        }
+
+
+        [Fact]
+        public void Details_ReturnsTask()
+        {
+            var controller = new RemindersController(DbContext, _userManager, _emailSender);
+            Reminder reminder = new Reminder();
+            var result = controller.Details(1);
+
+            var viewResult = Assert.IsType<Task<IActionResult>>(result);
+        }
+
 
     }
 }
