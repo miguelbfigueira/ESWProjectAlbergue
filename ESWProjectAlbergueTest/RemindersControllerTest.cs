@@ -13,6 +13,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ESWProjectAlbergueTest
 {
@@ -23,16 +26,16 @@ namespace ESWProjectAlbergueTest
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IEmailSender _emailSender;
 
-     /*   public RemindersControllerTest()
+       public RemindersControllerTest()
         {
             var connection = new SqliteConnection("DataSource=:memory:");
             connection.Open();
             var options = new DbContextOptionsBuilder<ESWProjectAlbergueContext>().UseSqlite(connection).Options;
             DbContext = new ESWProjectAlbergueContext(options);
-
-
             DbContext.Database.EnsureCreated();
-        }
+            
+
+                   }
 
         [Fact]
         public void Index_ReturnsViewResult()
@@ -41,8 +44,10 @@ namespace ESWProjectAlbergueTest
 
             var result = controller.Index();
 
-            var viewResult = Assert.IsType<ViewResult>(result);
-        }*/
+            var viewResult = Assert.IsType<Task<IActionResult >>(result);
+        }
+
+        
 
     }
 }

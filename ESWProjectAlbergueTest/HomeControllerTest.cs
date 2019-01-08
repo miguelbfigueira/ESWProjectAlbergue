@@ -1,16 +1,16 @@
 ﻿using ESWProjectAlbergue.Controllers;
 using ESWProjectAlbergue.Models;
-
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using System.Linq;
 
 using Xunit;
 
 
 namespace ESWProjectAlbergueTest
-{
+{/*
     public class ESWProjectAlbergueContextFixture
     {
         public ESWProjectAlbergueContext DbContext { get; private set; }
@@ -37,7 +37,7 @@ namespace ESWProjectAlbergueTest
         [Fact]
         public void Index_ReturnsViewResult()
         {
-            var controller = new HomeController();
+            var controller = new HomeController(DbContext,);
 
             var result = controller.Index();
 
@@ -63,5 +63,5 @@ namespace ESWProjectAlbergueTest
 
             Assert.NotNull(controller.ViewData["Message"]);
         }
-    }
+    }*/
 }
