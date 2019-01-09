@@ -26,10 +26,10 @@
             <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
             @if (!User.IsInRole("admins") || !User.IsInRole("funcionarios"))
             {
-                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contactos</a></li>
             }
-            @if (User.IsInRole("admins"))
+            @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
             {
                 <li><a asp-area="" asp-controller="Reminders" asp-action="Index">Lembretes</a></li>
             

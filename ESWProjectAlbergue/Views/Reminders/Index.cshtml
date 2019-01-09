@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ESWProjectAlbergue.Models.Reminder>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lembretes";
 }
 
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar Novo Lembrete</a>
 </p>
 <table class="table">
     <thead>
@@ -81,9 +81,9 @@
               
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ReminderId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ReminderId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReminderId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ReminderId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ReminderId">Visualizar</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReminderId">Remover</a>
             </td>
         </tr>
 }

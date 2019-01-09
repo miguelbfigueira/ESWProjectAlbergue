@@ -50,7 +50,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
             [Display(Name = "Nome Completo")]
             public string Name { get; set; }
 
-            [Required(ErrorMessage = "Insira o a sua Morada.")]
+            
             [Display(Name = "Morada")]
             public string Address { get; set; }
 
