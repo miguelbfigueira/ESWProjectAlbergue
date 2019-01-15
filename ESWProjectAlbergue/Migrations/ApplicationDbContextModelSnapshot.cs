@@ -19,6 +19,37 @@ namespace ESWProjectAlbergue.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AgeType");
+
+                    b.Property<int>("AnimalType");
+
+                    b.Property<int>("BehaviorType");
+
+                    b.Property<DateTime>("BirthDate");
+
+                    b.Property<int>("Breed");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("FurType");
+
+                    b.Property<int>("Gender");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("SizeType");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Animal");
+                });
+
             modelBuilder.Entity("ESWProjectAlbergue.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
