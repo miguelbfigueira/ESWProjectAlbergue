@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190114194151_4")]
+    partial class _4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,11 +127,11 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("UserToVisitId");
+                    b.Property<string>("UserToVisitIdId");
 
                     b.HasKey("VisitId");
 
-                    b.HasIndex("UserToVisitId");
+                    b.HasIndex("UserToVisitIdId");
 
                     b.ToTable("Visit");
                 });
@@ -261,9 +263,9 @@ namespace ESWProjectAlbergue.Data.Migrations
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Visit", b =>
                 {
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserToVisit")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserToVisitId")
                         .WithMany()
-                        .HasForeignKey("UserToVisitId");
+                        .HasForeignKey("UserToVisitIdId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -40,7 +40,7 @@ namespace ESWProjectAlbergue.Controllers
             return View();
         }
 
-      
+       
 
         public IActionResult About()
         {
