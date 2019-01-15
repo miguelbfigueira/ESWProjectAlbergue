@@ -33,7 +33,7 @@
             @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
             {
                 <li><a asp-area="" asp-controller="Reminders" asp-action="Index">Lembretes</a></li>
-
+                <li><a asp-area="" asp-controller="AdoptionFiles" asp-action="Index">Fichas de Adoções</a></li>
                 <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers">Utilizadores</a></li>
             }
         </ul>

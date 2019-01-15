@@ -32,6 +32,10 @@ namespace ESWProjectAlbergue.Models
 
         public EnumBehaviorType BehaviorType { get; set; }
 
+        public ApplicationUser Adopter { get; set; }
+
+        public Boolean Adopted { get; set; }
+
 
     }
 }
