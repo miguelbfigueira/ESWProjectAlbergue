@@ -4,86 +4,187 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AnimalType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BirthDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Breed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SizeType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FurType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AgeType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BehaviorType)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AnimalType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Breed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SizeType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FurType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AgeType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BehaviorType)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+<h2>Animais</h2>
+@if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+{
+    <p>
+        <a asp-action="Create">Registar Novo Animail</a>
+    </p>
 }
-    </tbody>
-</table>
+<form asp-controller="Animals" asp-action="FiltrarNumero" method="post">
+    <p>
+        ID: <input type="number" name="id">
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+<form asp-controller="Animals" asp-action="FiltrarNome" method="post">
+    <p>
+        Nome: <input type="text" name="name">
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+@foreach (var item in Model)
+{
+    <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <img src="~/images/check.png" width="200px" height="200px" />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AnimalType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.AnimalType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Gender)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.BirthDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Breed)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Breed)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SizeType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.SizeType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FurType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.FurType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AgeType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.AgeType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BehaviorType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.BehaviorType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Description)
+            </dd>
+            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+            @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+            {
+                <a asp-action="Edit" asp-route-id="@item.Id"> | Editar</a>
+            }
+            @if (User.IsInRole("admins"))
+            {
+                <a asp-action="Delete" asp-route-id="@item.Id"> | Eliminar</a>
+            }
+        </dl>
+    </div>
+}
+<!--<table class="table">
+       <thead>
+           <tr>
+               <th>
+                   @Html.DisplayNameFor(model => model.Name)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.AnimalType)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.Gender)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.BirthDate)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.Breed)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.SizeType)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.FurType)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.AgeType)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.BehaviorType)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.Description)
+               </th>
+
+               <th></th>
+           </tr>
+       </thead>
+       <tbody>
+           @foreach (var item in Model)
+           {
+               <tr>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.Name)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.AnimalType)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.Gender)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.BirthDate)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.Breed)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.SizeType)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.FurType)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.AgeType)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.BehaviorType)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(modelItem => item.Description)
+                   </td>
+
+<td>
+
+    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+    @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+    {
+        <a asp-action="Edit" asp-route-id="@item.Id"> | Editar</a>
+    }
+    @if (User.IsInRole("admins"))
+    {
+        <a asp-action="Delete" asp-route-id="@item.Id"> | Eliminar</a>
+    }
+</td>
+                </tr>
+}
+        </tbody>
+    </table>-->
