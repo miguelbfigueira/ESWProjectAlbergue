@@ -18,7 +18,9 @@ namespace ESWProjectAlbergue.Models
    
         public DbSet<ESWProjectAlbergue.Models.ApplicationUser> User { get; set; }
         public DbSet<ESWProjectAlbergue.Models.Reminder> Reminder { get; set; }
-        public DbSet<ESWProjectAlbergue.Models.Animal> Animal { get; set; }
+        public DbSet<ESWProjectAlbergue.Models.test2> test { get; set; }
+        public DbSet<ESWProjectAlbergue.Models.MainAnimal> MainAnimal { get; set; }
+        public DbSet<ESWProjectAlbergue.Models.ABreed> ABreed { get; set; }
     }
 }
 

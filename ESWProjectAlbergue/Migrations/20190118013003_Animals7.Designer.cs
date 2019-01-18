@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190118013003_Animals7")]
+    partial class Animals7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -198,6 +200,10 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<int>("AnimalTypeId");
 
+                    b.Property<int>("ApplicationUserId");
+
+                    b.Property<string>("ApplicationUserId1");
+
                     b.Property<DateTime>("BirthDate");
 
                     b.Property<string>("Description");
@@ -219,6 +225,8 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasIndex("AnimalSizeId");
 
                     b.HasIndex("AnimalTypeId");
+
+                    b.HasIndex("ApplicationUserId1");
 
                     b.HasIndex("GenderTypeId");
 
@@ -260,20 +268,15 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.ToTable("Reminder");
                 });
 
-            modelBuilder.Entity("ESWProjectAlbergue.Models.test2", b =>
+            modelBuilder.Entity("ESWProjectAlbergue.Models.test", b =>
                 {
-                    b.Property<int>("test2Id")
+                    b.Property<int>("testId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AnimalAgeTypeId");
+                    b.Property<string>("description");
 
-                    b.Property<string>("Designacao")
-                        .IsRequired();
-
-                    b.HasKey("test2Id");
-
-                    b.HasIndex("AnimalAgeTypeId");
+                    b.HasKey("testId");
 
                     b.ToTable("test");
                 });
@@ -424,6 +427,10 @@ namespace ESWProjectAlbergue.Data.Migrations
                         .HasForeignKey("AnimalTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId1");
+
                     b.HasOne("ESWProjectAlbergue.Models.AGender", "GenderType")
                         .WithMany("Animals")
                         .HasForeignKey("GenderTypeId")
@@ -439,14 +446,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserReminderId")
                         .WithMany()
                         .HasForeignKey("UserReminderIdId");
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.test2", b =>
-                {
-                    b.HasOne("ESWProjectAlbergue.Models.AAgeType", "AnimalAgeType")
-                        .WithMany("test2")
-                        .HasForeignKey("AnimalAgeTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

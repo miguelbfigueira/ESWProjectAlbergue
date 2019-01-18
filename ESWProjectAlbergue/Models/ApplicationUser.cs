@@ -25,7 +25,8 @@ namespace ESWProjectAlbergue.Models
         [PersonalData]
         public string Role { get; set; }
 
-        public virtual ICollection<Animal> Animals { get; set; }
+        //// Propriedade Navegacional
+        //public List<MainAnimal> Animals { get; set; }
 
     }
 }

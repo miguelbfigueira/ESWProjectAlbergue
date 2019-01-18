@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190118002358_Animals2")]
+    partial class Animals2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,74 +21,155 @@ namespace ESWProjectAlbergue.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ESWProjectAlbergue.Models.AAgeType", b =>
+            modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
                 {
-                    b.Property<int>("AAgeTypeId")
+                    b.Property<int>("AnimalId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Designacao")
-                        .IsRequired();
+                    b.Property<bool>("Adopted");
 
-                    b.HasKey("AAgeTypeId");
+                    b.Property<int>("AnimalAgeTypeId");
 
-                    b.ToTable("AAgeType");
+                    b.Property<int>("AnimalBehaviorTypeId");
+
+                    b.Property<int>("AnimalBreedId");
+
+                    b.Property<int>("AnimalFurTypeId");
+
+                    b.Property<int>("AnimalSizeId");
+
+                    b.Property<int>("AnimalTypeId");
+
+                    b.Property<int>("ApplicationUserId");
+
+                    b.Property<string>("ApplicationUserId1");
+
+                    b.Property<DateTime>("BirthDate");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("GenderTypeId");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("AnimalId");
+
+                    b.HasIndex("AnimalAgeTypeId");
+
+                    b.HasIndex("AnimalBehaviorTypeId");
+
+                    b.HasIndex("AnimalBreedId");
+
+                    b.HasIndex("AnimalFurTypeId");
+
+                    b.HasIndex("AnimalSizeId");
+
+                    b.HasIndex("AnimalTypeId");
+
+                    b.HasIndex("ApplicationUserId1");
+
+                    b.HasIndex("GenderTypeId");
+
+                    b.ToTable("Animal");
                 });
 
-            modelBuilder.Entity("ESWProjectAlbergue.Models.ABehaviorType", b =>
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AnimalAgeType", b =>
                 {
-                    b.Property<int>("ABehaviorTypeId")
+                    b.Property<int>("AnimalAgeTypeId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Designacao")
                         .IsRequired();
 
-                    b.HasKey("ABehaviorTypeId");
+                    b.HasKey("AnimalAgeTypeId");
 
-                    b.ToTable("ABehaviorType");
+                    b.ToTable("AnimalAgeType");
                 });
 
-            modelBuilder.Entity("ESWProjectAlbergue.Models.ABreed", b =>
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AnimalBehaviorType", b =>
                 {
-                    b.Property<int>("ABreedId")
+                    b.Property<int>("AnimalBehaviorTypeId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Designacao")
                         .IsRequired();
 
-                    b.HasKey("ABreedId");
+                    b.HasKey("AnimalBehaviorTypeId");
 
-                    b.ToTable("ABreed");
+                    b.ToTable("AnimalBehaviorType");
                 });
 
-            modelBuilder.Entity("ESWProjectAlbergue.Models.AFurType", b =>
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AnimalBreed", b =>
                 {
-                    b.Property<int>("AFurTypeId")
+                    b.Property<int>("AnimalBreedId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Designacao")
                         .IsRequired();
 
-                    b.HasKey("AFurTypeId");
+                    b.HasKey("AnimalBreedId");
 
-                    b.ToTable("AFurType");
+                    b.ToTable("AnimalBreed");
                 });
 
-            modelBuilder.Entity("ESWProjectAlbergue.Models.AGender", b =>
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AnimalFurType", b =>
                 {
-                    b.Property<int>("AGenderId")
+                    b.Property<int>("AnimalFurTypeId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Designacao")
                         .IsRequired();
 
-                    b.HasKey("AGenderId");
+                    b.HasKey("AnimalFurTypeId");
 
-                    b.ToTable("AGender");
+                    b.ToTable("AnimalFurType");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AnimalGenderType", b =>
+                {
+                    b.Property<int>("AnimalGenderTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Designacao")
+                        .IsRequired();
+
+                    b.HasKey("AnimalGenderTypeId");
+
+                    b.ToTable("AnimalGenderType");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AnimalSize", b =>
+                {
+                    b.Property<int>("AnimalSizeId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Designacao")
+                        .IsRequired();
+
+                    b.HasKey("AnimalSizeId");
+
+                    b.ToTable("AnimalSize");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AnimalType", b =>
+                {
+                    b.Property<int>("AnimalTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Designacao")
+                        .IsRequired();
+
+                    b.HasKey("AnimalTypeId");
+
+                    b.ToTable("AnimalType");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.ApplicationUser", b =>
@@ -150,81 +233,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("ESWProjectAlbergue.Models.ASize", b =>
-                {
-                    b.Property<int>("ASizeId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Designacao")
-                        .IsRequired();
-
-                    b.HasKey("ASizeId");
-
-                    b.ToTable("ASize");
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.AType", b =>
-                {
-                    b.Property<int>("ATypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Designacao")
-                        .IsRequired();
-
-                    b.HasKey("ATypeId");
-
-                    b.ToTable("AType");
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.MainAnimal", b =>
-                {
-                    b.Property<int>("MainAnimalId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Adopted");
-
-                    b.Property<int>("AnimalAgeTypeId");
-
-                    b.Property<int>("AnimalBehaviorTypeId");
-
-                    b.Property<int>("AnimalBreedId");
-
-                    b.Property<int>("AnimalFurTypeId");
-
-                    b.Property<int>("AnimalSizeId");
-
-                    b.Property<int>("AnimalTypeId");
-
-                    b.Property<DateTime>("BirthDate");
-
-                    b.Property<string>("Description");
-
-                    b.Property<int>("GenderTypeId");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("MainAnimalId");
-
-                    b.HasIndex("AnimalAgeTypeId");
-
-                    b.HasIndex("AnimalBehaviorTypeId");
-
-                    b.HasIndex("AnimalBreedId");
-
-                    b.HasIndex("AnimalFurTypeId");
-
-                    b.HasIndex("AnimalSizeId");
-
-                    b.HasIndex("AnimalTypeId");
-
-                    b.HasIndex("GenderTypeId");
-
-                    b.ToTable("MainAnimal");
-                });
-
             modelBuilder.Entity("ESWProjectAlbergue.Models.Reminder", b =>
                 {
                     b.Property<int>("ReminderId")
@@ -258,24 +266,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasIndex("UserReminderIdId");
 
                     b.ToTable("Reminder");
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.test2", b =>
-                {
-                    b.Property<int>("test2Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AnimalAgeTypeId");
-
-                    b.Property<string>("Designacao")
-                        .IsRequired();
-
-                    b.HasKey("test2Id");
-
-                    b.HasIndex("AnimalAgeTypeId");
-
-                    b.ToTable("test");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -392,39 +382,43 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ESWProjectAlbergue.Models.MainAnimal", b =>
+            modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
                 {
-                    b.HasOne("ESWProjectAlbergue.Models.AAgeType", "AnimalAgeType")
+                    b.HasOne("ESWProjectAlbergue.Models.AnimalAgeType", "AnimalAgeType")
                         .WithMany("Animals")
                         .HasForeignKey("AnimalAgeTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.ABehaviorType", "AnimalBehaviorType")
+                    b.HasOne("ESWProjectAlbergue.Models.AnimalBehaviorType", "AnimalBehaviorType")
                         .WithMany("Animals")
                         .HasForeignKey("AnimalBehaviorTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.ABreed", "AnimalBreed")
+                    b.HasOne("ESWProjectAlbergue.Models.AnimalBreed", "AnimalBreed")
                         .WithMany("Animals")
                         .HasForeignKey("AnimalBreedId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.AFurType", "AnimalFurType")
+                    b.HasOne("ESWProjectAlbergue.Models.AnimalFurType", "AnimalFurType")
                         .WithMany("Animals")
                         .HasForeignKey("AnimalFurTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.ASize", "AnimalSize")
+                    b.HasOne("ESWProjectAlbergue.Models.AnimalSize", "AnimalSize")
                         .WithMany("Animals")
                         .HasForeignKey("AnimalSizeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.AType", "AnimalType")
+                    b.HasOne("ESWProjectAlbergue.Models.AnimalType", "AnimalType")
                         .WithMany("Animals")
                         .HasForeignKey("AnimalTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.AGender", "GenderType")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId1");
+
+                    b.HasOne("ESWProjectAlbergue.Models.AnimalGenderType", "GenderType")
                         .WithMany("Animals")
                         .HasForeignKey("GenderTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -439,14 +433,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserReminderId")
                         .WithMany()
                         .HasForeignKey("UserReminderIdId");
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.test2", b =>
-                {
-                    b.HasOne("ESWProjectAlbergue.Models.AAgeType", "AnimalAgeType")
-                        .WithMany("test2")
-                        .HasForeignKey("AnimalAgeTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

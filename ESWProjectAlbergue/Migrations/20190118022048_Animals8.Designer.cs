@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190118022048_Animals8")]
+    partial class Animals8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -198,6 +200,10 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<int>("AnimalTypeId");
 
+                    b.Property<int>("ApplicationUserId");
+
+                    b.Property<string>("ApplicationUserId1");
+
                     b.Property<DateTime>("BirthDate");
 
                     b.Property<string>("Description");
@@ -219,6 +225,8 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasIndex("AnimalSizeId");
 
                     b.HasIndex("AnimalTypeId");
+
+                    b.HasIndex("ApplicationUserId1");
 
                     b.HasIndex("GenderTypeId");
 
@@ -423,6 +431,10 @@ namespace ESWProjectAlbergue.Data.Migrations
                         .WithMany("Animals")
                         .HasForeignKey("AnimalTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("Animals")
+                        .HasForeignKey("ApplicationUserId1");
 
                     b.HasOne("ESWProjectAlbergue.Models.AGender", "GenderType")
                         .WithMany("Animals")

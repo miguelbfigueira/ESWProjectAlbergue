@@ -1,0 +1,87 @@
+﻿@model ESWProjectAlbergue.Models.MainAnimal
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>MainAnimal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MainAnimalId" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnimalTypeId" class="control-label"></label>
+                <select asp-for="AnimalTypeId" class="form-control" asp-items="ViewBag.AnimalTypeId"></select>
+                <span asp-validation-for="AnimalTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GenderTypeId" class="control-label"></label>
+                <select asp-for="GenderTypeId" class="form-control" asp-items="ViewBag.GenderTypeId"></select>
+                <span asp-validation-for="GenderTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnimalAgeTypeId" class="control-label"></label>
+                <select asp-for="AnimalAgeTypeId" class="form-control" asp-items="ViewBag.AnimalAgeTypeId"></select>
+                <span asp-validation-for="AnimalAgeTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnimalBreedId" class="control-label"></label>
+                <select asp-for="AnimalBreedId" class="form-control" asp-items="ViewBag.AnimalBreedId"></select>
+                <span asp-validation-for="AnimalBreedId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnimalSizeId" class="control-label"></label>
+                <select asp-for="AnimalSizeId" class="form-control" asp-items="ViewBag.AnimalSizeId"></select>
+                <span asp-validation-for="AnimalSizeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnimalFurTypeId" class="control-label"></label>
+                <select asp-for="AnimalFurTypeId" class="form-control" asp-items="ViewBag.AnimalFurTypeId"></select>
+                <span asp-validation-for="AnimalFurTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnimalBehaviorTypeId" class="control-label"></label>
+                <select asp-for="AnimalBehaviorTypeId" class="form-control" asp-items="ViewBag.AnimalBehaviorTypeId"></select>
+                <span asp-validation-for="AnimalBehaviorTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Adopted" /> @Html.DisplayNameFor(model => model.Adopted)
+                    </label>
+                </div>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
