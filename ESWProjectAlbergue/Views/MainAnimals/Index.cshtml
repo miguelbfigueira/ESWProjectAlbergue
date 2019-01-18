@@ -61,49 +61,51 @@
             <tr>
                 @if (!item.Adopted)
                 {
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AnimalType.Designacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GenderType.Designacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BirthDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AnimalAgeType.Designacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AnimalBreed.Designacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AnimalSize.Designacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AnimalFurType.Designacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AnimalBehaviorType.Designacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Adopted)
-                </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalType.Designacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GenderType.Designacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BirthDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalAgeType.Designacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalBreed.Designacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalSize.Designacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalFurType.Designacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalBehaviorType.Designacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adopted)
+
+                    </td>
+                    @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                    {
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.MainAnimalId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.MainAnimalId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.MainAnimalId">Delete</a>
+                        </td>
+                    }
                 }
 
-                @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
-                {
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.MainAnimalId">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.MainAnimalId">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.MainAnimalId">Delete</a>
-                    </td>
-                }
+
 
             </tr>
             }
