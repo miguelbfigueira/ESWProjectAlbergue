@@ -150,34 +150,6 @@ namespace ESWProjectAlbergue.Controllers
         }
 
 
-        [HttpPost]
-        public async Task<IActionResult> FiltrarNumero(int? id)
-        {
-            var animais = await _context.Animal.ToListAsync();
-            if (id != null)
-            {
-                animais = (from a in animais where a.Id == id select a).ToList();
-                
-            }
-         
-            if (animais == null)
-            {
-                return NotFound();
-            }
-            return View(animais);
-
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> FiltrarNome(string name)
-        {
-            var animais = await _context.Animal.ToListAsync();
-            if (!String.IsNullOrEmpty(name))
-            {
-                animais = (from a in animais where a.Name.Contains(name) select a).ToList();
-            }
-            return View(animais);
-
-        }
+      
     }
 }
