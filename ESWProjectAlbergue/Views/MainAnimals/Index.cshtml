@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ESWProjectAlbergue.Models.MainAnimal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Animais</h2>
+@if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+{
+    <p>
+        <a asp-action="Create">Registar Novo Animail</a>
+    </p>
+}
+<form asp-controller="Animals" asp-action="FiltrarNumero" method="post">
+    <p>
+        ID: <input type="number" name="id">
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+<form asp-controller="Animals" asp-action="FiltrarNome" method="post">
+    <p>
+        Nome: <input type="text" name="name">
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+@foreach (var item in Model)
+{
+    <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <img src="~/images/check.png" width="200px" height="200px" />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AnimalType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.AnimalType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.GenderType.Designacao)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.GenderType.Designacao)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.BirthDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AnimalBreed.Designacao)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.AnimalBreed.Designacao)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AnimalSize)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.AnimalSize.Designacao)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AnimalFurType.Designacao)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.AnimalFurType.Designacao)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AnimalAgeType.Designacao)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.AnimalAgeType.Designacao)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AnimalBehaviorType.Designacao)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.AnimalBehaviorType.Designacao)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Description)
+            </dd>
+            <a asp-action="Details" asp-route-id="@item.MainAnimalId">Detalhes</a>
+            @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+            {
+                <a asp-action="Edit" asp-route-id="@item.MainAnimalId"> | Editar</a>
+            }
+            @if (User.IsInRole("admins"))
+            {
+                <a asp-action="Delete" asp-route-id="@item.MainAnimalId"> | Eliminar</a>
+            }
+        </dl>
+    </div>
+}

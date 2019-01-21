@@ -25,5 +25,8 @@ namespace ESWProjectAlbergue.Models
         [PersonalData]
         public string Role { get; set; }
 
-       }
+        //// Propriedade Navegacional
+        //public List<MainAnimal> Animals { get; set; }
+
+    }
 }

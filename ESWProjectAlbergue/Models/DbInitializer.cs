@@ -57,6 +57,8 @@ namespace ESWProjectAlbergue.Models
                 
             }
 
+            var agetype1 = new AAgeType { AAgeTypeId = 1, Designacao = "Bebé" };
+
            
 
             context.SaveChanges();

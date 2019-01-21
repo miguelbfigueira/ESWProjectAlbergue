@@ -29,12 +29,12 @@
             {
                 <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contactos</a></li>
-                <li><a asp-area="" asp-controller="Animals" asp-action="Index">Animais Para Adoção</a></li>
+                <li><a asp-area="" asp-controller="MainAnimals" asp-action="Index">Animais Para Adoção</a></li>
             }
             @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
             {
                 <li><a asp-area="" asp-controller="Reminders" asp-action="Index">Lembretes</a></li>
-
+                
                 <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers">Utilizadores</a></li>
             }
         </ul>
