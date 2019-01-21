@@ -19,6 +19,37 @@ namespace ESWProjectAlbergue.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AgeType");
+
+                    b.Property<int>("AnimalType");
+
+                    b.Property<int>("BehaviorType");
+
+                    b.Property<DateTime>("BirthDate");
+
+                    b.Property<int>("Breed");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("FurType");
+
+                    b.Property<int>("Gender");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("SizeType");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Animal");
+                });
+
             modelBuilder.Entity("ESWProjectAlbergue.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -113,6 +144,25 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasIndex("UserReminderIdId");
 
                     b.ToTable("Reminder");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.Visit", b =>
+                {
+                    b.Property<int>("VisitId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("UserToVisitId");
+
+                    b.HasKey("VisitId");
+
+                    b.HasIndex("UserToVisitId");
+
+                    b.ToTable("Visit");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -238,6 +288,13 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserReminderId")
                         .WithMany()
                         .HasForeignKey("UserReminderIdId");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.Visit", b =>
+                {
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "UserToVisit")
+                        .WithMany()
+                        .HasForeignKey("UserToVisitId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
