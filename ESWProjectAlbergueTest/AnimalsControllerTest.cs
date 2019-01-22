@@ -54,7 +54,7 @@ namespace ESWProjectAlbergueTest
         {
             var controller = new AnimalsController(DbContext);
             Animal animal = new Animal();
-            var result = controller.Create(animal);
+            var result = controller.Create(animal, null);
 
             var viewResult = Assert.IsType<Task<IActionResult>>(result);
         }
@@ -64,7 +64,7 @@ namespace ESWProjectAlbergueTest
         {
             var controller = new AnimalsController(DbContext);
             Animal animal = new Animal();
-            var result = controller.Edit(1, animal);
+            var result = controller.Edit(1, animal, null);
 
             var viewResult = Assert.IsType<Task<IActionResult>>(result);
         }
