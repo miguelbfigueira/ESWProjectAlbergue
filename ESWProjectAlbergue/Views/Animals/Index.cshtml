@@ -7,11 +7,17 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar novo animal</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -25,7 +31,7 @@
                 @Html.DisplayNameFor(model => model.BirthDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Breed)
+                @Html.DisplayNameFor(model => model.BreedId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SizeType)
@@ -42,6 +48,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.BehaviorType)
             </th>
+
             <th></th>
         </tr>
     </thead>
@@ -49,8 +56,15 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                <img src="@Url.Content(item.Photo)" width="100" height="40">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.AnimalType)
             </td>
@@ -61,7 +75,8 @@
                 @Html.DisplayFor(modelItem => item.BirthDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Breed)
+                @Html.DisplayFor(modelItem => item.Breed.Name)
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SizeType)
@@ -78,6 +93,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.BehaviorType)
             </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

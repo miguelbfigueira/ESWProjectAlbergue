@@ -8,29 +8,46 @@ namespace ESWProjectAlbergue.Models
 {
     public class Animal
     {
+        [Display(Name = "Nº de Registo")]
         public int Id { get; set; }
 
+        [Display(Name = "Nome")]
         public string Name { get; set; }
 
+        [Display(Name = "Tipo de Animal")]
         public EnumAnimalType AnimalType { get; set; }
 
+        [Display(Name = "Género")]
         public EnumGenderType Gender { get; set; }
 
+        [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
-        [CheckDateRange(ErrorMessage = "A data de nascimento tem de ser anterior a hoje.")] 
         public DateTime BirthDate { get; set; }
 
-        public EnumBreedType Breed { get; set; }
+        [Display(Name = "Raça")]
+        public int BreedId { get; set; }
 
+        public AnimalBreed Breed { get; set; }
+
+        [Display(Name = "Tamanho")]
         public EnumSize SizeType { get; set; }
 
+        [Display(Name = "Tipo de Pêlo")]
         public EnumFurType FurType  { get; set; }
 
+        [Display(Name = "Idade")]
         public EnumAgeType AgeType { get; set; }
 
-        public string Description { get; set; } 
+        [Display(Name = "Descrição")]
+        public string Description { get; set; }
 
+        [Display(Name = "Comportamento")]
         public EnumBehaviorType BehaviorType { get; set; }
+
+        [Display(Name = "Fotografia")]
+        public string Photo { get; set; }
+
+        
 
 
     }
