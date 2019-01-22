@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190122202756_adoptionform2")]
+    partial class adoptionform2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,9 +29,9 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<int>("AnimalId");
 
-                    b.Property<string>("ApplicationUser");
+                    b.Property<int>("ApplicationUserId");
 
-                    b.Property<string>("ApplicationUserIdId");
+                    b.Property<string>("ApplicationUserId1");
 
                     b.Property<DateTime>("Date");
 
@@ -37,7 +39,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.HasIndex("AnimalId");
 
-                    b.HasIndex("ApplicationUserIdId");
+                    b.HasIndex("ApplicationUserId1");
 
                     b.ToTable("AdoptionFile");
                 });
@@ -56,9 +58,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<string>("AnimalTypes");
 
-                    b.Property<string>("ApplicationUser");
-
-                    b.Property<string>("ApplicationUserIdId");
+                    b.Property<string>("ApplicationUserId");
 
                     b.Property<int>("Cc");
 
@@ -88,7 +88,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.HasIndex("AnimalId");
 
-                    b.HasIndex("ApplicationUserIdId");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("AdoptionForm");
                 });
@@ -381,9 +381,9 @@ namespace ESWProjectAlbergue.Data.Migrations
                         .HasForeignKey("AnimalId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUserId")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserIdId");
+                        .HasForeignKey("ApplicationUserId1");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.AdoptionForm", b =>
@@ -393,9 +393,9 @@ namespace ESWProjectAlbergue.Data.Migrations
                         .HasForeignKey("AnimalId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUserId")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserIdId");
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>

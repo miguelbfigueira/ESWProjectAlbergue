@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190122213746_adoptionform4")]
+    partial class adoptionform4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,6 +68,10 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<DateTime>("Date");
 
+                    b.Property<string>("EmailReceiver");
+
+                    b.Property<string>("EmailReceiverIdId");
+
                     b.Property<bool>("FinanciallyStable");
 
                     b.Property<int>("HouseType");
@@ -89,6 +95,8 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasIndex("AnimalId");
 
                     b.HasIndex("ApplicationUserIdId");
+
+                    b.HasIndex("EmailReceiverIdId");
 
                     b.ToTable("AdoptionForm");
                 });
@@ -396,6 +404,10 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUserId")
                         .WithMany()
                         .HasForeignKey("ApplicationUserIdId");
+
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "EmailReceiverId")
+                        .WithMany()
+                        .HasForeignKey("EmailReceiverIdId");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
