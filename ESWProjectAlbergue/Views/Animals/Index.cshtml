@@ -8,7 +8,7 @@
 @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
 {
     <p>
-        <a asp-action="Create">Registar Novo Animail</a>
+        <a asp-action="Create">Registar Novo Animal</a>
     </p>
 }
 <form asp-controller="Animals" asp-action="FiltrarNumero" method="post">
@@ -25,79 +25,107 @@
 </form>
 @foreach (var item in Model)
 {
-    <div class="col-lg-4 col-sm-6 text-center mb-4">
-        <img src= "model => model.Photo" width="200px" height="200px" />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => item.Name)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.Name)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.AnimalType)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.AnimalType)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Gender)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.Gender)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.BirthDate)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.BirthDate)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Breed)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.Breed)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.SizeType)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.SizeType)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.FurType)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.FurType)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.AgeType)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.AgeType)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.BehaviorType)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.BehaviorType)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => item.Description)
-            </dd>
-            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-            @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+<div class="col-lg-4 col-sm-6 text-center mb-4">
+    <div>
+        @{ 
+            var imgsrc = "";
+            if (item.Photo == null)
             {
-                <a asp-action="Edit" asp-route-id="@item.Id"> | Editar</a>
+                if (item.AnimalType == EnumAnimalType.CAT)
+                {
+                    imgsrc = "~/images/caticon.png";
+                }
+                if (item.AnimalType == EnumAnimalType.DOG)
+                {
+                    imgsrc = "~/images/dogicon.png";
+                }
+                if (item.AnimalType == EnumAnimalType.OTHER)
+                {
+                    imgsrc = "~/images/interrogacao.png";
+                }
+
             }
-            @if (User.IsInRole("admins"))
+            else
             {
-                <a asp-action="Delete" asp-route-id="@item.Id"> | Eliminar</a>
+                var base64 = Convert.ToBase64String(item.Photo);
+                imgsrc = string.Format("data:image/gif;base64,{0}", base64);
             }
-           
-        </dl>
+        }
     </div>
+    <img src='@imgsrc' width="200px" height="200px" style="border-radius:100px;" />
+   
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => item.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.AnimalType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.BirthDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Breed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.Breed.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.SizeType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FurType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.FurType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.AgeType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BehaviorType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.BehaviorType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => item.Description)
+        </dd>
+        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+        @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+        {
+            <a asp-action="Edit" asp-route-id="@item.Id"> | Editar</a>
+        }
+        @if (User.IsInRole("admins"))
+        {
+            <a asp-action="Delete" asp-route-id="@item.Id"> | Eliminar</a>
+        }
+
+    </dl>
+</div>
 }

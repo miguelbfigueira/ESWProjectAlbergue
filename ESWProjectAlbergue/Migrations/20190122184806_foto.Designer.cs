@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    [Migration("20190122162046_adopted")]
-    partial class adopted
+    [Migration("20190122184806_foto")]
+    partial class foto
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,29 @@ namespace ESWProjectAlbergue.Migrations
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AdoptionFile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AnimalId");
+
+                    b.Property<int>("ApplicationUserId");
+
+                    b.Property<string>("ApplicationUserId1");
+
+                    b.Property<DateTime>("Date");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnimalId");
+
+                    b.HasIndex("ApplicationUserId1");
+
+                    b.ToTable("AdoptionFile");
+                });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
                 {
@@ -47,7 +70,7 @@ namespace ESWProjectAlbergue.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Photo");
+                    b.Property<byte[]>("Photo");
 
                     b.Property<int>("SizeType");
 
@@ -302,10 +325,22 @@ namespace ESWProjectAlbergue.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("ESWProjectAlbergue.Models.AdoptionFile", b =>
+                {
+                    b.HasOne("ESWProjectAlbergue.Models.Animal", "Animal")
+                        .WithMany()
+                        .HasForeignKey("AnimalId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId1");
+                });
+
             modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
                 {
                     b.HasOne("ESWProjectAlbergue.Models.AnimalBreed", "Breed")
-                        .WithMany("Animal")
+                        .WithMany()
                         .HasForeignKey("BreedId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

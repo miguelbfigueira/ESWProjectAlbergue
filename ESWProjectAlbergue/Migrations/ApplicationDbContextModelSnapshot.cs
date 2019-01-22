@@ -119,7 +119,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Photo");
+                    b.Property<byte[]>("Photo");
 
                     b.Property<int>("SizeType");
 

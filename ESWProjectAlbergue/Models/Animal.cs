@@ -46,7 +46,7 @@ namespace ESWProjectAlbergue.Models
         public EnumBehaviorType BehaviorType { get; set; }
 
         [Display(Name = "Fotografia")]
-        public string Photo { get; set; }
+        public byte[] Photo { get; set; }
 
          [Display(Name = "Adotado")]
         public Boolean Adopted { get; set; }
