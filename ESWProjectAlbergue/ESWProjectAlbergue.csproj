@@ -33,6 +33,8 @@
     <Compile Remove="Migrations\20181218201108_4.Designer.cs" />
     <Compile Remove="Migrations\20190121155013_4.cs" />
     <Compile Remove="Migrations\20190121155013_4.Designer.cs" />
+    <Compile Remove="Migrations\20190122171011_animaisfoto.cs" />
+    <Compile Remove="Migrations\20190122171011_animaisfoto.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

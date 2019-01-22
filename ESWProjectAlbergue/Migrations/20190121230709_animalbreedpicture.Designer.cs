@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190121230709_animalbreedpicture")]
+    partial class animalbreedpicture
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,8 +27,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Adopted");
-
                     b.Property<int>("AgeType");
 
                     b.Property<int>("AnimalType");
@@ -35,7 +35,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<DateTime>("BirthDate");
 
-                    b.Property<int>("BreedId");
+                    b.Property<int?>("BreedId");
 
                     b.Property<string>("Description");
 
@@ -45,7 +45,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Photo");
+                    b.Property<byte[]>("Photo");
 
                     b.Property<int>("SizeType");
 
@@ -130,6 +130,33 @@ namespace ESWProjectAlbergue.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.File", b =>
+                {
+                    b.Property<int>("FileId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AnimalId");
+
+                    b.Property<byte[]>("Content");
+
+                    b.Property<string>("ContentType")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("FileName")
+                        .HasMaxLength(255);
+
+                    b.Property<int>("FileType");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("FileId");
+
+                    b.HasIndex("AnimalId");
+
+                    b.ToTable("File");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Reminder", b =>
@@ -304,8 +331,14 @@ namespace ESWProjectAlbergue.Data.Migrations
                 {
                     b.HasOne("ESWProjectAlbergue.Models.AnimalBreed", "Breed")
                         .WithMany()
-                        .HasForeignKey("BreedId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("BreedId");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.File", b =>
+                {
+                    b.HasOne("ESWProjectAlbergue.Models.Animal", "Animal")
+                        .WithMany("Files")
+                        .HasForeignKey("AnimalId");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Reminder", b =>

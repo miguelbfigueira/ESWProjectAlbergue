@@ -20,12 +20,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="AnimalType" class="control-label"></label>
-                <select asp-for="AnimalType" class="form-control"></select>
+                <select asp-for="AnimalType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumAnimalType>()"></select>
                 <span asp-validation-for="AnimalType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
-                <select asp-for="Gender" class="form-control"></select>
+                <select asp-for="Gender" class="form-control" asp-items="@Html.GetEnumSelectList<EnumGenderType>()"></select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -34,35 +34,48 @@
                 <span asp-validation-for="BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Breed" class="control-label"></label>
-                <select asp-for="Breed" class="form-control"></select>
-                <span asp-validation-for="Breed" class="text-danger"></span>
+                <label asp-for="BreedId" class="control-label"></label>
+                <select asp-for="BreedId" class="form-control" asp-items="ViewBag.BreedId"></select>
+                <a href="../AnimalBreeds/Create" class="elements"><span>Adicionar Raça</span></a>
+                <a href="../AnimalBreeds/Index" class="elements"><span>Editar Raças</span></a>
             </div>
             <div class="form-group">
                 <label asp-for="SizeType" class="control-label"></label>
-                <select asp-for="SizeType" class="form-control"></select>
+                <select asp-for="SizeType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumSize>()"></select>
                 <span asp-validation-for="SizeType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FurType" class="control-label"></label>
-                <select asp-for="FurType" class="form-control"></select>
+                <select asp-for="FurType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumFurType>()"></select>
                 <span asp-validation-for="FurType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AgeType" class="control-label"></label>
-                <select asp-for="AgeType" class="form-control"></select>
+                <select asp-for="AgeType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumAgeType>()"></select>
                 <span asp-validation-for="AgeType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BehaviorType" class="control-label"></label>
+                <select asp-for="BehaviorType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumBehaviorType>()"></select>
+                <span asp-validation-for="BehaviorType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="BehaviorType" class="control-label"></label>
-                <select asp-for="BehaviorType" class="form-control"></select>
-                <span asp-validation-for="BehaviorType" class="text-danger"></span>
+                <label asp-for="Photo" class="control-label"></label>
+                <input asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
             </div>
+            <div class="checkbox">
+                <label>
+                    <input asp-for="Adopted" /> @Html.DisplayNameFor(model => model.Adopted)
+                </label>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>

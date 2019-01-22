@@ -1,5 +1,6 @@
 ﻿@model ESWProjectAlbergue.Models.Animal
 
+
 @{
     ViewData["Title"] = "Create";
 }
@@ -36,9 +37,10 @@
                 <span asp-validation-for="BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Breed" class="control-label"></label>
-                <select asp-for="Breed" class="form-control" asp-items="@Html.GetEnumSelectList<EnumBreedType>()"></select>
-                <span asp-validation-for="Breed" class="text-danger"></span>
+                <label asp-for="BreedId" class="control-label"></label>
+                <select asp-for="BreedId" class="form-control" asp-items="ViewBag.BreedId"></select>
+                <a href="../AnimalBreeds/Create" class="elements"><span>Adicionar Raça</span></a>
+                <a href="../AnimalBreeds/Index" class="elements"><span>Editar Raças</span></a>
             </div>
             <div class="form-group">
                 <label asp-for="SizeType" class="control-label"></label>
@@ -67,6 +69,15 @@
             </div>
 
             <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+
+            
+
+            <div class="form-group">
+
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>
