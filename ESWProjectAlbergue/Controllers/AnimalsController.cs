@@ -111,7 +111,7 @@ namespace ESWProjectAlbergue.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType,Adopted")] Animal animal)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType,Adopted")] Animal animal, List<IFormFile> Photo)
         {
             ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
             if (id != animal.Id)
@@ -119,11 +119,23 @@ namespace ESWProjectAlbergue.Controllers
                 return NotFound();
             }
 
+            foreach (var item in Photo)
+            {
+                if (item.Length > 0)
+                {
+                    using (var stream = new MemoryStream())
+                    {
+                        await item.CopyToAsync(stream);
+                        animal.Photo = stream.ToArray();
+                    }
+                }
+            } 
             if (ModelState.IsValid)
             {
                 try
                 {
                     ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
+                   
                     _context.Update(animal);
                     await _context.SaveChangesAsync();
                 }
