@@ -12,7 +12,5 @@ namespace ESWProjectAlbergue.Models
         public string Name { get; set; }
 
         public EnumBehaviorType Behavior { get; set; }
-
-        public List<Animal> Animal { get; set; }
     }
 }
