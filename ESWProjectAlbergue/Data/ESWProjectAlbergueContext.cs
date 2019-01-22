@@ -23,6 +23,7 @@ namespace ESWProjectAlbergue.Models
         public DbSet<ESWProjectAlbergue.Models.AnimalBreed> AnimalBreed { get; set; }
         public DbSet<ESWProjectAlbergue.Models.AdoptionFile> AdoptionFile { get; set; }
         public DbSet<ESWProjectAlbergue.Models.AdoptionForm> AdoptionForm { get; set; }
+        public DbSet<ESWProjectAlbergue.Models.PosConditionsForm> PosConditionsForm { get; set; }
 
     }
 }

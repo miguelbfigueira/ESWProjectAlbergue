@@ -1,0 +1,48 @@
+﻿@model ESWProjectAlbergue.Models.PosConditionsForm
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PosConditionsForm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdoptionFile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AdoptionFile.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Answer1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Answer2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Answer3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.result)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.result)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

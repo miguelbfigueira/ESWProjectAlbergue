@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ESWProjectAlbergue.Models.PosConditionsForm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AdoptionFile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.result)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdoptionFile.Id)
+            </td>
+            <td>
+                @if (item.Answer1)
+                {
+                    <img src="~/images/check.png" width="16px" height="16px" />
+                }
+                else
+                {
+                    <img src="~/images/cross.png" width="16px" height="16px" />
+                }
+            </td>
+            <td>
+                @if (item.Answer2)
+                {
+                    <img src="~/images/check.png" width="16px" height="16px" />
+                }
+                else
+                {
+                    <img src="~/images/cross.png" width="16px" height="16px" />
+                }
+
+            </td>
+            <td>
+                @if (item.Answer3)
+                {
+                    <img src="~/images/check.png" width="16px" height="16px" />
+                }
+                else
+                {
+                    <img src="~/images/cross.png" width="16px" height="16px" />
+                }
+            </td>
+            <td>
+                @if (item.result)
+                {
+                    <img src="~/images/check.png" width="16px" height="16px" />
+                }
+                else
+                {
+                    <img src="~/images/cross.png" width="16px" height="16px" />
+                }
+
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
