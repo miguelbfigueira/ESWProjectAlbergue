@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ESWProjectAlbergue.Models;
+using System.IO;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace ESWProjectAlbergue.Controllers
 {
@@ -26,6 +29,8 @@ namespace ESWProjectAlbergue.Controllers
             var eSWContext = _context.Animal.Include(c => c.Breed);
             return View(await eSWContext.ToListAsync());
         }
+
+       
 
         // GET: Animals/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -58,12 +63,22 @@ namespace ESWProjectAlbergue.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType,Photo")] Animal animal)
+        public async Task<IActionResult> Create([Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType")] Animal animal,List<IFormFile> Photo)
         {
             ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
+           
+            foreach (var item in Photo) {
+                if (item.Length > 0) {
+                    using(var stream = new MemoryStream())
+                    {
+                        await item.CopyToAsync(stream);
+                        animal.Photo = stream.ToArray();
+                    }
+                }
+            }
+
             if (ModelState.IsValid)
             {
-               
                 _context.Add(animal);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -125,7 +140,7 @@ namespace ESWProjectAlbergue.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Nome", animal.BreedId);
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
             return View(animal);
         }
 
