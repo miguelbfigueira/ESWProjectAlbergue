@@ -47,6 +47,11 @@ namespace ESWProjectAlbergue.Models
         [Display(Name = "Fotografia")]
         public string Photo { get; set; }
 
+         [Display(Name = "Adotado")]
+        public Boolean Adopted { get; set; }
+
+
+
         
 
 

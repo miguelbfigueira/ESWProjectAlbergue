@@ -48,6 +48,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.BehaviorType)
             </th>
+            @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Adopted)
+                </th>
+            }
 
             <th></th>
         </tr>
@@ -94,11 +100,28 @@
                 @Html.DisplayFor(modelItem => item.BehaviorType)
             </td>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+            @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+            {
+                <td>
+                    @if (item.Adopted)
+                    {
+                        <img src="~/images/check.png" width="16px" height="16px" />
+                    }
+                    else
+                    {
+                        <img src="~/images/cross.png" width="16px" height="16px" />
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            }
+
+
+
+
         </tr>
 }
     </tbody>
