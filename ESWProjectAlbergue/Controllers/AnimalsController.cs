@@ -23,8 +23,8 @@ namespace ESWProjectAlbergue.Controllers
         // GET: Animals
         public async Task<IActionResult> Index()
         {
-
-            return View(await _context.Animal.ToListAsync());
+            var eSWContext = _context.Animal.Include(c => c.Breed);
+            return View(await eSWContext.ToListAsync());
         }
 
         // GET: Animals/Details/5
@@ -65,6 +65,8 @@ namespace ESWProjectAlbergue.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Nome", animal.BreedId);
+            
             return View(animal);
         }
 
