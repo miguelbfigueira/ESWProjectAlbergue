@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using ESWProjectAlbergue.Services;
 using ESWProjectAlbergue.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace ESWProjectAlbergue
 {
@@ -36,7 +38,9 @@ namespace ESWProjectAlbergue
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-           
+            services.AddSingleton<IFileProvider>(
+             new PhysicalFileProvider(
+                 Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

@@ -9,25 +9,22 @@ using ESWProjectAlbergue.Models;
 
 namespace ESWProjectAlbergue.Controllers
 {
-    public class AnimalsController : Controller
+    public class AnimalBreedsController : Controller
     {
         private readonly ESWProjectAlbergueContext _context;
 
-        public AnimalsController(ESWProjectAlbergueContext context)
+        public AnimalBreedsController(ESWProjectAlbergueContext context)
         {
             _context = context;
         }
 
-
-
-        // GET: Animals
+        // GET: AnimalBreeds
         public async Task<IActionResult> Index()
         {
-            var eSWContext = _context.Animal.Include(c => c.Breed);
-            return View(await eSWContext.ToListAsync());
+            return View(await _context.AnimalBreed.ToListAsync());
         }
 
-        // GET: Animals/Details/5
+        // GET: AnimalBreeds/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,42 +32,39 @@ namespace ESWProjectAlbergue.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal
+            var animalBreed = await _context.AnimalBreed
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (animal == null)
+            if (animalBreed == null)
             {
                 return NotFound();
             }
 
-            return View(animal);
+            return View(animalBreed);
         }
 
-        // GET: Animals/Create
+        // GET: AnimalBreeds/Create
         public IActionResult Create()
         {
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
             return View();
         }
 
-        // POST: Animals/Create
+        // POST: AnimalBreeds/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType,Photo")] Animal animal)
+        public async Task<IActionResult> Create([Bind("Id,Name,Behavior")] AnimalBreed animalBreed)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(animal);
+                _context.Add(animalBreed);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Nome", animal.BreedId);
-            
-            return View(animal);
+            return View(animalBreed);
         }
 
-        // GET: Animals/Edit/5
+        // GET: AnimalBreeds/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -78,22 +72,22 @@ namespace ESWProjectAlbergue.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal.FindAsync(id);
-            if (animal == null)
+            var animalBreed = await _context.AnimalBreed.FindAsync(id);
+            if (animalBreed == null)
             {
                 return NotFound();
             }
-            return View(animal);
+            return View(animalBreed);
         }
 
-        // POST: Animals/Edit/5
+        // POST: AnimalBreeds/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,AnimalType,Gender,BirthDate,Breed,SizeType,FurType,AgeType,Description,BehaviorType")] Animal animal)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Behavior")] AnimalBreed animalBreed)
         {
-            if (id != animal.Id)
+            if (id != animalBreed.Id)
             {
                 return NotFound();
             }
@@ -102,12 +96,12 @@ namespace ESWProjectAlbergue.Controllers
             {
                 try
                 {
-                    _context.Update(animal);
+                    _context.Update(animalBreed);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AnimalExists(animal.Id))
+                    if (!AnimalBreedExists(animalBreed.Id))
                     {
                         return NotFound();
                     }
@@ -118,10 +112,10 @@ namespace ESWProjectAlbergue.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(animal);
+            return View(animalBreed);
         }
 
-        // GET: Animals/Delete/5
+        // GET: AnimalBreeds/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,60 +123,30 @@ namespace ESWProjectAlbergue.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal
+            var animalBreed = await _context.AnimalBreed
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (animal == null)
+            if (animalBreed == null)
             {
                 return NotFound();
             }
 
-            return View(animal);
+            return View(animalBreed);
         }
 
-        // POST: Animals/Delete/5
+        // POST: AnimalBreeds/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var animal = await _context.Animal.FindAsync(id);
-            _context.Animal.Remove(animal);
+            var animalBreed = await _context.AnimalBreed.FindAsync(id);
+            _context.AnimalBreed.Remove(animalBreed);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AnimalExists(int id)
+        private bool AnimalBreedExists(int id)
         {
-            return _context.Animal.Any(e => e.Id == id);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> FiltrarNumero(int? id)
-        {
-            var animais = await _context.Animal.ToListAsync();
-            if (id != null)
-            {
-                animais = (from a in animais where a.Id == id select a).ToList();
-
-            }
-
-            if (animais == null)
-            {
-                return NotFound();
-            }
-            return View(animais);
-
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> FiltrarNome(string name)
-        {
-            var animais = await _context.Animal.ToListAsync();
-            if (!String.IsNullOrEmpty(name))
-            {
-                animais = (from a in animais where a.Name.Contains(name) select a).ToList();
-            }
-            return View(animais);
-
+            return _context.AnimalBreed.Any(e => e.Id == id);
         }
     }
 }
