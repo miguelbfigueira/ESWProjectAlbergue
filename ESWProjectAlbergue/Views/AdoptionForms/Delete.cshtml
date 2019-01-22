@@ -1,0 +1,123 @@
+﻿@model ESWProjectAlbergue.Models.AdoptionForm
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AdoptionForm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Animal.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUserId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Job)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MoreAnimals)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MoreAnimals)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HowMany)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HowMany)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalTypes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AnimalTypes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FinanciallyStable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FinanciallyStable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HouseType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfBedrooms)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfBedrooms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfPeople)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfPeople)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalTravel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AnimalTravel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveHouse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LeaveHouse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Conscious)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Conscious)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TermsAndConditions)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TermsAndConditions)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accepted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accepted)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

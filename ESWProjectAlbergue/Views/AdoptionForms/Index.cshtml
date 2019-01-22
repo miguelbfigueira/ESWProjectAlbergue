@@ -1,0 +1,131 @@
+﻿@model IEnumerable<ESWProjectAlbergue.Models.AdoptionForm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoreAnimals)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HowMany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnimalTypes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinanciallyStable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfBedrooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfPeople)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnimalTravel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeaveHouse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conscious)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermsAndConditions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accepted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoreAnimals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HowMany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalTypes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinanciallyStable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfBedrooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfPeople)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalTravel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveHouse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Conscious)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermsAndConditions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accepted)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
