@@ -36,12 +36,13 @@ namespace ESWProjectAlbergue.Controllers
             }
 
             var animal = await _context.Animal
+                .Include(c => c.Breed)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (animal == null)
             {
                 return NotFound();
             }
-
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
             return View(animal);
         }
 
@@ -86,6 +87,7 @@ namespace ESWProjectAlbergue.Controllers
             {
                 return NotFound();
             }
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
             return View(animal);
         }
 
@@ -94,7 +96,7 @@ namespace ESWProjectAlbergue.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,AnimalType,Gender,BirthDate,Breed,SizeType,FurType,AgeType,Description,BehaviorType")] Animal animal)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType,Adopted")] Animal animal)
         {
             ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
             if (id != animal.Id)
@@ -123,6 +125,7 @@ namespace ESWProjectAlbergue.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Nome", animal.BreedId);
             return View(animal);
         }
 
