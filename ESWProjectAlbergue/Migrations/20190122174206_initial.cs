@@ -2,7 +2,7 @@
 
 namespace ESWProjectAlbergue.Migrations
 {
-    public partial class animais : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

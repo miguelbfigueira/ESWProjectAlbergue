@@ -59,13 +59,15 @@ namespace ESWProjectAlbergue.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType,Photo")] Animal animal)
         {
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
             if (ModelState.IsValid)
             {
+               
                 _context.Add(animal);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Nome", animal.BreedId);
+          
             
             return View(animal);
         }
@@ -73,6 +75,7 @@ namespace ESWProjectAlbergue.Controllers
         // GET: Animals/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
             if (id == null)
             {
                 return NotFound();
@@ -93,6 +96,7 @@ namespace ESWProjectAlbergue.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,AnimalType,Gender,BirthDate,Breed,SizeType,FurType,AgeType,Description,BehaviorType")] Animal animal)
         {
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
             if (id != animal.Id)
             {
                 return NotFound();
@@ -102,6 +106,7 @@ namespace ESWProjectAlbergue.Controllers
             {
                 try
                 {
+                    ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
                     _context.Update(animal);
                     await _context.SaveChangesAsync();
                 }
