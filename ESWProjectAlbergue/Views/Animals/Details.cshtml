@@ -10,11 +10,14 @@
     <h4>Animal</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+
+       
+
         <dd>
             @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dd>
+            <img src="@Html.DisplayFor(model => model.Photo)" width="140" height="140">
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.AnimalType)
@@ -38,7 +41,7 @@
             @Html.DisplayNameFor(model => model.Breed)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Breed)
+            @Html.DisplayFor(model => model.Breed.Name)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.SizeType)
@@ -73,9 +76,7 @@
         <dt>
             @Html.DisplayNameFor(model => model.Photo)
         </dt>
-        <dd>
-            <img src="@Html.DisplayFor(model => model.BehaviorType)" width="40" height="40">
-        </dd>
+
     </dl>
 </div>
 <div>

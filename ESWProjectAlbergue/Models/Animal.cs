@@ -27,6 +27,7 @@ namespace ESWProjectAlbergue.Models
         [Display(Name = "Raça")]
         public int BreedId { get; set; }
 
+        [Display(Name = "Raça")]
         public AnimalBreed Breed { get; set; }
 
         [Display(Name = "Tamanho")]

@@ -9,25 +9,23 @@ using ESWProjectAlbergue.Models;
 
 namespace ESWProjectAlbergue.Controllers
 {
-    public class AnimalsController : Controller
+    public class AdoptionFilesController : Controller
     {
         private readonly ESWProjectAlbergueContext _context;
 
-        public AnimalsController(ESWProjectAlbergueContext context)
+        public AdoptionFilesController(ESWProjectAlbergueContext context)
         {
             _context = context;
         }
 
-
-
-        // GET: Animals
+        // GET: AdoptionFiles
         public async Task<IActionResult> Index()
         {
-            var eSWContext = _context.Animal.Include(c => c.Breed);
-            return View(await eSWContext.ToListAsync());
+            var eSWProjectAlbergueContext = _context.AdoptionFile.Include(a => a.Animal);
+            return View(await eSWProjectAlbergueContext.ToListAsync());
         }
 
-        // GET: Animals/Details/5
+        // GET: AdoptionFiles/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,43 +33,42 @@ namespace ESWProjectAlbergue.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal
-                .Include(c => c.Breed)
+            var adoptionFile = await _context.AdoptionFile
+                .Include(a => a.Animal)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (animal == null)
+            if (adoptionFile == null)
             {
                 return NotFound();
             }
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
-            return View(animal);
+
+            return View(adoptionFile);
         }
 
-        // GET: Animals/Create
+        // GET: AdoptionFiles/Create
         public IActionResult Create()
         {
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id");
             return View();
         }
 
-        // POST: Animals/Create
+        // POST: AdoptionFiles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType,Photo")] Animal animal)
+        public async Task<IActionResult> Create([Bind("Id,AnimalId,ApplicationUserId")] AdoptionFile adoptionFile)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(animal);
+                _context.Add(adoptionFile);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Nome", animal.BreedId);
-            
-            return View(animal);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionFile.AnimalId);
+            return View(adoptionFile);
         }
 
-        // GET: Animals/Edit/5
+        // GET: AdoptionFiles/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,23 +76,23 @@ namespace ESWProjectAlbergue.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal.FindAsync(id);
-            if (animal == null)
+            var adoptionFile = await _context.AdoptionFile.FindAsync(id);
+            if (adoptionFile == null)
             {
                 return NotFound();
             }
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name", animal.BreedId);
-            return View(animal);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionFile.AnimalId);
+            return View(adoptionFile);
         }
 
-        // POST: Animals/Edit/5
+        // POST: AdoptionFiles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,AnimalType,Gender,BirthDate,BreedId,SizeType,FurType,AgeType,Description,BehaviorType,Adopted")] Animal animal)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,AnimalId,ApplicationUserId")] AdoptionFile adoptionFile)
         {
-            if (id != animal.Id)
+            if (id != adoptionFile.Id)
             {
                 return NotFound();
             }
@@ -104,12 +101,12 @@ namespace ESWProjectAlbergue.Controllers
             {
                 try
                 {
-                    _context.Update(animal);
+                    _context.Update(adoptionFile);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AnimalExists(animal.Id))
+                    if (!AdoptionFileExists(adoptionFile.Id))
                     {
                         return NotFound();
                     }
@@ -120,11 +117,11 @@ namespace ESWProjectAlbergue.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Nome", animal.BreedId);
-            return View(animal);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionFile.AnimalId);
+            return View(adoptionFile);
         }
 
-        // GET: Animals/Delete/5
+        // GET: AdoptionFiles/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,30 +129,31 @@ namespace ESWProjectAlbergue.Controllers
                 return NotFound();
             }
 
-            var animal = await _context.Animal
+            var adoptionFile = await _context.AdoptionFile
+                .Include(a => a.Animal)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (animal == null)
+            if (adoptionFile == null)
             {
                 return NotFound();
             }
 
-            return View(animal);
+            return View(adoptionFile);
         }
 
-        // POST: Animals/Delete/5
+        // POST: AdoptionFiles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var animal = await _context.Animal.FindAsync(id);
-            _context.Animal.Remove(animal);
+            var adoptionFile = await _context.AdoptionFile.FindAsync(id);
+            _context.AdoptionFile.Remove(adoptionFile);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AnimalExists(int id)
+        private bool AdoptionFileExists(int id)
         {
-            return _context.Animal.Any(e => e.Id == id);
+            return _context.AdoptionFile.Any(e => e.Id == id);
         }
     }
 }
