@@ -17,9 +17,9 @@ namespace ESWProjectAlbergue.Models
         public Animal Animal { get; set; }
 
         [Display(Name = "Adotante")]
-        public int ApplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; }
 
-        public ApplicationUser ApplicationUser { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Display(Name = "Data de Adoção")]
         [DataType(DataType.Date)]

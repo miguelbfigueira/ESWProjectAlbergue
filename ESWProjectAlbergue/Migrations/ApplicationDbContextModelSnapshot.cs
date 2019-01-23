@@ -27,9 +27,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<int>("AnimalId");
 
-                    b.Property<int>("ApplicationUserId");
-
-                    b.Property<string>("ApplicationUserId1");
+                    b.Property<string>("ApplicationUserId");
 
                     b.Property<DateTime>("Date");
 
@@ -37,7 +35,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.HasIndex("AnimalId");
 
-                    b.HasIndex("ApplicationUserId1");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("AdoptionFile");
                 });
@@ -55,10 +53,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.Property<string>("AnimalTravel");
 
                     b.Property<string>("AnimalTypes");
-
-                    b.Property<int>("ApplicationUserId");
-
-                    b.Property<string>("ApplicationUserId1");
 
                     b.Property<int>("Cc");
 
@@ -84,11 +78,13 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<bool>("TermsAndConditions");
 
+                    b.Property<string>("UserId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AnimalId");
 
-                    b.HasIndex("ApplicationUserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("AdoptionForm");
                 });
@@ -406,7 +402,7 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId1");
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.AdoptionForm", b =>
@@ -416,9 +412,9 @@ namespace ESWProjectAlbergue.Data.Migrations
                         .HasForeignKey("AnimalId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "User")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId1");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>

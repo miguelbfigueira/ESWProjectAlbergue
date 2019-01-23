@@ -45,10 +45,14 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: AdoptionForms/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int? id)
         {
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id");
-            return View();
+            var adoptionForm = new AdoptionForm();
+            adoptionForm.Animal = await _context.Animal.FindAsync(id);
+            adoptionForm.AnimalId = adoptionForm.Animal.Id;
+            ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Id");
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionForm.AnimalId);
+            return View(adoptionForm);
         }
 
         // POST: AdoptionForms/Create
@@ -56,7 +60,7 @@ namespace ESWProjectAlbergue.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,AnimalId,ApplicationUserId,Date,Cc,Job,MoreAnimals,HowMany,AnimalTypes,FinanciallyStable,HouseType,NumberOfBedrooms,NumberOfPeople,AnimalTravel,LeaveHouse,Conscious,TermsAndConditions,Accepted")] AdoptionForm adoptionForm)
+        public async Task<IActionResult> Create(int id, [Bind("Id,AnimalId,ApplicationUserId,Date,Cc,Job,MoreAnimals,HowMany,AnimalTypes,FinanciallyStable,HouseType,NumberOfBedrooms,NumberOfPeople,AnimalTravel,LeaveHouse,Conscious,TermsAndConditions,Accepted")] AdoptionForm adoptionForm)
         {
             if (ModelState.IsValid)
             {
