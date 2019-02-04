@@ -6,22 +6,25 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ESWProjectAlbergue.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ESWProjectAlbergue.Controllers
 {
     public class AdoptionFormsController : Controller
     {
         private readonly ESWProjectAlbergueContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public AdoptionFormsController(ESWProjectAlbergueContext context)
+        public AdoptionFormsController(ESWProjectAlbergueContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: AdoptionForms
         public async Task<IActionResult> Index()
         {
-            var eSWProjectAlbergueContext = _context.AdoptionForm.Include(a => a.Animal);
+            var eSWProjectAlbergueContext = _context.AdoptionForm.Include(a => a.Animal).Include(a => a.ApplicationUser);
             return View(await eSWProjectAlbergueContext.ToListAsync());
         }
 
@@ -35,7 +38,8 @@ namespace ESWProjectAlbergue.Controllers
 
             var adoptionForm = await _context.AdoptionForm
                 .Include(a => a.Animal)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(a => a.ApplicationUser)
+                .FirstOrDefaultAsync(m => m.AdoptionFormId == id);
             if (adoptionForm == null)
             {
                 return NotFound();
@@ -47,12 +51,17 @@ namespace ESWProjectAlbergue.Controllers
         // GET: AdoptionForms/Create
         public async Task<IActionResult> Create(int? id)
         {
-            var adoptionForm = new AdoptionForm();
-            adoptionForm.Animal = await _context.Animal.FindAsync(id);
-            adoptionForm.AnimalId = adoptionForm.Animal.Id;
-            ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Id");
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionForm.AnimalId);
-            return View(adoptionForm);
+            Animal animal = _context.Animal.FirstOrDefault(a=>a.Id == id);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name");
+            var user = await _userManager.GetUserAsync(User);
+            ViewData["ApplicationUser"] = user.Name;
+            AdoptionForm adoption = new AdoptionForm();
+            adoption.AnimalId = animal.Id;
+            adoption.Animal = animal;
+            adoption.ApplicationUserId = user.Id;
+            adoption.ApplicationUser = user;
+            adoption.Date = DateTime.Now;
+            return View(adoption);
         }
 
         // POST: AdoptionForms/Create
@@ -60,7 +69,7 @@ namespace ESWProjectAlbergue.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(int id, [Bind("Id,AnimalId,ApplicationUserId,Date,Cc,Job,MoreAnimals,HowMany,AnimalTypes,FinanciallyStable,HouseType,NumberOfBedrooms,NumberOfPeople,AnimalTravel,LeaveHouse,Conscious,TermsAndConditions,Accepted")] AdoptionForm adoptionForm)
+        public async Task<IActionResult> Create([Bind("AdoptionFormId,AnimalId,ApplicationUserId,Date,Cc,Job,MoreAnimals,HowMany,AnimalTypes,FinanciallyStable,HouseType,NumberOfBedrooms,NumberOfPeople,AnimalTravel,LeaveHouse,Conscious,Accepted")] AdoptionForm adoptionForm)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +77,8 @@ namespace ESWProjectAlbergue.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionForm.AnimalId);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name", adoptionForm.AnimalId);
+            ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Name", adoptionForm.ApplicationUserId);
             return View(adoptionForm);
         }
 
@@ -85,7 +95,8 @@ namespace ESWProjectAlbergue.Controllers
             {
                 return NotFound();
             }
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionForm.AnimalId);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name", adoptionForm.AnimalId);
+            ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Name", adoptionForm.ApplicationUserId);
             return View(adoptionForm);
         }
 
@@ -94,9 +105,9 @@ namespace ESWProjectAlbergue.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,AnimalId,ApplicationUserId,Date,Cc,Job,MoreAnimals,HowMany,AnimalTypes,FinanciallyStable,HouseType,NumberOfBedrooms,NumberOfPeople,AnimalTravel,LeaveHouse,Conscious,TermsAndConditions,Accepted")] AdoptionForm adoptionForm)
+        public async Task<IActionResult> Edit(int id, [Bind("AdoptionFormId,AnimalId,ApplicationUserId,Date,Cc,Job,MoreAnimals,HowMany,AnimalTypes,FinanciallyStable,HouseType,NumberOfBedrooms,NumberOfPeople,AnimalTravel,LeaveHouse,Conscious,Accepted")] AdoptionForm adoptionForm)
         {
-            if (id != adoptionForm.Id)
+            if (id != adoptionForm.AdoptionFormId)
             {
                 return NotFound();
             }
@@ -110,7 +121,7 @@ namespace ESWProjectAlbergue.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AdoptionFormExists(adoptionForm.Id))
+                    if (!AdoptionFormExists(adoptionForm.AdoptionFormId))
                     {
                         return NotFound();
                     }
@@ -121,7 +132,8 @@ namespace ESWProjectAlbergue.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionForm.AnimalId);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name", adoptionForm.AnimalId);
+            ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Name", adoptionForm.ApplicationUserId);
             return View(adoptionForm);
         }
 
@@ -135,7 +147,8 @@ namespace ESWProjectAlbergue.Controllers
 
             var adoptionForm = await _context.AdoptionForm
                 .Include(a => a.Animal)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(a => a.ApplicationUser)
+                .FirstOrDefaultAsync(m => m.AdoptionFormId == id);
             if (adoptionForm == null)
             {
                 return NotFound();
@@ -157,7 +170,7 @@ namespace ESWProjectAlbergue.Controllers
 
         private bool AdoptionFormExists(int id)
         {
-            return _context.AdoptionForm.Any(e => e.Id == id);
+            return _context.AdoptionForm.Any(e => e.AdoptionFormId == id);
         }
     }
 }

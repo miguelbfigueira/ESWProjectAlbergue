@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.Animal)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserId)
+                @Html.DisplayNameFor(model => model.ApplicationUser)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date)
@@ -58,9 +58,6 @@
                 @Html.DisplayNameFor(model => model.Conscious)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TermsAndConditions)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Accepted)
             </th>
             <th></th>
@@ -73,7 +70,7 @@
                 @Html.DisplayFor(modelItem => item.Animal.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
@@ -115,15 +112,12 @@
                 @Html.DisplayFor(modelItem => item.Conscious)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TermsAndConditions)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Accepted)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.AdoptionFormId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AdoptionFormId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AdoptionFormId">Delete</a>
             </td>
         </tr>
 }

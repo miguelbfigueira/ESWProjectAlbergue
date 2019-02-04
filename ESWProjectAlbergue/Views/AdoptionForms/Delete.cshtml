@@ -18,10 +18,10 @@
             @Html.DisplayFor(model => model.Animal.Id)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Html.DisplayNameFor(model => model.ApplicationUser)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.UserId)
+            @Html.DisplayFor(model => model.ApplicationUser.Id)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Date)
@@ -102,12 +102,6 @@
             @Html.DisplayFor(model => model.Conscious)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TermsAndConditions)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TermsAndConditions)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.Accepted)
         </dt>
         <dd>
@@ -116,7 +110,7 @@
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="AdoptionFormId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>
     </form>

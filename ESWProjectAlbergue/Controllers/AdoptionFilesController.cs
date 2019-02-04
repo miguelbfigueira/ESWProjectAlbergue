@@ -21,7 +21,7 @@ namespace ESWProjectAlbergue.Controllers
         // GET: AdoptionFiles
         public async Task<IActionResult> Index()
         {
-            var eSWProjectAlbergueContext = _context.AdoptionFile.Include(a => a.Animal);
+            var eSWProjectAlbergueContext = _context.AdoptionFile.Include(a => a.Animal).Include(u => u.ApplicationUser);
             return View(await eSWProjectAlbergueContext.ToListAsync());
         }
 
@@ -47,7 +47,8 @@ namespace ESWProjectAlbergue.Controllers
         // GET: AdoptionFiles/Create
         public IActionResult Create()
         {
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id");
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name");
+            ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Name");
             return View();
         }
 
@@ -64,7 +65,8 @@ namespace ESWProjectAlbergue.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Id", adoptionFile.AnimalId);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name", adoptionFile.AnimalId);
+            ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Name", adoptionFile.ApplicationUserId);
             return View(adoptionFile);
         }
 

@@ -17,10 +17,10 @@
             @Html.DisplayFor(model => model.Animal.Id)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Html.DisplayNameFor(model => model.ApplicationUser)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.UserId)
+            @Html.DisplayFor(model => model.ApplicationUser.Id)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Date)
@@ -101,12 +101,6 @@
             @Html.DisplayFor(model => model.Conscious)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TermsAndConditions)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TermsAndConditions)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.Accepted)
         </dt>
         <dd>
@@ -115,6 +109,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.AdoptionFormId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

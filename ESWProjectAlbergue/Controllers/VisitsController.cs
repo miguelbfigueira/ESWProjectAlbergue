@@ -47,7 +47,7 @@ namespace ESWProjectAlbergue.Controllers
         // GET: Visits/Create
         public IActionResult Create()
         {
-            ViewData["UserToVisitId"] = new SelectList(_context.User, "Id", "Id");
+            ViewData["UserToVisitId"] = new SelectList(_context.User, "Id", "Name");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace ESWProjectAlbergue.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserToVisitId"] = new SelectList(_context.User, "Id", "Id", visit.UserToVisitId);
+            ViewData["UserToVisitId"] = new SelectList(_context.User, "Id", "Name", visit.UserToVisitId);
             return View(visit);
         }
 
@@ -81,7 +81,7 @@ namespace ESWProjectAlbergue.Controllers
             {
                 return NotFound();
             }
-            ViewData["UserToVisitId"] = new SelectList(_context.User, "Id", "Id", visit.UserToVisitId);
+            ViewData["UserToVisitId"] = new SelectList(_context.User, "Id", "Name", visit.UserToVisitId);
             return View(visit);
         }
 
@@ -117,7 +117,7 @@ namespace ESWProjectAlbergue.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserToVisitId"] = new SelectList(_context.User, "Id", "Id", visit.UserToVisitId);
+            ViewData["UserToVisitId"] = new SelectList(_context.User, "Id", "Name", visit.UserToVisitId);
             return View(visit);
         }
 

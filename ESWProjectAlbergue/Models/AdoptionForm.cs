@@ -9,17 +9,17 @@ namespace ESWProjectAlbergue.Models
     public class AdoptionForm
     {
         [Display(Name = "Nº de Pedido")]
-        public int Id { get; set; }
+        public int AdoptionFormId { get; set; }
 
         [Display(Name = "Animal Para Adotar")]
         public int AnimalId { get; set; }
 
-        public Animal Animal { get; set; }
+        public virtual Animal Animal { get; set; }
 
         [Display(Name = "Adotante")]
-        public string UserId { get; set; }
+        public string ApplicationUserId { get; set; }
 
-        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Display(Name = "Data de Pedido")]
         [DataType(DataType.Date)]
@@ -61,38 +61,9 @@ namespace ESWProjectAlbergue.Models
         [Display(Name = "Tem consciência de que um animal pode viver até aos 10, 15, 18 anos? E que ao adoptá-lo, torna-se responsável por ele durante a sua vida toda ? ")]
         public Boolean Conscious { get; set; }
 
-        [Display(Name = "Aceito os termos e condições")]
-        public Boolean TermsAndConditions { get; set; }
-
         public Boolean Accepted { get; set; }
 
     }
-
-
-    public enum HouseType  
-{  
-   [Display(Name = "Apartamento")]
-    AP,  
-   [Display(Name = "Vivenda")]
-    VI,  
-   [Display(Name = "Outra.")]
-    OU, 
-}
-
-    public enum LeaveHouse
-    {
-        [Display(Name = "Leva consigo")]
-        LEVA,
-        [Display(Name = "Devolve ao antigo dono ")]
-        DEVOLVE,
-        [Display(Name = "Entrega para outra pessoa")]
-        DA,
-        [Display(Name = "Abandona")]
-        ABANDONA,
-
-
-    }
-
 
 }
 

@@ -17,7 +17,33 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dd>
-            <img src="@Html.DisplayFor(model => model.Photo)" width="140" height="140">
+            <div>
+                @{
+                    var imgsrc = "";
+                    if (Model.Photo == null)
+                    {
+                        if (Model.AnimalType == EnumAnimalType.CAT)
+                        {
+                            imgsrc = "~/images/caticon.png";
+                        }
+                        if (Model.AnimalType == EnumAnimalType.DOG)
+                        {
+                            imgsrc = "~/images/dogicon.png";
+                        }
+                        if (Model.AnimalType == EnumAnimalType.OTHER)
+                        {
+                            imgsrc = "~/images/interrogacao.png";
+                        }
+
+                    }
+                    else
+                    {
+                        var base64 = Convert.ToBase64String(Model.Photo);
+                        imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                    }
+                }
+            </div>
+            <img src='@imgsrc' width="200px" height="200px" style="border-radius:100px;" />
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.AnimalType)
@@ -80,6 +106,9 @@
     </dl>
 </div>
 <div>
-    <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id">Adotar</a> |
-    <a asp-action="Index">Back to List</a>
+    @if (User.IsInRole("admins") || User.IsInRole("funcionarios") || User.IsInRole("users") )
+    {
+    <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id">Adotar | </a> 
+    }
+<a asp-action="Index">Voltar</a>
 </div>

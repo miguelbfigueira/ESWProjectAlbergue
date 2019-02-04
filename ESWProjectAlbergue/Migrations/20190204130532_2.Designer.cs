@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    [Migration("20190123000108_initial")]
-    partial class initial
+    [Migration("20190204130532_2")]
+    partial class _2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,6 +56,8 @@ namespace ESWProjectAlbergue.Migrations
 
                     b.Property<string>("AnimalTypes");
 
+                    b.Property<string>("ApplicationUserId");
+
                     b.Property<int>("Cc");
 
                     b.Property<bool>("Conscious");
@@ -80,13 +82,11 @@ namespace ESWProjectAlbergue.Migrations
 
                     b.Property<bool>("TermsAndConditions");
 
-                    b.Property<string>("UserId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AnimalId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("AdoptionForm");
                 });
@@ -414,9 +414,9 @@ namespace ESWProjectAlbergue.Migrations
                         .HasForeignKey("AnimalId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "User")
+                    b.HasOne("ESWProjectAlbergue.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
