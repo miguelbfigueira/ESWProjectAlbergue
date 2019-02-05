@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ESWProjectAlbergue.Models.AdoptionFile>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "FiltrarRaca";
 }
 
-<h2>Index</h2>
+<h2>FiltrarRaca</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -31,7 +31,7 @@
                 @Html.DisplayNameFor(model => model.Animal)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ApplicationUser.Name)
+                @Html.DisplayNameFor(model => model.ApplicationUser)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date)

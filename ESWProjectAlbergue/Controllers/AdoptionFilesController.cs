@@ -22,6 +22,7 @@ namespace ESWProjectAlbergue.Controllers
         public async Task<IActionResult> Index()
         {
             var eSWProjectAlbergueContext = _context.AdoptionFile.Include(a => a.Animal).Include(u => u.ApplicationUser);
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
             return View(await eSWProjectAlbergueContext.ToListAsync());
         }
 
@@ -61,11 +62,15 @@ namespace ESWProjectAlbergue.Controllers
         {
             if (ModelState.IsValid)
             {
+                adoptionFile.Animal = _context.Animal.Find(adoptionFile.AnimalId);
+                adoptionFile.ApplicationUser = _context.User.Find(adoptionFile.ApplicationUserId);
+                adoptionFile.Date = DateTime.Now;
                 _context.Add(adoptionFile);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name", adoptionFile.AnimalId);
+           
             ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Name", adoptionFile.ApplicationUserId);
             return View(adoptionFile);
         }
@@ -156,6 +161,47 @@ namespace ESWProjectAlbergue.Controllers
         private bool AdoptionFileExists(int id)
         {
             return _context.AdoptionFile.Any(e => e.Id == id);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> FiltrarRaca(int? id)
+        {
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
+            var breeds = await _context.AdoptionFile.Include(a => a.Animal).Include(u => u.ApplicationUser).ToListAsync();
+            if (id != null)
+            {
+                var animais = await _context.Animal.ToListAsync();
+                animais = (from a in animais where a.BreedId == id select a).ToList();
+                breeds = (from a in breeds from u in animais where a.AnimalId == u.Id select a).ToList();
+
+            }
+
+            if (breeds == null)
+            {
+                return NotFound();
+            }
+            return View(breeds);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> FiltrarDate(DateTime? date)
+        {
+            ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
+            var breeds = await _context.AdoptionFile.Include(a => a.Animal).Include(u => u.ApplicationUser).ToListAsync();
+            if (date != null) { 
+            
+                breeds = (from a in breeds where a.Date.Date == date select a).ToList();
+
+            }
+
+            if (breeds == null)
+            {
+                return NotFound();
+            }
+            return View(breeds);
+
+
         }
     }
 }
