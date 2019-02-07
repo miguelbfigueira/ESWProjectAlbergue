@@ -4,88 +4,143 @@
     ViewData["Title"] = "Lembretes";
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html>
 
-<p>
-    <a asp-action="Create">Criar Novo Lembrete</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserCreaterId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserReminderId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateCreate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateEnd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsEvent)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsDone)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <th>
-                @Html.DisplayFor(modelItem => item.UserCreaterId.Name)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.UserReminderId.Name)
-            </th>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateEnd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @if (item.IsEvent){
-                    <img src="~/images/check.png" width="16px" height="16px" />
-                }
-                else
-                {
-                    <img src="~/images/cross.png" width="16px" height="16px" />
-                }
-            </td>
-            <td>
-                @if (item.IsDone)
-                {
-                    <img src="~/images/check.png" width="16px" height="16px" />
-                }
-                else
-                {
-                    <img src="~/images/cross.png" width="16px" height="16px" />
-                }
-              
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ReminderId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ReminderId">Visualizar</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReminderId">Remover</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/csstable.css">
+    <!--===============================================================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+</head>
+<body>
+    <div class="lembretestotal">
+        <h2 class="lembretes">Lembretes</h2>
+        <br>
+        <p class="text-center">
+            <a asp-action="Create" class="btnnovolembrete">Criar Novo Lembrete</a>
+        </p>
+
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table">
+
+                        <div class="row header">
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.UserCreaterId)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.UserReminderId)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.DateCreate)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.DateEnd)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Title)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Description)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.IsEvent)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.IsDone)
+                            </div>
+                            <div class="cell">
+                                Acções
+                            </div>
+                        </div>
+                        @foreach (var item in Model)
+                        {
+                            <div class="row">
+                                <div class="cell" data-title="Full Name">
+                                    @Html.DisplayFor(modelItem => item.UserCreaterId.Name)
+                                </div>
+                                <div class="cell" data-title="Age">
+                                    @Html.DisplayFor(modelItem => item.UserReminderId.Name)
+                                </div>
+                                <div class="cell" data-title="Job Title">
+                                    @Html.DisplayFor(modelItem => item.DateCreate)
+                                </div>
+                                <div class="cell" data-title="Location">
+                                    @Html.DisplayFor(modelItem => item.DateEnd)
+                                </div>
+                                <div class="cell" data-title="Location">
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </div>
+                                <div class="cell" data-title="Location">
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </div>
+                                <div class="cell" data-title="Location">
+                                    @if (item.IsEvent)
+                                    {
+                                        <img src="~/images/check.png" style="width: 16px; height: 16px;" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/images/cross.png" style="width: 16px; height: 16px;" />
+                                    }
+                                </div>
+                                <div class="cell" data-title="Location">
+                                    @if (item.IsDone)
+                                    {
+                                        <img src="~/images/check.png" width="16px" height="16px" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/images/cross.png" width="16px" height="16px" />
+                                    }
+                                </div>
+
+                                <div class="cell" data-title="Location">
+                                    <a asp-action="Edit" asp-route-id="@item.ReminderId">Editar</a>
+                                    <a asp-action="Details" asp-route-id="@item.ReminderId">Visualizar</a>
+                                    <a asp-action="Delete" asp-route-id="@item.ReminderId">Remover</a>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <!--===============================================================================================-->
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
+
+</body>
+</html>
+
+
