@@ -26,8 +26,7 @@ namespace ESWProjectAlbergue.Migrations
                         name: "FK_PerfectAnimal_AnimalBreed_BreedId",
                         column: x => x.BreedId,
                         principalTable: "AnimalBreed",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

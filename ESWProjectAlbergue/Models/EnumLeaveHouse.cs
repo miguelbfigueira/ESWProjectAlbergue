@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ESWProjectAlbergue.Models
 {
-    public enum LeaveHouse
+    public enum EnumLeaveHouse
     {
         [Display(Name = "Leva consigo")]
         LEVA,

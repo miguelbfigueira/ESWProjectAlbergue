@@ -29,6 +29,7 @@ namespace ESWProjectAlbergue.Models
         [Display(Name = "Idade")]
         public EnumAgeType Age { get; set; }
 
+        [Display(Name = "Animal Adotado")]
         public int AnimalId { get; set; }
 
         public Animal Animal { get; set; }

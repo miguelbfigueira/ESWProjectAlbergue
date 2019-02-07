@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    [Migration("20190204151358_5")]
-    partial class _5
+    [Migration("20190207215109_9")]
+    partial class _9
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,10 @@ namespace ESWProjectAlbergue.Migrations
 
                     b.Property<DateTime>("Date");
 
+                    b.Property<int>("OrderId");
+
+                    b.Property<int>("Status");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AnimalId");
@@ -44,7 +48,7 @@ namespace ESWProjectAlbergue.Migrations
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.AdoptionForm", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("AdoptionFormId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -80,7 +84,7 @@ namespace ESWProjectAlbergue.Migrations
 
                     b.Property<int>("NumberOfPeople");
 
-                    b.HasKey("Id");
+                    b.HasKey("AdoptionFormId");
 
                     b.HasIndex("AnimalId");
 
@@ -139,6 +143,13 @@ namespace ESWProjectAlbergue.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AnimalBreed");
+
+                    b.HasData(
+                        new { Id = 1, Behavior = 1, Name = "Indefinida" },
+                        new { Id = 2, Behavior = 2, Name = "Beagle" },
+                        new { Id = 3, Behavior = 0, Name = "Husky" },
+                        new { Id = 4, Behavior = 4, Name = "Labrador" }
+                    );
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.ApplicationUser", b =>
@@ -200,6 +211,35 @@ namespace ESWProjectAlbergue.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.PerfectAnimal", b =>
+                {
+                    b.Property<int>("PerfectAnimalId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Age");
+
+                    b.Property<int>("AnimalId");
+
+                    b.Property<int>("BreedId");
+
+                    b.Property<int>("Gender");
+
+                    b.Property<int>("Percentagem");
+
+                    b.Property<int>("Size");
+
+                    b.Property<int>("Type");
+
+                    b.HasKey("PerfectAnimalId");
+
+                    b.HasIndex("AnimalId");
+
+                    b.HasIndex("BreedId");
+
+                    b.ToTable("PerfectAnimal");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.PosConditionsForm", b =>
@@ -419,6 +459,19 @@ namespace ESWProjectAlbergue.Migrations
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
                 {
+                    b.HasOne("ESWProjectAlbergue.Models.AnimalBreed", "Breed")
+                        .WithMany()
+                        .HasForeignKey("BreedId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ESWProjectAlbergue.Models.PerfectAnimal", b =>
+                {
+                    b.HasOne("ESWProjectAlbergue.Models.Animal", "Animal")
+                        .WithMany()
+                        .HasForeignKey("AnimalId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("ESWProjectAlbergue.Models.AnimalBreed", "Breed")
                         .WithMany()
                         .HasForeignKey("BreedId")

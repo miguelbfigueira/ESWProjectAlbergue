@@ -31,6 +31,10 @@ namespace ESWProjectAlbergue.Data.Migrations
 
                     b.Property<DateTime>("Date");
 
+                    b.Property<int>("OrderId");
+
+                    b.Property<int>("Status");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AnimalId");
@@ -45,8 +49,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                     b.Property<int>("AdoptionFormId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Accepted");
 
                     b.Property<int>("AnimalId");
 

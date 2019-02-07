@@ -25,6 +25,12 @@ namespace ESWProjectAlbergue.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
+        [Display(Name = "Estado do Pedido")]
+        public EnumAdoptionStatus Status { get; set; }
+
+        [Display(Name = "Formulário Pedido")]
+        public int OrderId { get; set; }
+
 
     }
 }

@@ -44,7 +44,7 @@ namespace ESWProjectAlbergue.Models
         public Boolean FinanciallyStable { get; set; }
 
         [Display(Name = "Mora em que tipo de habitação?")]
-        public HouseType HouseType { get; set; }
+        public EnumHouseType HouseType { get; set; }
 
         [Display(Name = "A sua habitação possui quantas divisões?")]
         public int NumberOfBedrooms { get; set; }
@@ -56,12 +56,11 @@ namespace ESWProjectAlbergue.Models
         public string AnimalTravel { get; set; }
 
         [Display(Name = "Se mudar de residência o que fará com o animal?")]
-        public LeaveHouse LeaveHouse { get; set; }
+        public EnumLeaveHouse LeaveHouse { get; set; }
 
         [Display(Name = "Tem consciência de que um animal pode viver até aos 10, 15, 18 anos? E que ao adoptá-lo, torna-se responsável por ele durante a sua vida toda ? ")]
         public Boolean Conscious { get; set; }
 
-        public Boolean Accepted { get; set; }
 
     }
 

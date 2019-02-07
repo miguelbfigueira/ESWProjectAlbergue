@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ESWProjectAlbergue.Models
 {
-    public enum HouseType
+    public enum EnumHouseType
     {
         [Display(Name = "Apartamento")]
         AP,

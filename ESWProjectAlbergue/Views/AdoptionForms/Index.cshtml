@@ -58,9 +58,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Conscious)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Accepted)
-            </th>
+          
             <th></th>
         </tr>
     </thead>
@@ -112,9 +110,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Conscious)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Accepted)
-            </td>
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.AdoptionFormId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.AdoptionFormId">Details</a> |

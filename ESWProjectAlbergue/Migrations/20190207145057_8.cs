@@ -28,8 +28,7 @@ namespace ESWProjectAlbergue.Migrations
                 table: "PerfectAnimal",
                 column: "AnimalId",
                 principalTable: "Animal",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                principalColumn: "Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
