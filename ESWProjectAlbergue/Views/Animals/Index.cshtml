@@ -2,130 +2,313 @@
 
 @{
     ViewData["Title"] = "Index";
+    var imgsrc = "";
+
 }
 
-<h2>Animais</h2>
-@if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
-{
-    <p>
-        <a asp-action="Create">Registar Novo Animal</a>
-    </p>
-}
-<form asp-controller="Animals" asp-action="FiltrarNumero" method="post">
-    <p>
-        ID: <input type="number" name="id">
-        <input type="submit" value="Filtrar" />
-    </p>
-</form>
-<form asp-controller="Animals" asp-action="FiltrarNome" method="post">
-    <p>
-        Nome: <input type="text" name="name">
-        <input type="submit" value="Filtrar" />
-    </p>
-</form>
-@foreach (var item in Model)
-{
-<div class="col-lg-4 col-sm-6 text-center mb-4">
-    <div>
-        @{ 
-            var imgsrc = "";
-            if (item.Photo == null)
-            {
-                if (item.AnimalType == EnumAnimalType.CAT)
-                {
-                    imgsrc = "~/images/caticon.png";
-                }
-                if (item.AnimalType == EnumAnimalType.DOG)
-                {
-                    imgsrc = "~/images/dogicon.png";
-                }
-                if (item.AnimalType == EnumAnimalType.OTHER)
-                {
-                    imgsrc = "~/images/interrogacao.png";
-                }
+<!DOCTYPE html>
 
-            }
-            else
-            {
-                var base64 = Convert.ToBase64String(item.Photo);
-                imgsrc = string.Format("data:image/gif;base64,{0}", base64);
-            }
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        .animalscontainer {
+            display: inline;
+            width: auto;
+            display: inline;
         }
-    </div>
-    <img src='@imgsrc' width="200px" height="200px" style="border-radius:100px;" />
-   
-    <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => item.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.AnimalType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.AnimalType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.Gender)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.BirthDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Breed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.Breed.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.SizeType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.SizeType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FurType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.FurType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.AgeType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.AgeType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BehaviorType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.BehaviorType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => item.Description)
-        </dd>
-        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+        .animalcontainer {
+            position: relative;
+            width: auto;
+            display: inline-block;
+        }
+
+        .animalimage {
+            opacity: 1;
+            display: block;
+            width: 200px;
+            height: 200px;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%)
+        }
+
+        .animalcontainer:hover .animalimage {
+            opacity: 0.3;
+        }
+
+        .animalcontainer:hover .middle {
+            opacity: 1;
+        }
+
+        .animalnamefemale {
+            background-color: hotpink;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            border-radius: 100px;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .animalnamemale {
+            background-color: #02A69E;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            border-radius: 100px;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .animalname {
+            color: white;
+            text-transform: uppercase;
+        }
+
+
+
+        a {
+            color: black;
+        }
+
+        .editdelete {
+            width: 200px;
+        }
+
+        .allanimals {
+            background-color: #333333;
+            padding: 20px;
+            padding-top:6px;
+            
+            border-style: solid;
+            border-width: 5px;
+            align-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin-top: 5px;
+            margin-right: auto;
+            margin-left: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            display: inline-block;
+            background-color: #333333;
+            border-radius: 25px;
+            
+            position: center;
+            
+        }
+
+        .Animais {
+            font-family: "Pacifico";
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+            color: #FFFFFF;
+        }
+
+        .whitetext {
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .button1 {
+            background-color: #02A69E;
+            text-transform: uppercase;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .button1:hover {
+            background-color: gray;
+            color: white;
+        }
+
+        .button2 {
+            background-color: #02A69E;
+            text-transform: uppercase;
+            border: none;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            margin-right: 20px;
+            cursor: pointer;
+            border-radius:3px;
+        }
+
+            .button2:hover {
+                background-color: gray;
+                color: white;
+            }
+
+        .filteranimals {
+            display: table;
+            margin: 0 auto;
+        }
+
+        .filteranimalschildren{
+            display:inline;
+        }
+
+        .centerdiv {
+            display: table;
+            margin: 0 auto;
+        }
+
+        .centerimage {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        .centertext{
+            text-align:center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="allanimals">
+        <h2 class="Animais">Animais</h2>
+        <br>
         @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
         {
-            <a asp-action="Edit" asp-route-id="@item.Id"> | Editar</a>
+            <div class="centerdiv">
+                <p class="whitetext button1 centertext">
+                    <a asp-action="Create" class="whitetext">Registar Novo Animal</a>
+                </p>
+            </div>
+            <br>
         }
-        @if (User.IsInRole("admins"))
-        {
-            <a asp-action="Delete" asp-route-id="@item.Id"> | Eliminar</a>
-        }
+        <div class="filteranimals centerdiv">
+            <form asp-controller="Animals" asp-action="FiltrarNumero" method="post" class="whitetext filteranimalschildren">
+                <p class="whitetext filteranimalschildren">
+                    ID: <input type="number" name="id">
+                    <input type="submit" class="button2" value="Filtrar" />
+                </p>
+            </form>
+            <form asp-controller="Animals" asp-action="FiltrarNome" method="post" class="whitetext filteranimalschildren">
+                <p class="whitetext filteranimalschildren">
+                    Nome: <input type="text" name="name">
+                    <input type="submit" class="button2" value="Filtrar" />
+                </p>
+            </form>
+        </div>
 
-    </dl>
-</div>
-}
+
+        <br>
+        <div class="animalscontainer">
+            @foreach (var item in Model)
+            {
+
+                @if (item.Photo == null)
+                {
+                    if (item.AnimalType == EnumAnimalType.CAT)
+                    {
+                        imgsrc = "~/images/caticon.png";
+                    }
+                    if (item.AnimalType == EnumAnimalType.DOG)
+                    {
+                        imgsrc = "~/images/dogicon.png";
+                    }
+                    if (item.AnimalType == EnumAnimalType.OTHER)
+                    {
+                        imgsrc = "~/images/interrogacao.png";
+                    }
+
+                }
+                else
+                {
+                    var base64 = Convert.ToBase64String(item.Photo);
+                    imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                }
+
+
+                @if (item.Gender == EnumGenderType.FEMALE)
+                {
+                    <div class="animalcontainer">
+                        <img src='@imgsrc' class="animalimage" width="200" height="200" style="border-radius:100px; border-style: solid; border-width: 5px; border-color: hotpink;" />
+                        <div class="middle">
+                            <div class="animalnamefemale">
+                                @if (item.AnimalType == EnumAnimalType.CAT)
+                                {
+                                    <img src='~/images/cat.png' width="40" height="40" class="centerimage">
+                                    
+                                }
+                                else
+                                {
+                                    <img src='~/images/dog.png' class="centerimage">
+                                }
+
+                                <a asp-action="Details" asp-route-id="@item.Id" class="animalname centertext" >@Html.DisplayFor(model => item.Name)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+                @if (item.Gender == EnumGenderType.MALE)
+                {
+                    <div class="animalcontainer">
+                        <img src='@imgsrc' class="animalimage" width="200px" height="200px" style="border-radius:100px; border-style: solid; border-width: 5px; border-color: #02A69E;" />
+                        <div class="middle">
+                            <div class="animalnamemale">
+                                @if (item.AnimalType == EnumAnimalType.CAT)
+                                {
+                                    <img src='~/images/cat.png' width="40" height="40" class="centerimage">
+
+                                }
+                                else
+                                {
+                                    <img src='~/images/dog.png' class="centerimage">
+                                }
+                                <a asp-action="Details" asp-route-id="@item.Id" class="animalname">@Html.DisplayFor(model => item.Name)</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <a class="editdelete">
+
+
+
+                    @*<a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>*@
+                    @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="whitetext"> Editar</a>
+                    }
+                    @if (User.IsInRole("admins"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="whitetext"> | Eliminar</a>
+                    }
+
+                </a>
+
+            }
+        </div>
+    </div>
+
+</body>

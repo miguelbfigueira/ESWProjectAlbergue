@@ -4,14 +4,16 @@ using ESWProjectAlbergue.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ESWProjectAlbergue.Data.Migrations
+namespace ESWProjectAlbergue.Migrations
 {
     [DbContext(typeof(ESWProjectAlbergueContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190206214739_BreedSeedData")]
+    partial class BreedSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -205,29 +207,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.PerfectAnimal", b =>
-                {
-                    b.Property<int>("PerfectAnimalId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Age");
-
-                    b.Property<int>("BreedId");
-
-                    b.Property<int>("Gender");
-
-                    b.Property<int>("Size");
-
-                    b.Property<int>("Type");
-
-                    b.HasKey("PerfectAnimalId");
-
-                    b.HasIndex("BreedId");
-
-                    b.ToTable("PerfectAnimal");
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.PosConditionsForm", b =>
@@ -446,14 +425,6 @@ namespace ESWProjectAlbergue.Data.Migrations
                 });
 
             modelBuilder.Entity("ESWProjectAlbergue.Models.Animal", b =>
-                {
-                    b.HasOne("ESWProjectAlbergue.Models.AnimalBreed", "Breed")
-                        .WithMany()
-                        .HasForeignKey("BreedId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ESWProjectAlbergue.Models.PerfectAnimal", b =>
                 {
                     b.HasOne("ESWProjectAlbergue.Models.AnimalBreed", "Breed")
                         .WithMany()

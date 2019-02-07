@@ -26,6 +26,50 @@ namespace ESWProjectAlbergue.Models
         public DbSet<ESWProjectAlbergue.Models.PosConditionsForm> PosConditionsForm { get; set; }
         public DbSet<ESWProjectAlbergue.Models.PerfectAnimal> PerfectAnimal { get; set; }
 
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<AnimalBreed>().HasData(
+                new AnimalBreed
+                {
+                    Id = 1,
+                    Name = "Indefinida",
+                    Behavior = EnumBehaviorType.ACTIVE
+
+
+                },
+
+                new AnimalBreed
+                {
+                    Id = 2,
+                    Name = "Beagle",
+                    Behavior = EnumBehaviorType.CALM
+
+
+                },
+
+                new AnimalBreed
+                {
+                    Id = 3,
+                    Name = "Husky",
+                    Behavior = EnumBehaviorType.VERYACTIVE
+
+
+                },
+
+                new AnimalBreed
+                {
+                    Id = 4,
+                    Name = "Labrador",
+                    Behavior = EnumBehaviorType.PLAYFUL
+
+
+                }
+             );
+
+        }
     }
 }
 
