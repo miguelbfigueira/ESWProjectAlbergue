@@ -150,41 +150,69 @@ namespace ESWProjectAlbergue.Controllers
         public async Task<IActionResult> GetAnimalIdeal([Bind("PerfectAnimalId,Size,Gender,BreedId,Age,Type")] PerfectAnimal perfectAnimal)
         {
             var percentagem = 0;
+            List<PerfectAnimal> animal = new List<PerfectAnimal>();
             var animaisideais = from a in _context.Animal select a;
             var animalIdeal = from a in _context.Animal where a.AnimalType == perfectAnimal.Type && a.Gender == perfectAnimal.Gender && a.AgeType == perfectAnimal.Age && a.BreedId == perfectAnimal.BreedId &&  a.SizeType == perfectAnimal.Size select a;
             if(animalIdeal.Count() >= 1)
             {
-                ViewData["Percentagem"] = 100;
-                return View(animalIdeal);
+                foreach (var item in animalIdeal)
+                { 
+                    var pA = new PerfectAnimal { Animal = item };
+                    pA.Percentagem = 100;
+                    animal.Add(pA);
+                }
+                return View(animal);
             }
-            Console.WriteLine("vou procuarr");
             var animaistipo = from a in _context.Animal where a.AnimalType == perfectAnimal.Type && a.Adopted == false select a;
 
             if (animaistipo.Count() == 0)
             {
                 return NotFound();
             }
-            if (animaistipo != null)
+            if (animaistipo.Count() >= 1)
             {
-                percentagem += 20;
-            }
-            var animaisgenero = from a in _context.Animal where a.Gender == perfectAnimal.Gender && a.Adopted == false select a;
-            if(animaisgenero != null)
-            {
-                percentagem += 20;
-                foreach(var a in animaistipo)
-                {
-                    if (animaisgenero.Contains(a))
-                    {
-                        animaisideais = from m in animaistipo from n in animaisgenero where m == n select m;
-                       percentagem += 20;
-                    }
+                foreach (var item in animaistipo)
+                {        
+                    animal.Add(HowPerfect(new PerfectAnimal(), item));
                 }
+                
+            }
+            
+            ViewData["BreedId"] = new SelectList(_context.AnimalBreed, "Id", "Name", perfectAnimal.BreedId);
+            animal.Distinct().ToList();
+            return View(animal);
+        }
+
+        public PerfectAnimal HowPerfect(PerfectAnimal perfectAnimal, Animal animal)
+        {
+            var count = 0;
+
+            if(perfectAnimal.Type == animal.AnimalType)
+            {
+                count += 20;
+            }
+            if (perfectAnimal.Gender == animal.Gender)
+            {
+                count += 20;
+            }
+            if (perfectAnimal.Age == animal.AgeType)
+            {
+                count += 20;
+            }
+            if (perfectAnimal.BreedId == animal.BreedId)
+            {
+                count += 20;
+            }
+            if (perfectAnimal.Size == animal.SizeType)
+            {
+                count += 20;
             }
 
-            ViewData["Percentagem"] = percentagem;
-            ViewData["BreedId"] = new SelectList(_context.AnimalBreed, "Id", "Name", perfectAnimal.BreedId);
-            return View(animaisideais);
+            perfectAnimal.AnimalId = animal.Id;
+            perfectAnimal.Animal = animal;
+            perfectAnimal.Percentagem = count;
+            return perfectAnimal;
+
         }
 
     }

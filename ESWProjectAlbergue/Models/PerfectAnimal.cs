@@ -29,6 +29,10 @@ namespace ESWProjectAlbergue.Models
         [Display(Name = "Idade")]
         public EnumAgeType Age { get; set; }
 
+        public int AnimalId { get; set; }
+
+        public Animal Animal { get; set; }
+
         public int Percentagem { get; set; }
     }
 }
