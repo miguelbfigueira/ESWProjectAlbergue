@@ -66,7 +66,6 @@ namespace ESWProjectAlbergue.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ReminderId,DateEnd,Title,Description,IsEvent,IsDone, UserReminderId")] Reminder reminder)
         {
-           
             reminder.UserCreaterId = await _userManager.FindByNameAsync(User.Identity.Name);
             reminder.DateCreate = DateTime.Now;
             reminder.UserReminderId = await _userManager.FindByEmailAsync(reminder.UserReminderId.Email);

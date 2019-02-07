@@ -12,5 +12,7 @@ namespace ESWProjectAlbergue.Models
         public string Name { get; set; }
 
         public EnumBehaviorType Behavior { get; set; }
+
+
     }
 }
