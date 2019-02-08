@@ -701,6 +701,20 @@ html, body {
         overflow: auto;
     }
 
+.doglogo {
+    width: 90px;
+    height: 90px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.catlogo {
+    width: 90px;
+    height: 90px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
 @media screen and (max-width: 700px) {
     .box {
         width: 70%;
@@ -708,6 +722,19 @@ html, body {
 
     .popup {
         width: 70%;
+    }
+
+    .doglogo{
+        width:40px;
+        height:40px;
+    }
+    .catlogo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .Quintadomiao{
+        font-size:13px;
     }
 }
 

@@ -7,60 +7,68 @@
     <link rel="icon" type="png" href="~/images/favicon.png" />
     <link rel="stylesheet" href="~/css/StyleSheet.css" />
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 500px)" href="css/mobile.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 501px)" href="css/main.css" />
 
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    
+
 
 
 </head>
 <body>
-<div class="nav-green container-fluid center-block">
-    <img src="~/images/Quinta.jpg" />
-    <h1 style="display:inline-block; font-family:'Pacifico'; color:white;  "> Quinta do Mião</h1>
-</div>
-<nav>
-
-    
-    <div class="nav-black container navbar-collapse collapse navbar-fixed">
-        <ul class="nav navbar-nav ">
-            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-            <li><a asp-area="" asp-controller="Visits" asp-action="Index">Visitas</a></li>
-            <li><a asp-area="" asp-controller="PerfectAnimals" asp-action="Index">Animal Ideal</a></li>
-            @if (!User.IsInRole("admins") || !User.IsInRole("funcionarios"))
-            {
-                <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contactos</a></li>
-                <li><a asp-area="" asp-controller="Animals" asp-action="Index">Animais Para Adoção</a></li>
-            }
-            @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
-            {
-                <li><a asp-area="" asp-controller="Reminders" asp-action="Index">Lembretes</a></li>
-
-                <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers">Utilizadores</a></li>
-                <li><a asp-area="" asp-controller="AdoptionFiles" asp-action="Index">Fichas de Adoção</a></li>
-            }
-        </ul>
-        <partial name="_LoginPartial" />
-    </div>
-
-</nav>
-
-<partial name="_CookieConsentPartial" />
-<div class="container">
-    @RenderBody()
-</div>
-<div class="container-fluid">
-
-    <hr />
-
-
-
+    <div class="nav">
         
 
-</div>
+    </div>
+        <div class="nav-green container-fluid center-block banner">
+            <img class="doglogo" src="~/images/doglogo.png" />
+            <h1 class="Quintadomiao" style="display:inline-block; font-family:'Pacifico'; color:white;"><a asp-area="" asp-controller="Home" asp-action="Index" style="color:white;">Quinta do Mião</a></h1>
+            <img class="catlogo" src="~/images/catlogo2.png"  />
+        </div>
+        <nav>
 
 
-@RenderSection("Scripts", required: false)
+            <div class="nav-black container navbar-collapse collapse navbar-fixed">
+                <ul class="nav navbar-nav ">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Visits" asp-action="Index">Visitas</a></li>
+                    @if (!User.IsInRole("admins") || !User.IsInRole("funcionarios"))
+                    {
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contactos</a></li>
+                        <li><a asp-area="" asp-controller="Animals" asp-action="Index">Animais Para Adoção</a></li>
+                    }
+                    @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                    {
+                        <li><a asp-area="" asp-controller="Reminders" asp-action="Index">Lembretes</a></li>
+
+                        <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers">Utilizadores</a></li>
+                        <li><a asp-area="" asp-controller="AdoptionFiles" asp-action="Index">Fichas de Adoção</a></li>
+                    }
+                </ul>
+                <partial name="_LoginPartial" />
+            </div>
+
+        </nav>
+
+        <partial name="_CookieConsentPartial" />
+        <div class="container">
+            @RenderBody()
+        </div>
+        <div class="container-fluid">
+
+            <hr />
+
+
+
+
+
+        </div>
+
+
+        @RenderSection("Scripts", required: false)
 
 </body>
 
@@ -97,7 +105,7 @@
     </div>
 
     <div class="footer-copyright text-center py-3">© 2018 Quinta do Mião
-       
+
     </div>
 
 </footer>
