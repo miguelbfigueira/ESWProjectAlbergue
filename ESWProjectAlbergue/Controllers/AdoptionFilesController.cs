@@ -11,12 +11,32 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace ESWProjectAlbergue.Controllers
 {
+    /// <summary>
+    /// Class AdoptionFilesController.
+    /// Implements the <see cref="Microsoft.AspNetCore.Mvc.Controller" />
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.Controller" />
     public class AdoptionFilesController : Controller
     {
+        /// <summary>
+        /// The context
+        /// </summary>
         private readonly ESWProjectAlbergueContext _context;
+        /// <summary>
+        /// The user manager
+        /// </summary>
         private readonly UserManager<ApplicationUser> _userManager;
+        /// <summary>
+        /// The email sender
+        /// </summary>
         private readonly IEmailSender _emailSender;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdoptionFilesController" /> class.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="userManager">The user manager.</param>
+        /// <param name="emailSender">The email sender.</param>
         public AdoptionFilesController(ESWProjectAlbergueContext context, UserManager<ApplicationUser> userManager, IEmailSender emailSender)
         {
             _context = context;
@@ -25,6 +45,10 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: AdoptionFiles
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Index()
         {
             var eSWProjectAlbergueContext = _context.AdoptionFile.Include(a => a.Animal).Include(u => u.ApplicationUser);
@@ -33,6 +57,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: AdoptionFiles/Details/5
+        /// <summary>
+        /// Detailses the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -51,38 +80,12 @@ namespace ESWProjectAlbergue.Controllers
             return View(adoptionFile);
         }
 
-        //// GET: AdoptionFiles/Create
-        //public IActionResult Create()
-        //{
-        //    ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name");
-        //    ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Name");
-        //    return View();
-        //}
-
-        //// POST: AdoptionFiles/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("Id,AnimalId,ApplicationUserId")] AdoptionFile adoptionFile)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        adoptionFile.Status = EnumAdoptionStatus.PENDING;
-        //        adoptionFile.Animal = _context.Animal.Find(adoptionFile.AnimalId);
-        //        adoptionFile.ApplicationUser = _context.User.Find(adoptionFile.ApplicationUserId);
-        //        adoptionFile.Date = DateTime.Now;
-        //        _context.Add(adoptionFile);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["AnimalId"] = new SelectList(_context.Animal, "Id", "Name", adoptionFile.AnimalId);
-           
-        //    ViewData["ApplicationUserId"] = new SelectList(_context.User, "Id", "Name", adoptionFile.ApplicationUserId);
-        //    return View(adoptionFile);
-        //}
-
         // GET: AdoptionFiles/Edit/5
+        /// <summary>
+        /// Edits the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -101,6 +104,12 @@ namespace ESWProjectAlbergue.Controllers
             return View(adoptionFile);
         }
 
+        /// <summary>
+        /// Edita do ficheiro de adoção e envia um email com as alterações
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="adoptionFile">The adoption file.</param>
+        /// <returns>O ficheiro de adoção editado.</returns>
         // POST: AdoptionFiles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -117,7 +126,7 @@ namespace ESWProjectAlbergue.Controllers
             {
                 try
                 {
-                    if(adoptionFile.Status == EnumAdoptionStatus.ACCEPTED)
+                    if(adoptionFile.Status == EnumAdoptionStatus.ACEITE)
                     {
                         var animal = _context.Animal.Find(adoptionFile.AnimalId);
                         animal.Adopted= true;
@@ -150,6 +159,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: AdoptionFiles/Delete/5
+        /// <summary>
+        /// Deletes the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -169,6 +183,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // POST: AdoptionFiles/Delete/5
+        /// <summary>
+        /// Deletes the confirmed.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -179,11 +198,21 @@ namespace ESWProjectAlbergue.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Adoptions the file exists.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         private bool AdoptionFileExists(int id)
         {
             return _context.AdoptionFile.Any(e => e.Id == id);
         }
 
+        /// <summary>
+        /// Filtrar as fichas de adoção pelas raças dos cães
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Um view com os animais da raça selecionada</returns>
         [HttpPost]
         public async Task<IActionResult> FiltrarRaca(int? id)
         {
@@ -205,6 +234,12 @@ namespace ESWProjectAlbergue.Controllers
 
         }
 
+
+        /// <summary>
+        /// Filtrar as fichas de adoção pelas datas da adoção dos cães
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns>Um view com os animais adotados na data selecionada</returns>
         [HttpPost]
         public async Task<IActionResult> FiltrarDate(DateTime? date)
         {

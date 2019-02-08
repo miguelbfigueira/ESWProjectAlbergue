@@ -1,16 +1,39 @@
-﻿using System.Threading.Tasks;
+﻿// ***********************************************************************
+// Assembly         : ESWProjectAlbergue
+// Author           : migue
+// Created          : 02-07-2019
+//
+// Last Modified By : migue
+// Last Modified On : 01-21-2019
+// ***********************************************************************
+// <copyright file="DbInitializer.cs" company="ESWProjectAlbergue">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.Threading.Tasks;
 using ESWProjectAlbergue.Models;
 
 using Microsoft.AspNetCore.Identity;
 
 namespace ESWProjectAlbergue.Models
 {
+    /// <summary>
+    /// Class DbInitializer.
+    /// </summary>
     public class DbInitializer
     {
         // Sem gestão de utilizadores e papeis
         //public static void Initialize(ESWProjectAlbergueContext context)
 
         // Com gestão de utilizadores e papeis
+        /// <summary>
+        /// Initializes the specified context.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="userManager">The user manager.</param>
+        /// <param name="roleManager">The role manager.</param>
+        /// <returns>Task.</returns>
         public static async Task Initialize(ESWProjectAlbergueContext context, UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
