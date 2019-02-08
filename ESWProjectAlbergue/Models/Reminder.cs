@@ -10,27 +10,35 @@ namespace ESWProjectAlbergue.Models
     public class Reminder
     {
         public int ReminderId { get; set; }
+
         [DisplayName("Autor")]
-        public string UserCreater { get; set; }
+        public string UserCreaterId { get; set; }
+
         [DisplayName("Autor")]
-        public ApplicationUser UserCreaterId { get; set; }
+        public ApplicationUser UserCreater { get; set; }
 
         [DisplayName("Data Criação")]
         public DateTime DateCreate { get; set; }
 
         [DisplayName("Prazo para a Realização")]
         public DateTime DateEnd { get; set; }
+
         [DisplayName("Título")]
         public string Title { get; set; }
+
         [DisplayName("Descrição")]
         public string Description { get; set; }
+
         [DisplayName("É um evento")]
         public bool IsEvent { get; set; }
+
         [DisplayName("Feito?")]
         public bool IsDone { get; set; }
+
         [DisplayName("Destinatário")]
-        public string UserReminder { get; set; }
+        public string UserReminderId { get; set; }
+
         [DisplayName("Destinatário")]
-        public ApplicationUser UserReminderId { get; set; }
+        public ApplicationUser UserReminder { get; set; }
     }
 }

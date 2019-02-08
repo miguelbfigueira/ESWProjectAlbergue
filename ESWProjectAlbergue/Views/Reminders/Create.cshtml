@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Create";
-    
 }
 
 <h2>Create</h2>
@@ -14,9 +13,17 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="UserReminderId.Email" class="control-label"></label>
-                <select asp-for="UserReminderId.Email" asp-items="@ViewBag.users" id="toReminde"></select>
-                <span asp-validation-for="UserReminderId.Email" class="text-danger"></span>
+
+                <input asp-for="UserCreaterId" class="form-control"  style="display:none"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserReminderId" class="control-label"></label>
+                <select asp-for="UserReminderId" class="form-control" asp-items="ViewBag.UserReminderId"></select>
+            </div>
+            <div class="form-group">
+
+                <input asp-for="DateCreate" class="form-control" style="display:none" />
+
             </div>
             <div class="form-group">
                 <label asp-for="DateEnd" class="control-label"></label>
@@ -29,11 +36,10 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Descrição</label>
+                <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-          
             <div class="form-group">
                 <div class="checkbox">
                     <label>
@@ -42,14 +48,21 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="Criar" class="btn btn-default" />
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsDone" /> @Html.DisplayNameFor(model => model.IsDone)
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>
-
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Voltar à lista</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
