@@ -13,16 +13,19 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ReminderId" />
-            <input type="hidden" asp-for="UserCreaterId" />
-            <input type="hidden" asp-for="DateCreate" />
             <div class="form-group">
-                <label asp-for="UserReminderId.Email" class="control-label"></label>
-                <select asp-for="UserReminderId.Email" asp-items="@ViewBag.users" id="toReminde"></select>
-                <span asp-validation-for="UserReminderId.Email" class="text-danger"></span>
+                <label asp-for="UserCreaterId" class="control-label"></label>
+                <select asp-for="UserCreaterId" class="form-control" asp-items="ViewBag.UserCreaterId"></select>
+                <span asp-validation-for="UserCreaterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreate" class="control-label"></label>
+                <input asp-for="DateCreate" class="form-control" />
+                <span asp-validation-for="DateCreate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateEnd" class="control-label"></label>
-                <input asp-for="DateEnd" class="form-control" type="date" />
+                <input asp-for="DateEnd" class="form-control" />
                 <span asp-validation-for="DateEnd" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -31,7 +34,7 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Descrição</label>
+                <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
@@ -48,16 +51,20 @@
                         <input asp-for="IsDone" /> @Html.DisplayNameFor(model => model.IsDone)
                     </label>
                 </div>
-
             </div>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-default" />
+                <label asp-for="UserReminderId" class="control-label"></label>
+                <select asp-for="UserReminderId" class="form-control" asp-items="ViewBag.UserReminderId"></select>
+                <span asp-validation-for="UserReminderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Voltar à lista</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 

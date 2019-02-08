@@ -17,20 +17,19 @@ namespace ESWProjectAlbergue.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IEmailSender _emailSender;
 
-        // private readonly RoleManager<ApplicationUser> _userRole;
-
         public RemindersController(ESWProjectAlbergueContext context, UserManager<ApplicationUser> userManager, IEmailSender emailSender)
         {
             _context = context;
             _userManager = userManager;
             _emailSender = emailSender;
-       
+
         }
 
         // GET: Reminders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Reminder.Include(c => c.UserReminderId).Include(r => r.UserCreaterId).ToListAsync());
+            var eSWProjectAlbergueContext = _context.Reminder.Include(r => r.UserCreater).Include(r => r.UserReminder);
+            return View(await eSWProjectAlbergueContext.ToListAsync());
         }
 
         // GET: Reminders/Details/5
@@ -42,6 +41,8 @@ namespace ESWProjectAlbergue.Controllers
             }
 
             var reminder = await _context.Reminder
+                .Include(r => r.UserCreater)
+                .Include(r => r.UserReminder)
                 .FirstOrDefaultAsync(m => m.ReminderId == id);
             if (reminder == null)
             {
@@ -54,8 +55,8 @@ namespace ESWProjectAlbergue.Controllers
         // GET: Reminders/Create
         public IActionResult Create()
         {
-           
-            ViewBag.users = new SelectList(_userManager.Users.ToList());            
+            ViewData["UserCreaterId"] = new SelectList(_context.User, "Id", "Name");
+            ViewData["UserReminderId"] = new SelectList(_context.User, "Id", "Name");
             return View();
         }
 
@@ -64,19 +65,19 @@ namespace ESWProjectAlbergue.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReminderId,DateEnd,Title,Description,IsEvent,IsDone, UserReminderId")] Reminder reminder)
-        {
-            reminder.UserCreaterId = await _userManager.FindByNameAsync(User.Identity.Name);
-            reminder.DateCreate = DateTime.Now;
-            reminder.UserReminderId = await _userManager.FindByEmailAsync(reminder.UserReminderId.Email);
-            reminder.IsDone = false;
+        public async Task<IActionResult> Create([Bind("ReminderId,DateEnd,Title,Description,IsEvent,IsDone,UserReminderId")] Reminder reminder)
+        {            
             if (ModelState.IsValid)
             {
+                reminder.UserCreater = await _userManager.FindByNameAsync(User.Identity.Name);
+                reminder.UserCreaterId = reminder.UserCreater.Id;
+                reminder.DateCreate = DateTime.Now;
+                reminder.IsDone = false;
                 _context.Add(reminder);
                 await _context.SaveChangesAsync();
-                Console.WriteLine(reminder.UserReminderId.Email);
 
-                await _emailSender.SendEmailAsync(reminder.UserReminderId.Email, "Novo Lembrete",
+                var user = _context.User.Find(reminder.UserReminderId);
+                await _emailSender.SendEmailAsync(user.Email, "Novo Lembrete",
                    $"<h1> Novo Lembrete </h1> " +
                    $"<h4> Tem um novo lembrete </h4> " +
                    $"<p> {reminder.Title} - {reminder.DateEnd} </p> " +
@@ -84,6 +85,8 @@ namespace ESWProjectAlbergue.Controllers
                 return RedirectToAction(nameof(Index));
             }
            
+            ViewData["UserCreaterId"] = new SelectList(_context.User, "Id", "Name", reminder.UserCreaterId);
+            ViewData["UserReminderId"] = new SelectList(_context.User, "Id", "Name", reminder.UserReminderId);
             return View(reminder);
         }
 
@@ -100,7 +103,8 @@ namespace ESWProjectAlbergue.Controllers
             {
                 return NotFound();
             }
-            ViewBag.users = new SelectList(_userManager.Users.ToList());
+            ViewData["UserCreaterId"] = new SelectList(_context.User, "Id", "Name", reminder.UserCreaterId);
+            ViewData["UserReminderId"] = new SelectList(_context.User, "Id", "Name", reminder.UserReminderId);
             return View(reminder);
         }
 
@@ -109,7 +113,7 @@ namespace ESWProjectAlbergue.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ReminderId,DateCreate,DateEnd,Title,Description,IsEvent,IsDone,UserReminderId")] Reminder reminder)
+        public async Task<IActionResult> Edit(int id, [Bind("ReminderId,UserCreaterId,DateCreate,DateEnd,Title,Description,IsEvent,IsDone,UserReminderId")] Reminder reminder)
         {
             if (id != reminder.ReminderId)
             {
@@ -120,10 +124,10 @@ namespace ESWProjectAlbergue.Controllers
             {
                 try
                 {
-                    reminder.UserReminderId = await _userManager.FindByEmailAsync(reminder.UserReminderId.Email);
                     _context.Update(reminder);
                     await _context.SaveChangesAsync();
-                    await _emailSender.SendEmailAsync(reminder.UserReminderId.Email, "ATUALIZAÇÃO! - Lembrete",
+                    var user = _context.User.Find(reminder.UserReminderId);
+                    await _emailSender.SendEmailAsync(user.Email, "ATUALIZAÇÃO! - Lembrete",
                   $"<h1> Atualização Lembrete </h1> " +
                   $"<h4> O seu lembrete foi atualizado </h4> " +
                   $"<p> {reminder.Title} - {reminder.DateEnd} </p> " +
@@ -142,6 +146,8 @@ namespace ESWProjectAlbergue.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["UserCreaterId"] = new SelectList(_context.User, "Id", "Name", reminder.UserCreaterId);
+            ViewData["UserReminderId"] = new SelectList(_context.User, "Id", "Name", reminder.UserReminderId);
             return View(reminder);
         }
 
@@ -154,6 +160,8 @@ namespace ESWProjectAlbergue.Controllers
             }
 
             var reminder = await _context.Reminder
+                .Include(r => r.UserCreater)
+                .Include(r => r.UserReminder)
                 .FirstOrDefaultAsync(m => m.ReminderId == id);
             if (reminder == null)
             {

@@ -1,22 +1,19 @@
 ﻿@model IEnumerable<ESWProjectAlbergue.Models.Reminder>
 
 @{
-    ViewData["Title"] = "Lembretes";
+    ViewData["Title"] = "Index";
 }
 
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Criar Novo Lembrete</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.UserCreaterId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserReminderId)
+                @Html.DisplayNameFor(model => model.UserCreater)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DateCreate)
@@ -36,18 +33,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.IsDone)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserReminder)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <th>
-                @Html.DisplayFor(modelItem => item.UserCreaterId.Name)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.UserReminderId.Name)
-            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserCreater.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateCreate)
             </td>
@@ -61,29 +58,18 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @if (item.IsEvent){
-                    <img src="~/images/check.png" width="16px" height="16px" />
-                }
-                else
-                {
-                    <img src="~/images/cross.png" width="16px" height="16px" />
-                }
+                @Html.DisplayFor(modelItem => item.IsEvent)
             </td>
             <td>
-                @if (item.IsDone)
-                {
-                    <img src="~/images/check.png" width="16px" height="16px" />
-                }
-                else
-                {
-                    <img src="~/images/cross.png" width="16px" height="16px" />
-                }
-              
+                @Html.DisplayFor(modelItem => item.IsDone)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ReminderId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ReminderId">Visualizar</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReminderId">Remover</a>
+                @Html.DisplayFor(modelItem => item.UserReminder.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReminderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReminderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReminderId">Delete</a>
             </td>
         </tr>
 }
