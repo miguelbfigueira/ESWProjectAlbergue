@@ -220,19 +220,28 @@
 
                 <div class="btnsadotar">
                     <div class="btnsadotartotal">
+                        @if ((!User.IsInRole("admins") || !User.IsInRole("funcionarios") || !User.IsInRole("users")) && Model.Adopted == false)
+                        {
+                            @if (Model.Gender == EnumGenderType.MALE)
+                            {
+                                <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id" class="btnadotarmale">Adotar</a>
+                            }
+                            else
+                            {
+                                <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id" class="btnadotarfemale">Adotar</a>
 
+                            }
+
+                        }
                         @if (Model.Gender == EnumGenderType.MALE)
                         {
-                            <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id" class="btnadotarmale">Adotar</a>
                             <a asp-action="Index" class="btnadotarmale">Voltar</a>
                         }
                         else
                         {
-                            <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id" class="btnadotarfemale">Adotar</a>
                             <a asp-action="Index" class="btnadotarfemale">Voltar</a>
 
                         }
-
                     </div>
                 </div>
 
