@@ -167,6 +167,10 @@ namespace ESWProjectAlbergue.Controllers
             }
         }
 
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
 
 
         /// <summary>
