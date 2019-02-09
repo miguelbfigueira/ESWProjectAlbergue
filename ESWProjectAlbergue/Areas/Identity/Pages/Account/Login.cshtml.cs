@@ -79,9 +79,10 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
                 //await _signInManager.UserManager.FindByEmailAsync(Input.Email);
                 //_signInManager.UserManager.IsEmailConfirmedAsync();
 
-                if (!await _signInManager.UserManager.IsEmailConfirmedAsync(user))
+                
+                if (user == null || !await _signInManager.UserManager.IsEmailConfirmedAsync(user))
                 {
-                    ModelState.AddModelError("", "You need to confirm your email.");
+                    ModelState.AddModelError("", "Login Inválido! - Verifique se já se registou ou se confirmou o seu emial");
                     return Page();
                 }
                 if (result.Succeeded)
@@ -100,7 +101,7 @@ namespace ESWProjectAlbergue.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Login Inválido");
                     return Page();
                 }
             }
