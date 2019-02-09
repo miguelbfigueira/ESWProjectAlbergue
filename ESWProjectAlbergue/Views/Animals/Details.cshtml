@@ -4,111 +4,340 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
-<div>
-    <h4>Animal</h4>
-    <hr />
-    <dl class="dl-horizontal">
+    <style>
+        .animalcontainer {
+            background-color: #333333;
+            padding: 20px;
+            padding-top: 6px;
+            border-style: solid;
+            border-width: 5px;
+            align-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin-top: 5px;
+            margin-right: auto;
+            margin-left: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            display: inline-block;
+            background-color: #333333;
+            border-radius: 25px;
+            position: center;
+        }
 
-       
+        .whitetext {
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-size:16px;
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dd>
-            <div>
-                @{
-                    var imgsrc = "";
-                    if (Model.Photo == null)
+        .detalhesanimal {
+            font-family: "Pacifico";
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+            color: #FFFFFF;
+        }
+
+        .nomeanimalmale {
+            font-family: "Pacifico";
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+            color: #02A69E;
+            text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        }
+
+        .nomeanimalFemale {
+            font-family: "Pacifico";
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+            color: hotpink;
+            text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        }
+
+        .animalNameDescAdopt {
+            margin: 0 auto;
+            width: 600px;
+        }
+
+        .animalimagecontainer {
+            display: inline-block;
+            background-color: lightgrey;
+            padding: 10px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        .animalmaindiv {
+            display: flex;
+            justify-content: center;
+            padding: 3px;
+            border-radius: 3px;
+        }
+
+            .animalmaindiv > div {
+            }
+
+        .animaldetails {
+            background-color: grey;
+            padding: 10px;
+            width: fit-content;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        .divider {
+            -webkit-filter: invert(100%);
+            filter: invert(100%);
+            width: 85%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .details {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: inherit;
+        }
+
+        .bolddetails{
+            font-weight: bolder;
+            
+        }
+
+        .btnadotarmale {
+            background-color: #02A69E;
+            text-transform: uppercase;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .btnadotarfemale {
+            background-color: hotpink;
+            text-transform: uppercase;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+            .btnadotarmale:hover {
+                background-color: gray;
+                color: white;
+            }
+
+        .btnadotarfemale:hover {
+            background-color: gray;
+            color: white;
+        }
+
+        .btnsadotar {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: inherit;
+            text-align:center;
+            margin-top:auto;
+            height:200px;
+        }
+
+        .btnsadotartotal {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: inherit;
+            
+            margin-top: 20px;
+            
+        }
+
+        .animalimagesize{
+            max-width:300px;
+            max-height:500px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="animalcontainer">
+
+        
+        
+
+        <div>
+            @{
+                var imgsrc = "";
+                if (Model.Photo == null)
+                {
+                    if (Model.AnimalType == EnumAnimalType.CAT)
                     {
-                        if (Model.AnimalType == EnumAnimalType.CAT)
-                        {
-                            imgsrc = "~/images/caticon.png";
-                        }
-                        if (Model.AnimalType == EnumAnimalType.DOG)
-                        {
-                            imgsrc = "~/images/dogicon.png";
-                        }
-                        if (Model.AnimalType == EnumAnimalType.OTHER)
-                        {
-                            imgsrc = "~/images/interrogacao.png";
-                        }
-
+                        imgsrc = "~/images/caticon.png";
                     }
-                    else
+                    if (Model.AnimalType == EnumAnimalType.DOG)
                     {
-                        var base64 = Convert.ToBase64String(Model.Photo);
-                        imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                        imgsrc = "~/images/dogicon.png";
                     }
+                    if (Model.AnimalType == EnumAnimalType.OTHER)
+                    {
+                        imgsrc = "~/images/interrogacao.png";
+                    }
+
                 }
-            </div>
-            <img src='@imgsrc' width="200px" height="200px" style="border-radius:100px;" />
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.AnimalType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.AnimalType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Breed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Breed.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.SizeType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.SizeType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FurType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FurType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.AgeType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.AgeType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BehaviorType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.BehaviorType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
+                else
+                {
+                    var base64 = Convert.ToBase64String(Model.Photo);
+                    imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                }
+            }
+        </div>
+        <div class="animalmaindiv">
+            <div class="animalimagecontainer">
+                <div class="animalimage">
+                    <img src='@imgsrc' style="border-radius:10px;" class="animalimagesize" />
+                </div>
 
-    </dl>
-</div>
-<div>
-    @if (User.IsInRole("admins") || User.IsInRole("funcionarios") || User.IsInRole("users") )
-    {
-    <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id">Adotar | </a> 
-    }
-<a asp-action="Index">Voltar</a>
-</div>
+                <div class="btnsadotar">
+                    <div class="btnsadotartotal">
+                        @if ((!User.IsInRole("admins") || !User.IsInRole("funcionarios") || !User.IsInRole("users")) && Model.Adopted == false)
+                        {
+                            @if (Model.Gender == EnumGenderType.MALE)
+                            {
+                                <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id" class="btnadotarmale">Adotar</a>
+                            }
+                            else
+                            {
+                                <a asp-controller="AdoptionForms" asp-action="Create" asp-route-id="@Model.Id" class="btnadotarfemale">Adotar</a>
+
+                            }
+
+                        }
+                        @if (Model.Gender == EnumGenderType.MALE)
+                        {
+                            <a asp-action="Index" class="btnadotarmale">Voltar</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Index" class="btnadotarfemale">Voltar</a>
+
+                        }
+                    </div>
+                </div>
+
+
+
+            </div>
+            
+            <div class="animaldetails">
+                <h4 class="detalhesanimal">Detalhes do Animal</h4>
+                @if (Model.Gender == EnumGenderType.FEMALE)
+                {
+                    <h4 class="nomeanimalFemale">
+                        @Html.DisplayFor(model => model.Name)
+                    </h4>
+                }
+                else
+                {
+                    <h4 class="nomeanimalmale">
+                        @Html.DisplayFor(model => model.Name)
+                    </h4>
+                }
+                <br>
+                <img src="~/images/divider.png " class="divider" />
+                <br>
+                <div class="animalNameDescAdopt whitetext">
+
+                    <p>@Html.DisplayFor(model => model.Description)</p>
+
+                </div>
+
+                <br>
+                <img src="~/images/divider.png " class="divider" />
+                <br>
+
+                <div class="details">
+
+                    <p class="whitetext">
+                        <img src="~/images/paw.png" />
+                        <span class="bolddetails"> @Html.DisplayNameFor(model => model.AnimalType) : </span>
+                        @Html.DisplayFor(model => model.AnimalType)
+                    </p>
+
+                    <p class="whitetext">
+                        <img src="~/images/gender.png" />
+                        <span class="bolddetails">@Html.DisplayNameFor(model => model.Gender) : </span> @Html.DisplayFor(model => model.Gender)
+                    </p>
+
+                    <p class="whitetext">
+                        <img src="~/images/calendar.png" />
+                        <span class="bolddetails"> @Html.DisplayNameFor(model => model.BirthDate) : </span> @Html.DisplayFor(model => model.BirthDate)
+                    </p>
+
+                    <p class="whitetext">
+                        <img src="~/images/dna.png" />
+                        <span class="bolddetails">@Html.DisplayNameFor(model => model.Breed) : </span> @Html.DisplayFor(model => model.Breed.Name)
+                    </p>
+
+                    <p class="whitetext">
+                        <img src="~/images/ruler.png" />
+                        <span class="bolddetails">@Html.DisplayNameFor(model => model.SizeType) : </span> @Html.DisplayFor(model => model.SizeType)
+                    </p>
+
+                    <p class="whitetext">
+                        <img src="~/images/grass.png" />
+                        <span class="bolddetails">@Html.DisplayNameFor(model => model.FurType) : </span> @Html.DisplayFor(model => model.FurType)
+                    </p>
+
+                    <p class="whitetext">
+                        <img src="~/images/hourglass.png" />
+                        <span class="bolddetails">@Html.DisplayNameFor(model => model.AgeType) : </span> @Html.DisplayFor(model => model.AgeType)
+                    </p>
+
+                    <p class="whitetext">
+                        <img src="~/images/toys.png" />
+                        <span class="bolddetails">@Html.DisplayNameFor(model => model.BehaviorType) : </span> @Html.DisplayFor(model => model.BehaviorType)
+                    </p>
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        </div>
+</body>

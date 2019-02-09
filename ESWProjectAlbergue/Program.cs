@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : ESWProjectAlbergue
+// Author           : migue
+// Created          : 11-20-2018
+//
+// Last Modified By : migue
+// Last Modified On : 02-08-2019
+// ***********************************************************************
+// <copyright file="Program.cs" company="ESWProjectAlbergue">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,11 +26,18 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace MediatecaEst
+namespace ESWProjectAlbergue
 {
+    /// <summary>
+    /// Class Program.
+    /// </summary>
     public class Program
     {
 
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
         public static void Main(string[] args)
         {
             var host = BuildWebHost(args);
@@ -44,6 +64,11 @@ namespace MediatecaEst
             host.Run();
         }
 
+        /// <summary>
+        /// Builds the web host.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <returns>IWebHost.</returns>
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()

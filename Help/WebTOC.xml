@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="ffcddbc3-ddb5-4b07-bafc-65b60c92c1e0" Title="ESWProjectAlbergue Namespace" Url="html/N-ESWProjectAlbergue.htm">
+    <HelpTOCNode Id="c716cf08-a94f-4596-9437-223f0aff8e2f" Title="Startup Class" Url="html/T-ESWProjectAlbergue.Startup.htm">
+      <HelpTOCNode Title="Startup Members" Url="html/AllMembers.T-ESWProjectAlbergue.Startup.htm" />
+      <HelpTOCNode Title="Startup Constructor " Url="html/M-ESWProjectAlbergue.Startup.-ctor.htm" />
+      <HelpTOCNode Id="49f46e58-34fa-4822-b8f8-04434b0865cb" Title="Startup Methods" Url="html/Methods.T-ESWProjectAlbergue.Startup.htm">
+        <HelpTOCNode Title="Configure Method " Url="html/M-ESWProjectAlbergue.Startup.Configure.htm" />
+        <HelpTOCNode Title="ConfigureServices Method " Url="html/M-ESWProjectAlbergue.Startup.ConfigureServices.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="122a9b81-e977-456c-bf76-77f842407aad" Title="Startup Properties" Url="html/Properties.T-ESWProjectAlbergue.Startup.htm">
+        <HelpTOCNode Title="Configuration Property " Url="html/P-ESWProjectAlbergue.Startup.Configuration.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="e901a189-bb75-473d-923a-cd78c70abc52" Title="ESWProjectAlbergue.Areas.Identity Namespace" Url="html/N-ESWProjectAlbergue.Areas.Identity.htm">
+    <HelpTOCNode Id="c49376d4-0f50-4062-a80e-875293374785" Title="IdentityHostingStartup Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.IdentityHostingStartup.htm">
+      <HelpTOCNode Title="IdentityHostingStartup Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.IdentityHostingStartup.htm" />
+      <HelpTOCNode Id="d9b00004-afdb-4b9c-a5d7-7e74afc36f83" Title="IdentityHostingStartup Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.IdentityHostingStartup.htm">
+        <HelpTOCNode Title="Configure Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.IdentityHostingStartup.Configure.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="93478bc9-f73b-41cc-be4e-4b0081e1281b" Title="ESWProjectAlbergue.Areas.Identity.Pages.Account Namespace" Url="html/N-ESWProjectAlbergue.Areas.Identity.Pages.Account.htm">
+    <HelpTOCNode Id="eff52744-fcbd-49c3-97ef-ad646d348197" Title="AccessDeniedModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.AccessDeniedModel.htm">
+      <HelpTOCNode Title="AccessDeniedModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.AccessDeniedModel.htm" />
+      <HelpTOCNode Id="0b9bd770-2cb0-4df6-a350-5239fda50844" Title="AccessDeniedModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.AccessDeniedModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.AccessDeniedModel.OnGet.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AccessDeniedModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.AccessDeniedModel.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="fc02977a-e505-4595-9bfa-78a8e2419f00" Title="ConfirmEmailModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ConfirmEmailModel.htm">
+      <HelpTOCNode Title="ConfirmEmailModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ConfirmEmailModel.htm" />
+      <HelpTOCNode Title="ConfirmEmailModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ConfirmEmailModel.-ctor.htm" />
+      <HelpTOCNode Id="d9c9d47b-c121-4789-9e89-a350289e1969" Title="ConfirmEmailModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ConfirmEmailModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ConfirmEmailModel.OnGetAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ConfirmEmailModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ConfirmEmailModel.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="1f1fee9d-e22b-4a5b-bb6f-f722ca3e1103" Title="ExternalLoginModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.htm">
+      <HelpTOCNode Title="ExternalLoginModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.htm" />
+      <HelpTOCNode Title="ExternalLoginModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.-ctor.htm" />
+      <HelpTOCNode Id="0aad0d9a-6524-410f-a9b1-bb4732c2f143" Title="ExternalLoginModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnGetCallbackAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.OnGetCallbackAsync.htm" />
+        <HelpTOCNode Title="OnPost Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.OnPost.htm" />
+        <HelpTOCNode Title="OnPostConfirmationAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.OnPostConfirmationAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1f8b7318-e8f2-438e-88ad-ec8cf8d58905" Title="ExternalLoginModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.htm">
+        <HelpTOCNode Title="ErrorMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.ErrorMessage.htm" />
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.Input.htm" />
+        <HelpTOCNode Title="LoginProvider Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.LoginProvider.htm" />
+        <HelpTOCNode Title="ReturnUrl Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.ReturnUrl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c8bf4011-8f75-4dfb-88dd-3d7a12ec8260" Title="ExternalLoginModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel.htm">
+      <HelpTOCNode Title="ExternalLoginModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel.htm" />
+      <HelpTOCNode Title="ExternalLoginModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel.htm" />
+      <HelpTOCNode Id="bb02d2bc-3e4d-43a7-9f47-92062c4f32a2" Title="ExternalLoginModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel.htm">
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ExternalLoginModel.InputModel.Email.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6d20d849-ed95-46a8-9438-b6e4783be1df" Title="ForgotPasswordConfirmation Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.htm">
+      <HelpTOCNode Title="ForgotPasswordConfirmation Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.htm" />
+      <HelpTOCNode Id="27e99286-c1e0-4833-9738-7422f83a65d8" Title="ForgotPasswordConfirmation Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.OnGet.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ForgotPasswordConfirmation Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="b24fb804-8398-432d-913f-efa52532e517" Title="ForgotPasswordModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.htm">
+      <HelpTOCNode Title="ForgotPasswordModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.htm" />
+      <HelpTOCNode Title="ForgotPasswordModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.-ctor.htm" />
+      <HelpTOCNode Id="17365c33-1bd2-475a-b518-9e35548a3d08" Title="ForgotPasswordModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.htm">
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b73d1331-869e-4f3a-a367-67d3d0b67e8d" Title="ForgotPasswordModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.Input.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2ae8f712-2957-448b-9d97-759f17e58ee1" Title="ForgotPasswordModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel.htm">
+      <HelpTOCNode Title="ForgotPasswordModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel.htm" />
+      <HelpTOCNode Title="ForgotPasswordModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel.htm" />
+      <HelpTOCNode Id="b09c6192-3396-4032-a743-cf386c12d868" Title="ForgotPasswordModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel.htm">
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ForgotPasswordModel.InputModel.Email.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ae9bfa2a-eb22-4557-8fb6-bdd11e180321" Title="LockoutModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LockoutModel.htm">
+      <HelpTOCNode Title="LockoutModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LockoutModel.htm" />
+      <HelpTOCNode Id="38e845a7-ad2e-4423-97d1-25d040d08ca8" Title="LockoutModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LockoutModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LockoutModel.OnGet.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="LockoutModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LockoutModel.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="1afd23aa-f733-4a08-a473-a7b17d05118f" Title="LoginModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.htm">
+      <HelpTOCNode Title="LoginModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.htm" />
+      <HelpTOCNode Title="LoginModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.-ctor.htm" />
+      <HelpTOCNode Id="63e4ed29-1bf4-4a65-8552-d40624ee3eaf" Title="LoginModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="833f044d-026e-4f3c-9f96-b306e6329816" Title="LoginModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.htm">
+        <HelpTOCNode Title="ErrorMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.ErrorMessage.htm" />
+        <HelpTOCNode Title="ExternalLogins Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.ExternalLogins.htm" />
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.Input.htm" />
+        <HelpTOCNode Title="ReturnUrl Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.ReturnUrl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="a3508f56-ac3c-4fc9-8b4e-af4b340845b4" Title="LoginModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.InputModel.htm">
+      <HelpTOCNode Title="LoginModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.InputModel.htm" />
+      <HelpTOCNode Title="LoginModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.InputModel.htm" />
+      <HelpTOCNode Id="85f084cb-a70f-45c5-980f-b6a580feb579" Title="LoginModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.InputModel.htm">
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.InputModel.Email.htm" />
+        <HelpTOCNode Title="Password Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.InputModel.Password.htm" />
+        <HelpTOCNode Title="RememberMe Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginModel.InputModel.RememberMe.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5f570ff1-1de9-4f2f-bad0-fe9304f6d451" Title="LoginWith2faModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.htm">
+      <HelpTOCNode Title="LoginWith2faModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.htm" />
+      <HelpTOCNode Title="LoginWith2faModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.-ctor.htm" />
+      <HelpTOCNode Id="da78488e-0468-407c-a502-a6a2707284c1" Title="LoginWith2faModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b44d97a3-9c29-43d2-b09c-1c4d756b4429" Title="LoginWith2faModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.Input.htm" />
+        <HelpTOCNode Title="RememberMe Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.RememberMe.htm" />
+        <HelpTOCNode Title="ReturnUrl Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.ReturnUrl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="07c93e54-d7dd-4a2c-8f33-afa5d2fe7df9" Title="LoginWith2faModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.htm">
+      <HelpTOCNode Title="LoginWith2faModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.htm" />
+      <HelpTOCNode Title="LoginWith2faModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.htm" />
+      <HelpTOCNode Id="644dea37-a7d5-432d-a129-dcd17a011225" Title="LoginWith2faModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.htm">
+        <HelpTOCNode Title="RememberMachine Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.RememberMachine.htm" />
+        <HelpTOCNode Title="TwoFactorCode Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWith2faModel.InputModel.TwoFactorCode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e2f55d53-aebe-4451-8252-9c41fbdda84b" Title="LoginWithRecoveryCodeModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.htm">
+      <HelpTOCNode Title="LoginWithRecoveryCodeModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.htm" />
+      <HelpTOCNode Title="LoginWithRecoveryCodeModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.-ctor.htm" />
+      <HelpTOCNode Id="73badade-67d8-439a-8805-49ee15eb493f" Title="LoginWithRecoveryCodeModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="23e3883a-bad9-4385-a049-9074f4b7bfe3" Title="LoginWithRecoveryCodeModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.Input.htm" />
+        <HelpTOCNode Title="ReturnUrl Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.ReturnUrl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ebe8b8ec-99d7-454e-a39a-dd3e9e2d2044" Title="LoginWithRecoveryCodeModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel.htm">
+      <HelpTOCNode Title="LoginWithRecoveryCodeModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel.htm" />
+      <HelpTOCNode Title="LoginWithRecoveryCodeModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel.htm" />
+      <HelpTOCNode Id="65d52020-a94e-479a-b299-259efdf442d9" Title="LoginWithRecoveryCodeModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel.htm">
+        <HelpTOCNode Title="RecoveryCode Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.LoginWithRecoveryCodeModel.InputModel.RecoveryCode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d0890b94-9546-4770-9aab-a38f47cbc3b5" Title="LogoutModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LogoutModel.htm">
+      <HelpTOCNode Title="LogoutModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LogoutModel.htm" />
+      <HelpTOCNode Title="LogoutModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LogoutModel.-ctor.htm" />
+      <HelpTOCNode Id="77668aab-a013-43ae-8108-57f42fca062c" Title="LogoutModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LogoutModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LogoutModel.OnGet.htm" />
+        <HelpTOCNode Title="OnPost Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.LogoutModel.OnPost.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="LogoutModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.LogoutModel.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="ffdc212b-8582-4a6a-b596-5f04a6cc1996" Title="RegisterFuncModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.htm">
+      <HelpTOCNode Title="RegisterFuncModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.htm" />
+      <HelpTOCNode Title="RegisterFuncModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.-ctor.htm" />
+      <HelpTOCNode Id="dd43cd2c-028f-4205-8aff-c8db574a42c6" Title="RegisterFuncModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.OnGet.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a6e3b4ee-be9e-45a8-ac20-96bd1d9cf5fb" Title="RegisterFuncModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.Input.htm" />
+        <HelpTOCNode Title="ReturnUrl Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.ReturnUrl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="bd4608b0-cb96-4eb9-8f1b-1d53cc23369b" Title="RegisterFuncModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.htm">
+      <HelpTOCNode Title="RegisterFuncModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.htm" />
+      <HelpTOCNode Title="RegisterFuncModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.htm" />
+      <HelpTOCNode Id="55c791a1-998d-4984-ba10-c3fb7841bc89" Title="RegisterFuncModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.htm">
+        <HelpTOCNode Title="Address Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.Address.htm" />
+        <HelpTOCNode Title="BirthDate Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.BirthDate.htm" />
+        <HelpTOCNode Title="ConfirmPassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.ConfirmPassword.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.Email.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.Name.htm" />
+        <HelpTOCNode Title="Password Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.Password.htm" />
+        <HelpTOCNode Title="Role Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterFuncModel.InputModel.Role.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d1e42c5f-c211-4f9e-b798-9cc088e52328" Title="RegisterModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.htm">
+      <HelpTOCNode Title="RegisterModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.htm" />
+      <HelpTOCNode Title="RegisterModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.-ctor.htm" />
+      <HelpTOCNode Id="2ecd3775-e263-4e93-9fac-5947e814d555" Title="RegisterModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.OnGet.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0f0af1ca-9ab1-435a-862e-951749f85597" Title="RegisterModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.Input.htm" />
+        <HelpTOCNode Title="ReturnUrl Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.ReturnUrl.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="83cbc7b1-5dec-43bc-8593-0ed5e0a6d061" Title="RegisterModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.htm">
+      <HelpTOCNode Title="RegisterModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.htm" />
+      <HelpTOCNode Title="RegisterModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.htm" />
+      <HelpTOCNode Id="e5f7afeb-c2c3-480d-aa25-deae9390bda3" Title="RegisterModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.htm">
+        <HelpTOCNode Title="Address Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.Address.htm" />
+        <HelpTOCNode Title="BirthDate Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.BirthDate.htm" />
+        <HelpTOCNode Title="ConfirmPassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.ConfirmPassword.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.Email.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.Name.htm" />
+        <HelpTOCNode Title="Password Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.Password.htm" />
+        <HelpTOCNode Title="Role Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.RegisterModel.InputModel.Role.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="04312fc7-2ae3-4bfc-8db5-04f7231d41de" Title="ResetPasswordConfirmationModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel.htm">
+      <HelpTOCNode Title="ResetPasswordConfirmationModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel.htm" />
+      <HelpTOCNode Id="98eb8f9c-6996-416b-9d22-974d435187dc" Title="ResetPasswordConfirmationModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel.OnGet.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ResetPasswordConfirmationModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordConfirmationModel.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="4b09553a-d75c-4d7e-a43b-82dc39b408a6" Title="ResetPasswordModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.htm">
+      <HelpTOCNode Title="ResetPasswordModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.htm" />
+      <HelpTOCNode Title="ResetPasswordModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.-ctor.htm" />
+      <HelpTOCNode Id="675de0c4-2282-4a84-a8e6-746c8769aba0" Title="ResetPasswordModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.OnGet.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2091d505-f631-4124-b94f-20e123fe1d95" Title="ResetPasswordModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.Input.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="deef1b45-d676-4d0f-9d4f-ec0c4d1c4595" Title="ResetPasswordModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.htm">
+      <HelpTOCNode Title="ResetPasswordModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.htm" />
+      <HelpTOCNode Title="ResetPasswordModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.htm" />
+      <HelpTOCNode Id="95b11d0c-c624-4489-8cde-56a5fbedd7e9" Title="ResetPasswordModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.htm">
+        <HelpTOCNode Title="Code Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.Code.htm" />
+        <HelpTOCNode Title="ConfirmPassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.ConfirmPassword.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.Email.htm" />
+        <HelpTOCNode Title="Password Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.ResetPasswordModel.InputModel.Password.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="2ec4b401-0f18-4cec-b180-1536009f198a" Title="ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage Namespace" Url="html/N-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.htm">
+    <HelpTOCNode Id="cdeaadc2-c01c-4343-a8d9-4f4e88029935" Title="AllFuncionariosModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.htm">
+      <HelpTOCNode Title="AllFuncionariosModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.htm" />
+      <HelpTOCNode Title="AllFuncionariosModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.-ctor.htm" />
+      <HelpTOCNode Id="06f1264d-8848-4aca-b8d8-2b944f8d7fc2" Title="AllFuncionariosModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="Promote Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.Promote.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d1bfeb14-c593-4823-99fd-5362529f6907" Title="AllFuncionariosModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.Input.htm" />
+        <HelpTOCNode Title="IsEmailConfirmed Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.IsEmailConfirmed.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.StatusMessage.htm" />
+        <HelpTOCNode Title="Username Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.Username.htm" />
+        <HelpTOCNode Title="users Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.users.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7b694be3-c30c-43b4-945f-4e51fdd479f3" Title="AllFuncionariosModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.htm">
+      <HelpTOCNode Title="AllFuncionariosModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.htm" />
+      <HelpTOCNode Title="AllFuncionariosModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.htm" />
+      <HelpTOCNode Id="c76a0894-e23a-4c89-ac16-5dd5d95b108e" Title="AllFuncionariosModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.htm">
+        <HelpTOCNode Title="Address Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.Address.htm" />
+        <HelpTOCNode Title="BirthDate Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.BirthDate.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.Email.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.Name.htm" />
+        <HelpTOCNode Title="PhoneNumber Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.PhoneNumber.htm" />
+        <HelpTOCNode Title="PostalCode Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllFuncionariosModel.InputModel.PostalCode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cd0779ed-0223-4d0d-8c92-1a0d3f91e11a" Title="AllUsersModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.htm">
+      <HelpTOCNode Title="AllUsersModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.htm" />
+      <HelpTOCNode Title="AllUsersModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.-ctor.htm" />
+      <HelpTOCNode Id="79619385-ed1a-47d7-995b-ddd2c91ae63f" Title="AllUsersModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.htm">
+        <HelpTOCNode Title="FiltrarFuncionarios Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.FiltrarFuncionarios.htm" />
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="Promote Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.Promote.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0029aeeb-179f-4833-9b74-7b19bcd10084" Title="AllUsersModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.Input.htm" />
+        <HelpTOCNode Title="IsEmailConfirmed Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.IsEmailConfirmed.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.StatusMessage.htm" />
+        <HelpTOCNode Title="Username Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.Username.htm" />
+        <HelpTOCNode Title="users Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.users.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="73263d96-caee-4c40-ac39-0b35b5801a57" Title="AllUsersModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.htm">
+      <HelpTOCNode Title="AllUsersModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.htm" />
+      <HelpTOCNode Title="AllUsersModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.htm" />
+      <HelpTOCNode Id="56e9e92f-6414-48ef-8957-cf1d5715326e" Title="AllUsersModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.htm">
+        <HelpTOCNode Title="Address Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.Address.htm" />
+        <HelpTOCNode Title="BirthDate Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.BirthDate.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.Email.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.Name.htm" />
+        <HelpTOCNode Title="PhoneNumber Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.PhoneNumber.htm" />
+        <HelpTOCNode Title="PostalCode Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.AllUsersModel.InputModel.PostalCode.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9c5d5aa5-24f8-40e1-bbcc-2ecc5de79a14" Title="ChangePasswordModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.htm">
+      <HelpTOCNode Title="ChangePasswordModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.htm" />
+      <HelpTOCNode Title="ChangePasswordModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.-ctor.htm" />
+      <HelpTOCNode Id="ab5b8e7d-9062-48ec-b410-5d112b3b5643" Title="ChangePasswordModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b3ebde30-2258-4485-8981-076f333a3638" Title="ChangePasswordModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.Input.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.StatusMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b05f14a0-0914-4dc5-89d2-1cfca8ef32be" Title="ChangePasswordModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.htm">
+      <HelpTOCNode Title="ChangePasswordModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.htm" />
+      <HelpTOCNode Title="ChangePasswordModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.htm" />
+      <HelpTOCNode Id="d6129f7c-e8f1-4a0e-ad9f-d1f636bed653" Title="ChangePasswordModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.htm">
+        <HelpTOCNode Title="ConfirmPassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.ConfirmPassword.htm" />
+        <HelpTOCNode Title="NewPassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.NewPassword.htm" />
+        <HelpTOCNode Title="OldPassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ChangePasswordModel.InputModel.OldPassword.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="699f69c3-8657-4fa8-b385-2e1a1f0ae143" Title="DeletePersonalDataModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.htm">
+      <HelpTOCNode Title="DeletePersonalDataModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.htm" />
+      <HelpTOCNode Title="DeletePersonalDataModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.-ctor.htm" />
+      <HelpTOCNode Id="b4aa7dd8-1dc6-40f8-8985-a6e845c22e76" Title="DeletePersonalDataModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.OnGet.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0e60f33a-4d32-46ce-8d08-c3a25284f65c" Title="DeletePersonalDataModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.Input.htm" />
+        <HelpTOCNode Title="RequirePassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.RequirePassword.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cc381f7f-a327-4689-9792-0b3d3fb7a04e" Title="DeletePersonalDataModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel.htm">
+      <HelpTOCNode Title="DeletePersonalDataModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel.htm" />
+      <HelpTOCNode Title="DeletePersonalDataModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel.htm" />
+      <HelpTOCNode Id="01abb0f8-b4bc-4ddc-b7ad-5095ba756f3d" Title="DeletePersonalDataModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel.htm">
+        <HelpTOCNode Title="Password Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DeletePersonalDataModel.InputModel.Password.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e0a09b25-1761-4899-a775-3bfc7077f45d" Title="Disable2faModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.Disable2faModel.htm">
+      <HelpTOCNode Title="Disable2faModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.Disable2faModel.htm" />
+      <HelpTOCNode Title="Disable2faModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.Disable2faModel.-ctor.htm" />
+      <HelpTOCNode Id="27e23b89-c0d1-4a2a-95cc-ccdc15b64625" Title="Disable2faModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.Disable2faModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.Disable2faModel.OnGet.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.Disable2faModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="75cbebc4-818f-4f2d-8060-bc6b07d17827" Title="Disable2faModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.Disable2faModel.htm">
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.Disable2faModel.StatusMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6ed4aa28-7f05-45c1-913d-971b0a9b8bd6" Title="DownloadPersonalDataModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.htm">
+      <HelpTOCNode Title="DownloadPersonalDataModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.htm" />
+      <HelpTOCNode Title="DownloadPersonalDataModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.-ctor.htm" />
+      <HelpTOCNode Id="6cb98d0a-03d9-42a6-a83f-058de7964cce" Title="DownloadPersonalDataModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.htm">
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="DownloadPersonalDataModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.DownloadPersonalDataModel.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="791c9fb8-1f98-4d81-a2cd-0f780053949f" Title="EnableAuthenticatorModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.htm">
+      <HelpTOCNode Title="EnableAuthenticatorModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.htm" />
+      <HelpTOCNode Title="EnableAuthenticatorModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.-ctor.htm" />
+      <HelpTOCNode Id="4923da6e-10f3-4542-8079-24961df34d0b" Title="EnableAuthenticatorModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7dc7d649-e2a0-46a0-bfe7-23799e50794d" Title="EnableAuthenticatorModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.htm">
+        <HelpTOCNode Title="AuthenticatorUri Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.AuthenticatorUri.htm" />
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.Input.htm" />
+        <HelpTOCNode Title="RecoveryCodes Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.RecoveryCodes.htm" />
+        <HelpTOCNode Title="SharedKey Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.SharedKey.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.StatusMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9246ef1c-e902-4019-9102-bd927ce80088" Title="EnableAuthenticatorModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel.htm">
+      <HelpTOCNode Title="EnableAuthenticatorModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel.htm" />
+      <HelpTOCNode Title="EnableAuthenticatorModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel.htm" />
+      <HelpTOCNode Id="4baa45a2-ac3f-462a-a6a7-4d8c26bb9037" Title="EnableAuthenticatorModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel.htm">
+        <HelpTOCNode Title="Code Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.EnableAuthenticatorModel.InputModel.Code.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="48c3d61f-f632-4e28-9eeb-8cfe2fcf4266" Title="ExternalLoginsModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.htm">
+      <HelpTOCNode Title="ExternalLoginsModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.htm" />
+      <HelpTOCNode Title="ExternalLoginsModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.-ctor.htm" />
+      <HelpTOCNode Id="3bd83050-bfba-4aca-8524-401bf8b58215" Title="ExternalLoginsModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnGetLinkLoginCallbackAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OnGetLinkLoginCallbackAsync.htm" />
+        <HelpTOCNode Title="OnPostLinkLoginAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OnPostLinkLoginAsync.htm" />
+        <HelpTOCNode Title="OnPostRemoveLoginAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OnPostRemoveLoginAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="273b4f66-d296-43d6-a81b-19efe9257180" Title="ExternalLoginsModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.htm">
+        <HelpTOCNode Title="CurrentLogins Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.CurrentLogins.htm" />
+        <HelpTOCNode Title="OtherLogins Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.OtherLogins.htm" />
+        <HelpTOCNode Title="ShowRemoveButton Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.ShowRemoveButton.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ExternalLoginsModel.StatusMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1de0c8ba-f438-4c95-9b6d-4ac05db30dd3" Title="GenerateRecoveryCodesModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.htm">
+      <HelpTOCNode Title="GenerateRecoveryCodesModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.htm" />
+      <HelpTOCNode Title="GenerateRecoveryCodesModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.-ctor.htm" />
+      <HelpTOCNode Id="db8981ab-085f-47b7-bea5-004b9ba456a9" Title="GenerateRecoveryCodesModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="185a9363-3f89-40ef-881a-2188fa8901f3" Title="GenerateRecoveryCodesModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.htm">
+        <HelpTOCNode Title="RecoveryCodes Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.RecoveryCodes.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.GenerateRecoveryCodesModel.StatusMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="94b150b4-24f3-42b1-a116-0e8233c41b8e" Title="IndexModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.htm">
+      <HelpTOCNode Title="IndexModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.htm" />
+      <HelpTOCNode Title="IndexModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.-ctor.htm" />
+      <HelpTOCNode Id="4f465f7e-6045-4027-91d2-a304b69c0f46" Title="IndexModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.htm">
+        <HelpTOCNode Title="IDRedirect Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.IDRedirect.htm" />
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.OnPostAsync.htm" />
+        <HelpTOCNode Title="OnPostSendVerificationEmailAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.OnPostSendVerificationEmailAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1172c8f8-864d-465c-be38-89d36688d6ed" Title="IndexModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.Input.htm" />
+        <HelpTOCNode Title="IsEmailConfirmed Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.IsEmailConfirmed.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.StatusMessage.htm" />
+        <HelpTOCNode Title="Username Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.Username.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d2b486f3-4c34-4dfc-b651-a165a8684263" Title="IndexModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.htm">
+      <HelpTOCNode Title="IndexModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.htm" />
+      <HelpTOCNode Title="IndexModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.htm" />
+      <HelpTOCNode Id="05fec090-a00e-4956-96d8-d31ee77004c3" Title="IndexModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.htm">
+        <HelpTOCNode Title="Address Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.Address.htm" />
+        <HelpTOCNode Title="BirthDate Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.BirthDate.htm" />
+        <HelpTOCNode Title="Email Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.Email.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.Name.htm" />
+        <HelpTOCNode Title="PhoneNumber Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.IndexModel.InputModel.PhoneNumber.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1cbf6e08-5ff5-4d1f-ac64-b77dab38ec9d" Title="ManageNavPages Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.htm">
+      <HelpTOCNode Title="ManageNavPages Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.htm" />
+      <HelpTOCNode Id="b94cdc36-2d82-4bab-ba3b-02a0ef1fe16a" Title="ManageNavPages Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.htm">
+        <HelpTOCNode Title="AllUsersNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.AllUsersNavClass.htm" />
+        <HelpTOCNode Title="ChangePasswordNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.ChangePasswordNavClass.htm" />
+        <HelpTOCNode Title="DeletePersonalDataNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.DeletePersonalDataNavClass.htm" />
+        <HelpTOCNode Title="DownloadPersonalDataNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.DownloadPersonalDataNavClass.htm" />
+        <HelpTOCNode Title="ExternalLoginsNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.ExternalLoginsNavClass.htm" />
+        <HelpTOCNode Title="IndexNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.IndexNavClass.htm" />
+        <HelpTOCNode Title="PageNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.PageNavClass.htm" />
+        <HelpTOCNode Title="PersonalDataNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.PersonalDataNavClass.htm" />
+        <HelpTOCNode Title="TwoFactorAuthenticationNavClass Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.TwoFactorAuthenticationNavClass.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7d01c6b7-c8f6-42f6-b72d-9b79864c3c7a" Title="ManageNavPages Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.htm">
+        <HelpTOCNode Title="ChangePassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.ChangePassword.htm" />
+        <HelpTOCNode Title="DeletePersonalData Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.DeletePersonalData.htm" />
+        <HelpTOCNode Title="DownloadPersonalData Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.DownloadPersonalData.htm" />
+        <HelpTOCNode Title="ExternalLogins Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.ExternalLogins.htm" />
+        <HelpTOCNode Title="Index Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.Index.htm" />
+        <HelpTOCNode Title="PersonalData Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.PersonalData.htm" />
+        <HelpTOCNode Title="TwoFactorAuthentication Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ManageNavPages.TwoFactorAuthentication.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b56ce392-e97f-450c-8fee-565d66973b83" Title="PersonalDataModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.PersonalDataModel.htm">
+      <HelpTOCNode Title="PersonalDataModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.PersonalDataModel.htm" />
+      <HelpTOCNode Title="PersonalDataModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.PersonalDataModel.-ctor.htm" />
+      <HelpTOCNode Id="c0167517-5d6a-4ed1-bbde-3cf67d50d5a1" Title="PersonalDataModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.PersonalDataModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.PersonalDataModel.OnGet.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PersonalDataModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.PersonalDataModel.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="c0994031-839e-41f5-83ac-dc3a54dda1c1" Title="ResetAuthenticatorModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.htm">
+      <HelpTOCNode Title="ResetAuthenticatorModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.htm" />
+      <HelpTOCNode Title="ResetAuthenticatorModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.-ctor.htm" />
+      <HelpTOCNode Id="cb56059f-9926-4de5-a1c7-c4b9395d9c7b" Title="ResetAuthenticatorModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.OnGet.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="55216700-71d0-45a5-8329-a5779b096d35" Title="ResetAuthenticatorModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.htm">
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.ResetAuthenticatorModel.StatusMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4deb9efc-37f5-4bf2-b119-33cea8630123" Title="SetPasswordModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.htm">
+      <HelpTOCNode Title="SetPasswordModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.htm" />
+      <HelpTOCNode Title="SetPasswordModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.-ctor.htm" />
+      <HelpTOCNode Id="2637b91b-ff3f-4ff0-b19f-89813bad9768" Title="SetPasswordModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.htm">
+        <HelpTOCNode Title="OnGetAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.OnGetAsync.htm" />
+        <HelpTOCNode Title="OnPostAsync Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.OnPostAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="22a9f6d4-e1b5-4028-8545-b65b06f901f8" Title="SetPasswordModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.htm">
+        <HelpTOCNode Title="Input Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.Input.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.StatusMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d45b0d1c-9029-4348-ba93-3d335f36e565" Title="SetPasswordModel.InputModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.htm">
+      <HelpTOCNode Title="SetPasswordModel.InputModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.htm" />
+      <HelpTOCNode Title="SetPasswordModel.InputModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.htm" />
+      <HelpTOCNode Id="a7b48ec4-ea3b-4e06-9c9e-4d156c4c4a72" Title="SetPasswordModel.InputModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.htm">
+        <HelpTOCNode Title="ConfirmPassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.ConfirmPassword.htm" />
+        <HelpTOCNode Title="NewPassword Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.SetPasswordModel.InputModel.NewPassword.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="fa83a98a-24bb-4045-bcbe-e742db52bd49" Title="TwoFactorAuthenticationModel Class" Url="html/T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.htm">
+      <HelpTOCNode Title="TwoFactorAuthenticationModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.htm" />
+      <HelpTOCNode Title="TwoFactorAuthenticationModel Constructor " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.-ctor.htm" />
+      <HelpTOCNode Id="84dd3c08-fea4-485b-b7e4-dadc1027b7a7" Title="TwoFactorAuthenticationModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.htm">
+        <HelpTOCNode Title="OnGet Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.OnGet.htm" />
+        <HelpTOCNode Title="OnPost Method " Url="html/M-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.OnPost.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="83a1e471-9f3a-4512-b2eb-b45cd849f9ec" Title="TwoFactorAuthenticationModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.htm">
+        <HelpTOCNode Title="HasAuthenticator Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.HasAuthenticator.htm" />
+        <HelpTOCNode Title="Is2faEnabled Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.Is2faEnabled.htm" />
+        <HelpTOCNode Title="IsMachineRemembered Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.IsMachineRemembered.htm" />
+        <HelpTOCNode Title="RecoveryCodesLeft Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.RecoveryCodesLeft.htm" />
+        <HelpTOCNode Title="StatusMessage Property " Url="html/P-ESWProjectAlbergue.Areas.Identity.Pages.Account.Manage.TwoFactorAuthenticationModel.StatusMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="bf435db4-2e49-47b1-b569-fe5d84e3f3a0" Title="ESWProjectAlbergue.Controllers Namespace" Url="html/N-ESWProjectAlbergue.Controllers.htm">
+    <HelpTOCNode Id="e963caee-35b4-477d-9998-c67847e90283" Title="AdoptionFilesController Class" Url="html/T-ESWProjectAlbergue.Controllers.AdoptionFilesController.htm">
+      <HelpTOCNode Title="AdoptionFilesController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Controllers.AdoptionFilesController.htm" />
+      <HelpTOCNode Title="AdoptionFilesController Constructor " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.-ctor.htm" />
+      <HelpTOCNode Id="ebdd70f6-0fb8-4686-86ff-93de1e60c9c5" Title="AdoptionFilesController Methods" Url="html/Methods.T-ESWProjectAlbergue.Controllers.AdoptionFilesController.htm">
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.Details.htm" />
+        <HelpTOCNode Id="59097563-4530-4089-b7bb-b6b8d33a79bb" Title="Edit Method " Url="html/Overload-ESWProjectAlbergue.Controllers.AdoptionFilesController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Int32, AdoptionFile)" Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="FiltrarDate Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.FiltrarDate.htm" />
+        <HelpTOCNode Title="FiltrarRaca Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.FiltrarRaca.htm" />
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFilesController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AdoptionFilesController Properties" Url="html/Properties.T-ESWProjectAlbergue.Controllers.AdoptionFilesController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="3c7c75cf-a8c3-4bcf-8f56-1462b6b176a0" Title="AdoptionFormsController Class" Url="html/T-ESWProjectAlbergue.Controllers.AdoptionFormsController.htm">
+      <HelpTOCNode Title="AdoptionFormsController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Controllers.AdoptionFormsController.htm" />
+      <HelpTOCNode Title="AdoptionFormsController Constructor " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFormsController.-ctor.htm" />
+      <HelpTOCNode Id="8b7f7470-ed38-4989-81ae-93382cdd4185" Title="AdoptionFormsController Methods" Url="html/Methods.T-ESWProjectAlbergue.Controllers.AdoptionFormsController.htm">
+        <HelpTOCNode Title="Create Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFormsController.Create.htm" />
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFormsController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFormsController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFormsController.Details.htm" />
+        <HelpTOCNode Id="881ef3f1-fb01-40de-9830-278568ac4f92" Title="Edit Method " Url="html/Overload-ESWProjectAlbergue.Controllers.AdoptionFormsController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFormsController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Int32, AdoptionForm)" Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFormsController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Controllers.AdoptionFormsController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AdoptionFormsController Properties" Url="html/Properties.T-ESWProjectAlbergue.Controllers.AdoptionFormsController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="60e0612c-6942-48e1-a221-8efd345b74ef" Title="AnimalBreedsController Class" Url="html/T-ESWProjectAlbergue.Controllers.AnimalBreedsController.htm">
+      <HelpTOCNode Title="AnimalBreedsController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Controllers.AnimalBreedsController.htm" />
+      <HelpTOCNode Title="AnimalBreedsController Constructor " Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.-ctor.htm" />
+      <HelpTOCNode Id="86e6c1a5-9d3f-4476-9a9a-7d22fcea320a" Title="AnimalBreedsController Methods" Url="html/Methods.T-ESWProjectAlbergue.Controllers.AnimalBreedsController.htm">
+        <HelpTOCNode Id="e37f5144-1885-47af-8976-7c70a67bf524" Title="Create Method " Url="html/Overload-ESWProjectAlbergue.Controllers.AnimalBreedsController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.Create.htm" />
+          <HelpTOCNode Title="Create Method (AnimalBreed)" Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.Details.htm" />
+        <HelpTOCNode Id="3c2bb9e4-df5a-44bd-8429-2075e2576020" Title="Edit Method " Url="html/Overload-ESWProjectAlbergue.Controllers.AnimalBreedsController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Int32, AnimalBreed)" Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalBreedsController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AnimalBreedsController Properties" Url="html/Properties.T-ESWProjectAlbergue.Controllers.AnimalBreedsController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="218b91af-e3d8-4f38-b2b3-0922037f8ea3" Title="AnimalsController Class" Url="html/T-ESWProjectAlbergue.Controllers.AnimalsController.htm">
+      <HelpTOCNode Title="AnimalsController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Controllers.AnimalsController.htm" />
+      <HelpTOCNode Title="AnimalsController Constructor " Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.-ctor.htm" />
+      <HelpTOCNode Id="5d781f68-fbbb-40c7-b665-39287552ba1e" Title="AnimalsController Methods" Url="html/Methods.T-ESWProjectAlbergue.Controllers.AnimalsController.htm">
+        <HelpTOCNode Id="db1e513f-749b-4662-9ac0-e21053bd3152" Title="Create Method " Url="html/Overload-ESWProjectAlbergue.Controllers.AnimalsController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.Create.htm" />
+          <HelpTOCNode Title="Create Method (Animal, List(IFormFile))" Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.Details.htm" />
+        <HelpTOCNode Id="171aac1d-5a45-43eb-8d07-4c19d922a720" Title="Edit Method " Url="html/Overload-ESWProjectAlbergue.Controllers.AnimalsController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Int32, Animal, List(IFormFile))" Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="FiltrarNome Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.FiltrarNome.htm" />
+        <HelpTOCNode Title="FiltrarNumero Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.FiltrarNumero.htm" />
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Controllers.AnimalsController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AnimalsController Properties" Url="html/Properties.T-ESWProjectAlbergue.Controllers.AnimalsController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="a0d5ac83-2075-44c7-a994-7f7d5996fd1f" Title="HomeController Class" Url="html/T-ESWProjectAlbergue.Controllers.HomeController.htm">
+      <HelpTOCNode Title="HomeController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Controllers.HomeController.htm" />
+      <HelpTOCNode Title="HomeController Constructor " Url="html/M-ESWProjectAlbergue.Controllers.HomeController.-ctor.htm" />
+      <HelpTOCNode Id="f4fedd3e-ab2a-49e2-920c-d31514f52bfa" Title="HomeController Methods" Url="html/Methods.T-ESWProjectAlbergue.Controllers.HomeController.htm">
+        <HelpTOCNode Title="About Method " Url="html/M-ESWProjectAlbergue.Controllers.HomeController.About.htm" />
+        <HelpTOCNode Title="Contact Method " Url="html/M-ESWProjectAlbergue.Controllers.HomeController.Contact.htm" />
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Controllers.HomeController.Delete.htm" />
+        <HelpTOCNode Title="Edit Method " Url="html/M-ESWProjectAlbergue.Controllers.HomeController.Edit.htm" />
+        <HelpTOCNode Title="Error Method " Url="html/M-ESWProjectAlbergue.Controllers.HomeController.Error.htm" />
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Controllers.HomeController.Index.htm" />
+        <HelpTOCNode Title="Privacy Method " Url="html/M-ESWProjectAlbergue.Controllers.HomeController.Privacy.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="HomeController Properties" Url="html/Properties.T-ESWProjectAlbergue.Controllers.HomeController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="26f6f99b-a582-44ca-b26c-1982c45672e0" Title="PerfectAnimalsController Class" Url="html/T-ESWProjectAlbergue.Controllers.PerfectAnimalsController.htm">
+      <HelpTOCNode Title="PerfectAnimalsController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Controllers.PerfectAnimalsController.htm" />
+      <HelpTOCNode Title="PerfectAnimalsController Constructor " Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.-ctor.htm" />
+      <HelpTOCNode Id="60c96942-9fe0-4c42-a21d-8353ba20656b" Title="PerfectAnimalsController Methods" Url="html/Methods.T-ESWProjectAlbergue.Controllers.PerfectAnimalsController.htm">
+        <HelpTOCNode Title="Create Method " Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.Create.htm" />
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.Details.htm" />
+        <HelpTOCNode Id="d9e78bc6-4496-4d29-9711-468a0d9ffda4" Title="Edit Method " Url="html/Overload-ESWProjectAlbergue.Controllers.PerfectAnimalsController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Int32, PerfectAnimal)" Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetAnimalIdeal Method " Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.GetAnimalIdeal.htm" />
+        <HelpTOCNode Title="HowPerfect Method " Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.HowPerfect.htm" />
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Controllers.PerfectAnimalsController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PerfectAnimalsController Properties" Url="html/Properties.T-ESWProjectAlbergue.Controllers.PerfectAnimalsController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="df301457-954e-4d9f-bc9d-af7558fff5e3" Title="RemindersController Class" Url="html/T-ESWProjectAlbergue.Controllers.RemindersController.htm">
+      <HelpTOCNode Title="RemindersController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Controllers.RemindersController.htm" />
+      <HelpTOCNode Title="RemindersController Constructor " Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.-ctor.htm" />
+      <HelpTOCNode Id="d5b9f104-cd61-4921-975a-a9efccc40b87" Title="RemindersController Methods" Url="html/Methods.T-ESWProjectAlbergue.Controllers.RemindersController.htm">
+        <HelpTOCNode Id="1a49f21b-831d-4e99-8d6a-22a2e30500da" Title="Create Method " Url="html/Overload-ESWProjectAlbergue.Controllers.RemindersController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.Create.htm" />
+          <HelpTOCNode Title="Create Method (Reminder)" Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.Details.htm" />
+        <HelpTOCNode Id="be402678-0560-44cb-ab84-1f0e25a637b6" Title="Edit Method " Url="html/Overload-ESWProjectAlbergue.Controllers.RemindersController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Int32, Reminder)" Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Controllers.RemindersController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="RemindersController Properties" Url="html/Properties.T-ESWProjectAlbergue.Controllers.RemindersController.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="a5c55211-df7d-44e8-8c3b-4b4818856195" Title="VisitsController Class" Url="html/T-ESWProjectAlbergue.Controllers.VisitsController.htm">
+      <HelpTOCNode Title="VisitsController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Controllers.VisitsController.htm" />
+      <HelpTOCNode Title="VisitsController Constructor " Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.-ctor.htm" />
+      <HelpTOCNode Id="db39158b-b57a-4964-8b97-abebc560cdbb" Title="VisitsController Methods" Url="html/Methods.T-ESWProjectAlbergue.Controllers.VisitsController.htm">
+        <HelpTOCNode Id="6a323092-670d-4fb1-b83a-926347e0b47f" Title="Create Method " Url="html/Overload-ESWProjectAlbergue.Controllers.VisitsController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.Create.htm" />
+          <HelpTOCNode Title="Create Method (Visit)" Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.Details.htm" />
+        <HelpTOCNode Id="4013bcc3-7475-4dbb-aebb-cdf4e1268f7a" Title="Edit Method " Url="html/Overload-ESWProjectAlbergue.Controllers.VisitsController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Int32, Visit)" Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Controllers.VisitsController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="VisitsController Properties" Url="html/Properties.T-ESWProjectAlbergue.Controllers.VisitsController.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="752623db-1067-49b9-b799-3fd547312102" Title="ESWProjectAlbergue.Migrations Namespace" Url="html/N-ESWProjectAlbergue.Migrations.htm">
+    <HelpTOCNode Id="10713235-aad0-452d-b32a-139c7988801a" Title="_10 Class" Url="html/T-ESWProjectAlbergue.Migrations._10.htm">
+      <HelpTOCNode Title="_10 Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations._10.htm" />
+      <HelpTOCNode Title="_10 Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations._10.htm" />
+      <HelpTOCNode Title="_10 Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations._10.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="a9afea31-eb9b-4d48-810f-3990f12cffd5" Title="_11 Class" Url="html/T-ESWProjectAlbergue.Migrations._11.htm">
+      <HelpTOCNode Title="_11 Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations._11.htm" />
+      <HelpTOCNode Title="_11 Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations._11.htm" />
+      <HelpTOCNode Title="_11 Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations._11.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="5292eee9-da46-42c6-a0dc-6da3e2bd9fcd" Title="_2 Class" Url="html/T-ESWProjectAlbergue.Migrations._2.htm">
+      <HelpTOCNode Title="_2 Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations._2.htm" />
+      <HelpTOCNode Title="_2 Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations._2.htm" />
+      <HelpTOCNode Title="_2 Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations._2.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="280c3e4c-54b8-4653-94ad-47f7c37096b2" Title="_4 Class" Url="html/T-ESWProjectAlbergue.Migrations._4.htm">
+      <HelpTOCNode Title="_4 Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations._4.htm" />
+      <HelpTOCNode Title="_4 Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations._4.htm" />
+      <HelpTOCNode Title="_4 Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations._4.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="4a4eb9b9-15f3-4080-a9b1-0bb7088a45b1" Title="_6 Class" Url="html/T-ESWProjectAlbergue.Migrations._6.htm">
+      <HelpTOCNode Title="_6 Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations._6.htm" />
+      <HelpTOCNode Title="_6 Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations._6.htm" />
+      <HelpTOCNode Title="_6 Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations._6.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="28cfc9c5-a2ee-497b-b448-7d9b1e0fbd64" Title="_7 Class" Url="html/T-ESWProjectAlbergue.Migrations._7.htm">
+      <HelpTOCNode Title="_7 Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations._7.htm" />
+      <HelpTOCNode Title="_7 Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations._7.htm" />
+      <HelpTOCNode Title="_7 Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations._7.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6cae56f6-fa8e-48df-bcb6-bfdf79f4e41c" Title="_8 Class" Url="html/T-ESWProjectAlbergue.Migrations._8.htm">
+      <HelpTOCNode Title="_8 Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations._8.htm" />
+      <HelpTOCNode Title="_8 Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations._8.htm" />
+      <HelpTOCNode Title="_8 Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations._8.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9d415f2e-3eb6-499e-9579-0c8203e97998" Title="_9 Class" Url="html/T-ESWProjectAlbergue.Migrations._9.htm">
+      <HelpTOCNode Title="_9 Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations._9.htm" />
+      <HelpTOCNode Title="_9 Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations._9.htm" />
+      <HelpTOCNode Title="_9 Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations._9.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="c0171fea-ee13-4819-b94d-5457359b2ab9" Title="BreedSeedData Class" Url="html/T-ESWProjectAlbergue.Migrations.BreedSeedData.htm">
+      <HelpTOCNode Title="BreedSeedData Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations.BreedSeedData.htm" />
+      <HelpTOCNode Title="BreedSeedData Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations.BreedSeedData.htm" />
+      <HelpTOCNode Title="BreedSeedData Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations.BreedSeedData.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="acfd2dfc-2c4b-43da-a383-4acae343529b" Title="initial Class" Url="html/T-ESWProjectAlbergue.Migrations.initial.htm">
+      <HelpTOCNode Title="initial Members" Url="html/AllMembers.T-ESWProjectAlbergue.Migrations.initial.htm" />
+      <HelpTOCNode Title="initial Methods" Url="html/Methods.T-ESWProjectAlbergue.Migrations.initial.htm" />
+      <HelpTOCNode Title="initial Properties" Url="html/Properties.T-ESWProjectAlbergue.Migrations.initial.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="cc24f1bc-c184-446a-8366-78a2e9c8d8a3" Title="ESWProjectAlbergue.Models Namespace" Url="html/N-ESWProjectAlbergue.Models.htm">
+    <HelpTOCNode Id="6bd99710-8a3a-439f-aa43-de0b43890735" Title="AdoptionFile Class" Url="html/T-ESWProjectAlbergue.Models.AdoptionFile.htm">
+      <HelpTOCNode Title="AdoptionFile Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.AdoptionFile.htm" />
+      <HelpTOCNode Title="AdoptionFile Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.AdoptionFile.htm" />
+      <HelpTOCNode Id="5f48c89f-8d78-4b22-93f8-0c30ed05b05e" Title="AdoptionFile Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.AdoptionFile.htm">
+        <HelpTOCNode Title="Animal Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionFile.Animal.htm" />
+        <HelpTOCNode Title="AnimalId Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionFile.AnimalId.htm" />
+        <HelpTOCNode Title="ApplicationUser Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionFile.ApplicationUser.htm" />
+        <HelpTOCNode Title="ApplicationUserId Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionFile.ApplicationUserId.htm" />
+        <HelpTOCNode Title="Date Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionFile.Date.htm" />
+        <HelpTOCNode Title="Id Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionFile.Id.htm" />
+        <HelpTOCNode Title="OrderId Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionFile.OrderId.htm" />
+        <HelpTOCNode Title="Status Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionFile.Status.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e01a74ea-5498-44e8-8c54-a97a5d9247c5" Title="AdoptionForm Class" Url="html/T-ESWProjectAlbergue.Models.AdoptionForm.htm">
+      <HelpTOCNode Title="AdoptionForm Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.AdoptionForm.htm" />
+      <HelpTOCNode Title="AdoptionForm Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.AdoptionForm.htm" />
+      <HelpTOCNode Id="35ce0751-60ef-4e43-9939-f3a778696359" Title="AdoptionForm Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.AdoptionForm.htm">
+        <HelpTOCNode Title="AdoptionFormId Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.AdoptionFormId.htm" />
+        <HelpTOCNode Title="Animal Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.Animal.htm" />
+        <HelpTOCNode Title="AnimalId Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.AnimalId.htm" />
+        <HelpTOCNode Title="AnimalTravel Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.AnimalTravel.htm" />
+        <HelpTOCNode Title="AnimalTypes Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.AnimalTypes.htm" />
+        <HelpTOCNode Title="ApplicationUser Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.ApplicationUser.htm" />
+        <HelpTOCNode Title="ApplicationUserId Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.ApplicationUserId.htm" />
+        <HelpTOCNode Title="Cc Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.Cc.htm" />
+        <HelpTOCNode Title="Conscious Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.Conscious.htm" />
+        <HelpTOCNode Title="Date Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.Date.htm" />
+        <HelpTOCNode Title="FinanciallyStable Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.FinanciallyStable.htm" />
+        <HelpTOCNode Title="HouseType Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.HouseType.htm" />
+        <HelpTOCNode Title="HowMany Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.HowMany.htm" />
+        <HelpTOCNode Title="Job Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.Job.htm" />
+        <HelpTOCNode Title="LeaveHouse Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.LeaveHouse.htm" />
+        <HelpTOCNode Title="MoreAnimals Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.MoreAnimals.htm" />
+        <HelpTOCNode Title="NumberOfBedrooms Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.NumberOfBedrooms.htm" />
+        <HelpTOCNode Title="NumberOfPeople Property " Url="html/P-ESWProjectAlbergue.Models.AdoptionForm.NumberOfPeople.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c7446c24-f241-4592-98f4-c917f60cecb1" Title="Animal Class" Url="html/T-ESWProjectAlbergue.Models.Animal.htm">
+      <HelpTOCNode Title="Animal Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.Animal.htm" />
+      <HelpTOCNode Title="Animal Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.Animal.htm" />
+      <HelpTOCNode Id="80506a12-6c25-4494-88bc-1931ff101351" Title="Animal Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.Animal.htm">
+        <HelpTOCNode Title="Adopted Property " Url="html/P-ESWProjectAlbergue.Models.Animal.Adopted.htm" />
+        <HelpTOCNode Title="AgeType Property " Url="html/P-ESWProjectAlbergue.Models.Animal.AgeType.htm" />
+        <HelpTOCNode Title="AnimalType Property " Url="html/P-ESWProjectAlbergue.Models.Animal.AnimalType.htm" />
+        <HelpTOCNode Title="BehaviorType Property " Url="html/P-ESWProjectAlbergue.Models.Animal.BehaviorType.htm" />
+        <HelpTOCNode Title="BirthDate Property " Url="html/P-ESWProjectAlbergue.Models.Animal.BirthDate.htm" />
+        <HelpTOCNode Title="Breed Property " Url="html/P-ESWProjectAlbergue.Models.Animal.Breed.htm" />
+        <HelpTOCNode Title="BreedId Property " Url="html/P-ESWProjectAlbergue.Models.Animal.BreedId.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/P-ESWProjectAlbergue.Models.Animal.Description.htm" />
+        <HelpTOCNode Title="FurType Property " Url="html/P-ESWProjectAlbergue.Models.Animal.FurType.htm" />
+        <HelpTOCNode Title="Gender Property " Url="html/P-ESWProjectAlbergue.Models.Animal.Gender.htm" />
+        <HelpTOCNode Title="Id Property " Url="html/P-ESWProjectAlbergue.Models.Animal.Id.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-ESWProjectAlbergue.Models.Animal.Name.htm" />
+        <HelpTOCNode Title="Photo Property " Url="html/P-ESWProjectAlbergue.Models.Animal.Photo.htm" />
+        <HelpTOCNode Title="SizeType Property " Url="html/P-ESWProjectAlbergue.Models.Animal.SizeType.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1405ea57-773c-4a6d-bd14-a003b89f3778" Title="AnimalBreed Class" Url="html/T-ESWProjectAlbergue.Models.AnimalBreed.htm">
+      <HelpTOCNode Title="AnimalBreed Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.AnimalBreed.htm" />
+      <HelpTOCNode Title="AnimalBreed Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.AnimalBreed.htm" />
+      <HelpTOCNode Id="6f4b80f8-7448-4cfc-9d6c-eb3855f1ca1d" Title="AnimalBreed Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.AnimalBreed.htm">
+        <HelpTOCNode Title="Behavior Property " Url="html/P-ESWProjectAlbergue.Models.AnimalBreed.Behavior.htm" />
+        <HelpTOCNode Title="Id Property " Url="html/P-ESWProjectAlbergue.Models.AnimalBreed.Id.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-ESWProjectAlbergue.Models.AnimalBreed.Name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c919d56f-b0d4-4efe-8b21-5c8d0c2b780f" Title="ApplicationUser Class" Url="html/T-ESWProjectAlbergue.Models.ApplicationUser.htm">
+      <HelpTOCNode Title="ApplicationUser Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.ApplicationUser.htm" />
+      <HelpTOCNode Title="ApplicationUser Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.ApplicationUser.htm" />
+      <HelpTOCNode Id="f9689eb1-0b67-4e48-bf6c-5d4b25360f22" Title="ApplicationUser Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.ApplicationUser.htm">
+        <HelpTOCNode Title="Address Property " Url="html/P-ESWProjectAlbergue.Models.ApplicationUser.Address.htm" />
+        <HelpTOCNode Title="BirthDate Property " Url="html/P-ESWProjectAlbergue.Models.ApplicationUser.BirthDate.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-ESWProjectAlbergue.Models.ApplicationUser.Name.htm" />
+        <HelpTOCNode Title="Postalcode Property " Url="html/P-ESWProjectAlbergue.Models.ApplicationUser.Postalcode.htm" />
+        <HelpTOCNode Title="Role Property " Url="html/P-ESWProjectAlbergue.Models.ApplicationUser.Role.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b91393bc-9265-47b4-a834-cda2cc7e8e72" Title="CheckDateRange Class" Url="html/T-ESWProjectAlbergue.Models.CheckDateRange.htm">
+      <HelpTOCNode Title="CheckDateRange Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.CheckDateRange.htm" />
+      <HelpTOCNode Title="CheckDateRange Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.CheckDateRange.htm" />
+      <HelpTOCNode Title="CheckDateRange Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.CheckDateRange.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9873dba8-c0de-499b-ba9a-9267466b66bb" Title="DbInitializer Class" Url="html/T-ESWProjectAlbergue.Models.DbInitializer.htm">
+      <HelpTOCNode Title="DbInitializer Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.DbInitializer.htm" />
+      <HelpTOCNode Id="e5bb38d6-ef7a-48dc-8696-c1bda27a0e65" Title="DbInitializer Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.DbInitializer.htm">
+        <HelpTOCNode Title="Initialize Method " Url="html/M-ESWProjectAlbergue.Models.DbInitializer.Initialize.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="EnumAdoptionStatus Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumAdoptionStatus.htm" />
+    <HelpTOCNode Title="EnumAgeType Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumAgeType.htm" />
+    <HelpTOCNode Title="EnumAnimalType Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumAnimalType.htm" />
+    <HelpTOCNode Title="EnumBehaviorType Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumBehaviorType.htm" />
+    <HelpTOCNode Title="EnumFurType Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumFurType.htm" />
+    <HelpTOCNode Title="EnumGenderType Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumGenderType.htm" />
+    <HelpTOCNode Title="EnumHouseType Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumHouseType.htm" />
+    <HelpTOCNode Title="EnumLeaveHouse Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumLeaveHouse.htm" />
+    <HelpTOCNode Title="EnumSize Enumeration" Url="html/T-ESWProjectAlbergue.Models.EnumSize.htm" />
+    <HelpTOCNode Id="e99cd8d0-e9fb-469c-8299-6c39ddbde961" Title="ErrorViewModel Class" Url="html/T-ESWProjectAlbergue.Models.ErrorViewModel.htm">
+      <HelpTOCNode Title="ErrorViewModel Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.ErrorViewModel.htm" />
+      <HelpTOCNode Title="ErrorViewModel Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.ErrorViewModel.htm" />
+      <HelpTOCNode Id="c8b8420d-221a-4f95-aa39-78a49cd9e238" Title="ErrorViewModel Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.ErrorViewModel.htm">
+        <HelpTOCNode Title="RequestId Property " Url="html/P-ESWProjectAlbergue.Models.ErrorViewModel.RequestId.htm" />
+        <HelpTOCNode Title="ShowRequestId Property " Url="html/P-ESWProjectAlbergue.Models.ErrorViewModel.ShowRequestId.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2063c1f4-1e95-425d-a9c0-06390d94e6ea" Title="ESWProjectAlbergueContext Class" Url="html/T-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.htm">
+      <HelpTOCNode Title="ESWProjectAlbergueContext Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.htm" />
+      <HelpTOCNode Title="ESWProjectAlbergueContext Constructor " Url="html/M-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.-ctor.htm" />
+      <HelpTOCNode Title="ESWProjectAlbergueContext Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.htm" />
+      <HelpTOCNode Id="b400aff5-73ea-4bd5-b880-d9466d454b20" Title="ESWProjectAlbergueContext Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.htm">
+        <HelpTOCNode Title="AdoptionFile Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.AdoptionFile.htm" />
+        <HelpTOCNode Title="AdoptionForm Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.AdoptionForm.htm" />
+        <HelpTOCNode Title="Animal Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.Animal.htm" />
+        <HelpTOCNode Title="AnimalBreed Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.AnimalBreed.htm" />
+        <HelpTOCNode Title="PerfectAnimal Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.PerfectAnimal.htm" />
+        <HelpTOCNode Title="PosConditionsForm Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.PosConditionsForm.htm" />
+        <HelpTOCNode Title="Reminder Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.Reminder.htm" />
+        <HelpTOCNode Title="User Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.User.htm" />
+        <HelpTOCNode Title="Visit Property " Url="html/P-ESWProjectAlbergue.Models.ESWProjectAlbergueContext.Visit.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="5699277a-733d-4b8a-a75b-7af5787ee902" Title="PerfectAnimal Class" Url="html/T-ESWProjectAlbergue.Models.PerfectAnimal.htm">
+      <HelpTOCNode Title="PerfectAnimal Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.PerfectAnimal.htm" />
+      <HelpTOCNode Title="PerfectAnimal Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.PerfectAnimal.htm" />
+      <HelpTOCNode Id="a9a026fe-48d6-4e95-8f35-e515fcdd3dcf" Title="PerfectAnimal Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.PerfectAnimal.htm">
+        <HelpTOCNode Title="Age Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.Age.htm" />
+        <HelpTOCNode Title="Animal Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.Animal.htm" />
+        <HelpTOCNode Title="AnimalId Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.AnimalId.htm" />
+        <HelpTOCNode Title="Breed Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.Breed.htm" />
+        <HelpTOCNode Title="BreedId Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.BreedId.htm" />
+        <HelpTOCNode Title="Gender Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.Gender.htm" />
+        <HelpTOCNode Title="Percentagem Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.Percentagem.htm" />
+        <HelpTOCNode Title="PerfectAnimalId Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.PerfectAnimalId.htm" />
+        <HelpTOCNode Title="Size Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.Size.htm" />
+        <HelpTOCNode Title="Type Property " Url="html/P-ESWProjectAlbergue.Models.PerfectAnimal.Type.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="088bf3f9-67f0-409a-a42a-44ee4e2dafeb" Title="PosConditionsForm Class" Url="html/T-ESWProjectAlbergue.Models.PosConditionsForm.htm">
+      <HelpTOCNode Title="PosConditionsForm Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.PosConditionsForm.htm" />
+      <HelpTOCNode Title="PosConditionsForm Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.PosConditionsForm.htm" />
+      <HelpTOCNode Id="4984e6a8-3753-41f2-aba3-756f03467c7d" Title="PosConditionsForm Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.PosConditionsForm.htm">
+        <HelpTOCNode Title="AdoptionFile Property " Url="html/P-ESWProjectAlbergue.Models.PosConditionsForm.AdoptionFile.htm" />
+        <HelpTOCNode Title="AdoptionFileId Property " Url="html/P-ESWProjectAlbergue.Models.PosConditionsForm.AdoptionFileId.htm" />
+        <HelpTOCNode Title="Answer1 Property " Url="html/P-ESWProjectAlbergue.Models.PosConditionsForm.Answer1.htm" />
+        <HelpTOCNode Title="Answer2 Property " Url="html/P-ESWProjectAlbergue.Models.PosConditionsForm.Answer2.htm" />
+        <HelpTOCNode Title="Answer3 Property " Url="html/P-ESWProjectAlbergue.Models.PosConditionsForm.Answer3.htm" />
+        <HelpTOCNode Title="Id Property " Url="html/P-ESWProjectAlbergue.Models.PosConditionsForm.Id.htm" />
+        <HelpTOCNode Title="result Property " Url="html/P-ESWProjectAlbergue.Models.PosConditionsForm.result.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9ab4a114-9233-46df-b46e-0f4709c9d812" Title="Reminder Class" Url="html/T-ESWProjectAlbergue.Models.Reminder.htm">
+      <HelpTOCNode Title="Reminder Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.Reminder.htm" />
+      <HelpTOCNode Title="Reminder Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.Reminder.htm" />
+      <HelpTOCNode Id="8fc8b2a7-300f-4355-aef9-f2391975e216" Title="Reminder Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.Reminder.htm">
+        <HelpTOCNode Title="DateCreate Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.DateCreate.htm" />
+        <HelpTOCNode Title="DateEnd Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.DateEnd.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.Description.htm" />
+        <HelpTOCNode Title="IsDone Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.IsDone.htm" />
+        <HelpTOCNode Title="IsEvent Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.IsEvent.htm" />
+        <HelpTOCNode Title="ReminderId Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.ReminderId.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.Title.htm" />
+        <HelpTOCNode Title="UserCreater Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.UserCreater.htm" />
+        <HelpTOCNode Title="UserCreaterId Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.UserCreaterId.htm" />
+        <HelpTOCNode Title="UserReminder Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.UserReminder.htm" />
+        <HelpTOCNode Title="UserReminderId Property " Url="html/P-ESWProjectAlbergue.Models.Reminder.UserReminderId.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="09ac7612-453b-4657-bfb3-704809335fa7" Title="RestrictedDate Class" Url="html/T-ESWProjectAlbergue.Models.RestrictedDate.htm">
+      <HelpTOCNode Title="RestrictedDate Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.RestrictedDate.htm" />
+      <HelpTOCNode Id="4131b3eb-4d14-48c0-8291-fe7fbe5429eb" Title="RestrictedDate Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.RestrictedDate.htm">
+        <HelpTOCNode Id="ff49d920-161d-4f00-b8c8-4e65d64a4011" Title="IsValid Method " Url="html/Overload-ESWProjectAlbergue.Models.RestrictedDate.IsValid.htm">
+          <HelpTOCNode Title="IsValid Method " Url="html/M-ESWProjectAlbergue.Models.RestrictedDate.IsValid.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="RestrictedDate Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.RestrictedDate.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="030e5999-2281-4165-9ecc-1489b796c41b" Title="Visit Class" Url="html/T-ESWProjectAlbergue.Models.Visit.htm">
+      <HelpTOCNode Title="Visit Members" Url="html/AllMembers.T-ESWProjectAlbergue.Models.Visit.htm" />
+      <HelpTOCNode Title="Visit Methods" Url="html/Methods.T-ESWProjectAlbergue.Models.Visit.htm" />
+      <HelpTOCNode Id="73817cd8-a9f1-4d47-a87a-a49c0645376f" Title="Visit Properties" Url="html/Properties.T-ESWProjectAlbergue.Models.Visit.htm">
+        <HelpTOCNode Title="Date Property " Url="html/P-ESWProjectAlbergue.Models.Visit.Date.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/P-ESWProjectAlbergue.Models.Visit.Description.htm" />
+        <HelpTOCNode Title="UserToVisit Property " Url="html/P-ESWProjectAlbergue.Models.Visit.UserToVisit.htm" />
+        <HelpTOCNode Title="UserToVisitId Property " Url="html/P-ESWProjectAlbergue.Models.Visit.UserToVisitId.htm" />
+        <HelpTOCNode Title="VisitId Property " Url="html/P-ESWProjectAlbergue.Models.Visit.VisitId.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="38307b2e-dbd7-4890-9bc6-cf1eee4b1d52" Title="ESWProjectAlbergue.Services Namespace" Url="html/N-ESWProjectAlbergue.Services.htm">
+    <HelpTOCNode Id="9a371cd9-312e-4414-9dc3-b93c5860828a" Title="AuthMessageSenderOptions Class" Url="html/T-ESWProjectAlbergue.Services.AuthMessageSenderOptions.htm">
+      <HelpTOCNode Title="AuthMessageSenderOptions Members" Url="html/AllMembers.T-ESWProjectAlbergue.Services.AuthMessageSenderOptions.htm" />
+      <HelpTOCNode Title="AuthMessageSenderOptions Methods" Url="html/Methods.T-ESWProjectAlbergue.Services.AuthMessageSenderOptions.htm" />
+      <HelpTOCNode Id="b87554b9-8294-4e67-a0f4-35efd8705973" Title="AuthMessageSenderOptions Properties" Url="html/Properties.T-ESWProjectAlbergue.Services.AuthMessageSenderOptions.htm">
+        <HelpTOCNode Title="SendGridKey Property " Url="html/P-ESWProjectAlbergue.Services.AuthMessageSenderOptions.SendGridKey.htm" />
+        <HelpTOCNode Title="SendGridUser Property " Url="html/P-ESWProjectAlbergue.Services.AuthMessageSenderOptions.SendGridUser.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b4fca4fa-4da6-4f38-9a4d-437dba006e1b" Title="Email Class" Url="html/T-ESWProjectAlbergue.Services.Email.htm">
+      <HelpTOCNode Title="Email Members" Url="html/AllMembers.T-ESWProjectAlbergue.Services.Email.htm" />
+      <HelpTOCNode Title="Email Constructor " Url="html/M-ESWProjectAlbergue.Services.Email.-ctor.htm" />
+      <HelpTOCNode Id="2e3f0c17-f8a1-44c6-9f8d-7b632f86b2f1" Title="Email Methods" Url="html/Methods.T-ESWProjectAlbergue.Services.Email.htm">
+        <HelpTOCNode Title="SendEmailAsync Method " Url="html/M-ESWProjectAlbergue.Services.Email.SendEmailAsync.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="b1e8d9ad-b7df-4921-bcbf-0ec587741371" Title="ESWProjectAlbergue.Views Namespace" Url="html/N-ESWProjectAlbergue.Views.htm">
+    <HelpTOCNode Id="e83677bb-2be1-4b26-b6f0-2814355100d5" Title="PosConditionsFormsController Class" Url="html/T-ESWProjectAlbergue.Views.PosConditionsFormsController.htm">
+      <HelpTOCNode Title="PosConditionsFormsController Members" Url="html/AllMembers.T-ESWProjectAlbergue.Views.PosConditionsFormsController.htm" />
+      <HelpTOCNode Title="PosConditionsFormsController Constructor " Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.-ctor.htm" />
+      <HelpTOCNode Id="7a6c999a-bbbd-4c0d-b413-b1410216f9cc" Title="PosConditionsFormsController Methods" Url="html/Methods.T-ESWProjectAlbergue.Views.PosConditionsFormsController.htm">
+        <HelpTOCNode Id="7c8f73aa-bcb3-4e36-aa09-b0258b4a2809" Title="Create Method " Url="html/Overload-ESWProjectAlbergue.Views.PosConditionsFormsController.Create.htm">
+          <HelpTOCNode Title="Create Method " Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.Create.htm" />
+          <HelpTOCNode Title="Create Method (PosConditionsForm)" Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.Create_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Delete Method " Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.Delete.htm" />
+        <HelpTOCNode Title="DeleteConfirmed Method " Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.DeleteConfirmed.htm" />
+        <HelpTOCNode Title="Details Method " Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.Details.htm" />
+        <HelpTOCNode Id="de51ed83-f8f7-4cb0-8525-7b528c9f848f" Title="Edit Method " Url="html/Overload-ESWProjectAlbergue.Views.PosConditionsFormsController.Edit.htm">
+          <HelpTOCNode Title="Edit Method (Nullable(Int32))" Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.Edit.htm" />
+          <HelpTOCNode Title="Edit Method (Int32, PosConditionsForm)" Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.Edit_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Index Method " Url="html/M-ESWProjectAlbergue.Views.PosConditionsFormsController.Index.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PosConditionsFormsController Properties" Url="html/Properties.T-ESWProjectAlbergue.Views.PosConditionsFormsController.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="c7f02ccf-ebb8-47fc-8059-ced40512ad8e" Title="MediatecaEst Namespace" Url="html/N-MediatecaEst.htm">
+    <HelpTOCNode Id="163f5693-a4f5-4e52-9839-81be9dc87d87" Title="Program Class" Url="html/T-MediatecaEst.Program.htm">
+      <HelpTOCNode Title="Program Members" Url="html/AllMembers.T-MediatecaEst.Program.htm" />
+      <HelpTOCNode Id="bec30196-61f6-4c4b-9434-21761ff075d0" Title="Program Methods" Url="html/Methods.T-MediatecaEst.Program.htm">
+        <HelpTOCNode Title="BuildWebHost Method " Url="html/M-MediatecaEst.Program.BuildWebHost.htm" />
+        <HelpTOCNode Title="Main Method " Url="html/M-MediatecaEst.Program.Main.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

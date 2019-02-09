@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : ESWProjectAlbergue
+// Author           : migue
+// Created          : 02-08-2019
+//
+// Last Modified By : migue
+// Last Modified On : 02-08-2019
+// ***********************************************************************
+// <copyright file="PerfectAnimalsController.cs" company="ESWProjectAlbergue">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,16 +22,32 @@ using ESWProjectAlbergue.Models;
 
 namespace ESWProjectAlbergue.Controllers
 {
+    /// <summary>
+    /// Class PerfectAnimalsController.
+    /// Implements the <see cref="Microsoft.AspNetCore.Mvc.Controller" />
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.Controller" />
     public class PerfectAnimalsController : Controller
     {
+        /// <summary>
+        /// The context
+        /// </summary>
         private readonly ESWProjectAlbergueContext _context;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerfectAnimalsController"/> class.
+        /// </summary>
+        /// <param name="context">The context.</param>
         public PerfectAnimalsController(ESWProjectAlbergueContext context)
         {
             _context = context;
         }
 
         // GET: PerfectAnimals
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Index()
         {
             var eSWProjectAlbergueContext = _context.PerfectAnimal.Include(p => p.Breed);
@@ -27,6 +56,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: PerfectAnimals/Details/5
+        /// <summary>
+        /// Detailses the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +80,10 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: PerfectAnimals/Create
+        /// <summary>
+        /// Creates this instance.
+        /// </summary>
+        /// <returns>IActionResult.</returns>
         public IActionResult Create()
         {
             ViewData["BreedId"] = new SelectList(_context.AnimalBreed, "Id", "Name");
@@ -55,9 +93,14 @@ namespace ESWProjectAlbergue.Controllers
         // POST: PerfectAnimals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-     
+
 
         // GET: PerfectAnimals/Edit/5
+        /// <summary>
+        /// Edits the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,6 +120,12 @@ namespace ESWProjectAlbergue.Controllers
         // POST: PerfectAnimals/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Edits the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="perfectAnimal">The perfect animal.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("PerfectAnimalId,Size,Gender,BreedId,Age,Type")] PerfectAnimal perfectAnimal)
@@ -111,6 +160,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: PerfectAnimals/Delete/5
+        /// <summary>
+        /// Deletes the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,6 +184,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // POST: PerfectAnimals/Delete/5
+        /// <summary>
+        /// Deletes the confirmed.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -140,11 +199,22 @@ namespace ESWProjectAlbergue.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Perfects the animal exists.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         private bool PerfectAnimalExists(int id)
         {
             return _context.PerfectAnimal.Any(e => e.PerfectAnimalId == id);
         }
 
+
+        /// <summary>
+        /// Filtrar os animais de acordo com as caracteristicas procuradas pelo utilizador
+        /// </summary>
+        /// <param name="perfectAnimal">The perfect animal.</param>
+        /// <returns>Um view com o animal  que for 100% o que o ulizador procura ou varios ordenados pelas percentagens de compatibilidade</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> GetAnimalIdeal([Bind("PerfectAnimalId,Size,Gender,BreedId,Age,Type")] PerfectAnimal perfectAnimal)
@@ -183,6 +253,12 @@ namespace ESWProjectAlbergue.Controllers
             return View(animal);
         }
 
+        /// <summary>
+        /// Analisa os animais consoante as caracteristicas do utilizadpr
+        /// </summary>
+        /// <param name="perfectAnimal">The perfect animal.</param>
+        /// <param name="animal">The animal.</param>
+        /// <returns>O animal com a sua percentagem de compatibilidade</returns>
         public PerfectAnimal HowPerfect(PerfectAnimal perfectAnimal, Animal animal)
         {
             var count = 0;

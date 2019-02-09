@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : ESWProjectAlbergue
+// Author           : migue
+// Created          : 02-08-2019
+//
+// Last Modified By : migue
+// Last Modified On : 02-08-2019
+// ***********************************************************************
+// <copyright file="RemindersController.cs" company="ESWProjectAlbergue">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,12 +24,32 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace ESWProjectAlbergue.Controllers
 {
+    /// <summary>
+    /// Class RemindersController.
+    /// Implements the <see cref="Microsoft.AspNetCore.Mvc.Controller" />
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.Controller" />
     public class RemindersController : Controller
     {
+        /// <summary>
+        /// The context
+        /// </summary>
         private readonly ESWProjectAlbergueContext _context;
+        /// <summary>
+        /// The user manager
+        /// </summary>
         private readonly UserManager<ApplicationUser> _userManager;
+        /// <summary>
+        /// The email sender
+        /// </summary>
         private readonly IEmailSender _emailSender;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemindersController"/> class.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="userManager">The user manager.</param>
+        /// <param name="emailSender">The email sender.</param>
         public RemindersController(ESWProjectAlbergueContext context, UserManager<ApplicationUser> userManager, IEmailSender emailSender)
         {
             _context = context;
@@ -26,6 +59,10 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: Reminders
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Index()
         {
             var eSWProjectAlbergueContext = _context.Reminder.Include(r => r.UserCreater).Include(r => r.UserReminder);
@@ -33,6 +70,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: Reminders/Details/5
+        /// <summary>
+        /// Detailses the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -53,6 +95,10 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: Reminders/Create
+        /// <summary>
+        /// Creates this instance.
+        /// </summary>
+        /// <returns>IActionResult.</returns>
         public IActionResult Create()
         {
             ViewData["UserCreaterId"] = new SelectList(_context.User, "Id", "Name");
@@ -60,6 +106,11 @@ namespace ESWProjectAlbergue.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Cria um lembrete e envia um email com as informações
+        /// </summary>
+        /// <param name="reminder">The reminder.</param>
+        /// <returns>O lembrete</returns>
         // POST: Reminders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -91,6 +142,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: Reminders/Edit/5
+        /// <summary>
+        /// Edits the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -108,6 +164,12 @@ namespace ESWProjectAlbergue.Controllers
             return View(reminder);
         }
 
+        /// <summary>
+        /// Edita um lembrete e envia um email com as informações
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="reminder">The reminder.</param>
+        /// <returns>O lembrete</returns>
         // POST: Reminders/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -152,6 +214,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // GET: Reminders/Delete/5
+        /// <summary>
+        /// Deletes the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -172,6 +239,11 @@ namespace ESWProjectAlbergue.Controllers
         }
 
         // POST: Reminders/Delete/5
+        /// <summary>
+        /// Deletes the confirmed.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Task&lt;IActionResult&gt;.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -182,6 +254,11 @@ namespace ESWProjectAlbergue.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Reminders the exists.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         private bool ReminderExists(int id)
         {
             return _context.Reminder.Any(e => e.ReminderId == id);

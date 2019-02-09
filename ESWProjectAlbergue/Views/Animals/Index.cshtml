@@ -72,6 +72,17 @@
             border-width: 2px;
         }
 
+        .animaladopted {
+            background-color: darkorange;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            border-radius: 100px;
+            border-style: solid;
+            border-width: 2px;
+            text-align: center;
+        }
+
         .animalname {
             color: white;
             text-transform: uppercase;
@@ -248,7 +259,8 @@
                 }
 
 
-                @if (item.Gender == EnumGenderType.FEMALE)
+
+                @if (item.Gender == EnumGenderType.FEMALE && item.Adopted == false)
                 {
                     <div class="animalcontainer">
                         <img src='@imgsrc' class="animalimage" width="200" height="200" style="border-radius:100px; border-style: solid; border-width: 5px; border-color: hotpink;" />
@@ -257,23 +269,25 @@
                                 @if (item.AnimalType == EnumAnimalType.CAT)
                                 {
                                     <img src='~/images/cat.png' width="40" height="40" class="centerimage">
-                                    
+
                                 }
                                 else
                                 {
                                     <img src='~/images/dog.png' class="centerimage">
                                 }
 
-                                <a asp-action="Details" asp-route-id="@item.Id" class="animalname centertext" >@Html.DisplayFor(model => item.Name)</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="animalname centertext">@Html.DisplayFor(model => item.Name)</a>
                             </div>
                         </div>
                     </div>
 
                 }
-                @if (item.Gender == EnumGenderType.MALE)
+
+
+                @if (item.Gender == EnumGenderType.MALE && item.Adopted == false)
                 {
                     <div class="animalcontainer">
-                        <img src='@imgsrc' class="animalimage" width="200px" height="200px" style="border-radius:100px; border-style: solid; border-width: 5px; border-color: #02A69E;" />
+                        <img src='@imgsrc' class="animalimage" style="border-radius:100px; border-style: solid; border-width: 5px; border-color: #02A69E;" />
                         <div class="middle">
                             <div class="animalnamemale">
                                 @if (item.AnimalType == EnumAnimalType.CAT)
@@ -291,22 +305,42 @@
                     </div>
                 }
 
-                <a class="editdelete">
-
-
-
-                    @*<a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>*@
-                    @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                {
+                    @if (item.Adopted == true)
                     {
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="whitetext"> Editar</a>
-                    }
-                    @if (User.IsInRole("admins"))
-                    {
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="whitetext"> | Eliminar</a>
-                    }
+                        <div class="animalcontainer">
+                            <img src='@imgsrc' class="animalimage" width="200" height="200" style="border-radius:100px; border-style: solid; border-width: 5px; border-color: darkorange;" />
+                            <div class="middle">
+                                <div class="animaladopted">
 
-                </a>
+                                    ADOTADO
 
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="animalname centertext">@Html.DisplayFor(model => item.Name)</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                }
+
+                    <a class="editdelete">
+
+
+
+                        @*<a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>*@
+                        @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="whitetext"> Editar</a>
+                        }
+                        @if (User.IsInRole("admins"))
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="whitetext"> | Eliminar</a>
+                        }
+
+                    </a>
+
+                }
             }
         </div>
     </div>
