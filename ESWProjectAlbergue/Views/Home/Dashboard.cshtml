@@ -1,13 +1,52 @@
-﻿
+﻿<!DOCTYPE html>
+
+  
+<head>
+    <title>Dashboard</title>
+    <script src="~/js/ChartJS.js"></script>
 
 
-<!DOCTYPE html>
+</head>
+
+
+<style>
+    #chart_container {
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        padding: 1px;
+        border-radius: 4px;
+    }
+</style>
+
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Dashboard</title>
-</head>
+
 <body>
+<div id=" chart_container ">
+<canvas id="lineChart"></canvas>
+</div>
+
+<script>
+    const CHART = document.getElementById("lineChart");
+    console.log(CHART); 
+
+    let lineChart = new Chart(CHART,
+        {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April", "May"],
+                datasets: [
+                    {
+                        label: "Teste",
+                        fill: false,
+                        lineTension: 0.1,
+                        data: [10, 20, 30, 40]
+                    }]
+            }
+        });
+</script>
 </body>
 </html>
+
+
