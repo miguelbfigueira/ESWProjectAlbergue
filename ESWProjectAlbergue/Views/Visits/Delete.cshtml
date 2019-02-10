@@ -4,36 +4,130 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<style>
+    .container-all {
+        background-color: #333333;
+        padding: 20px;
+        padding-top: 6px;
+        border-style: solid;
+        border-width: 5px;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        display: inline-block;
+        background-color: #333333;
+        border-radius: 25px;
+        position: center;
+    }
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Visit</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.UserToVisit)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.UserToVisit.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="VisitId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    .whitetext {
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
+
+    .editar {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 3%;
+        color: #FFFFFF;
+    }
+
+    .form-create {
+    }
+
+    .creates {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .btnsalvar {
+        background-color: #02A69E;
+        text-transform: uppercase;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+        .btnsalvar:hover {
+            background-color: gray;
+            color: white;
+        }
+
+    .btnatualizar {
+        margin: 0 auto;
+        align-content: center;
+        display: table;
+    }
+</style>
+
+
+
+
+
+<div class="container-all">
+
+    <<div class="form-create">
+
+        <div class="creates">
+            <h2 class="editar">Eliminar Lembrete</h2>
+            <br />
+
+
+
+            <p class="whitetext">
+                <span class="bold whitetext">
+                    @Html.DisplayNameFor(model => model.Description)
+                </span>
+
+
+
+                @Html.DisplayFor(model => model.Description)
+            </p>
+
+            <p class="whitetext">
+                <span class="bold whitetext">
+                    @Html.DisplayNameFor(model => model.UserToVisit)
+                </span>
+
+
+                @Html.DisplayFor(model => model.UserToVisit.Name)
+            </p>
+
+            <p class="whitetext">
+                <span class="bold whitetext">
+                    @Html.DisplayNameFor(model => model.Date)
+                </span>
+
+
+                @Html.DisplayFor(model => model.Date)
+            </p>
+
+
+        </div>
+        <div class="btnatualizar">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="VisitId" />
+                <p class="bold whitetext">Tem a certeza que quer eliminar a visita?</p>
+                <input type="submit" value="Eliminar" class="btnsalvar" /> |
+                <a asp-action="Index" class="btnsalvar">Voltar</a>
+            </form>
+        </div>
+    </div>
+</div>
+
 </div>

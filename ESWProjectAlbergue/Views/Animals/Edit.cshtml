@@ -4,88 +4,179 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<style>
+    .container-all {
+        background-color: #333333;
+        padding: 20px;
+        padding-top: 6px;
+        border-style: solid;
+        border-width: 5px;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        display: inline-block;
+        background-color: #333333;
+        border-radius: 25px;
+        position: center;
+    }
 
-<h4>Animal</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit"  method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AnimalType" class="control-label"></label>
-                <select asp-for="AnimalType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumAnimalType>()"></select>
-                <span asp-validation-for="AnimalType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <select asp-for="Gender" class="form-control" asp-items="@Html.GetEnumSelectList<EnumGenderType>()"></select>
-                <span asp-validation-for="Gender" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BirthDate" class="control-label"></label>
-                <input asp-for="BirthDate" class="form-control" />
-                <span asp-validation-for="BirthDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BreedId" class="control-label"></label>
-                <select asp-for="BreedId" class="form-control" asp-items="ViewBag.BreedId"></select>
-                <a href="/AnimalBreeds/Create" class="elements"><span>Adicionar Raça</span></a>
-                <a href="/AnimalBreeds/Index" class="elements"><span>Editar Raças</span></a>
-            </div>
-            <div class="form-group">
-                <label asp-for="SizeType" class="control-label"></label>
-                <select asp-for="SizeType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumSize>()"></select>
-                <span asp-validation-for="SizeType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FurType" class="control-label"></label>
-                <select asp-for="FurType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumFurType>()"></select>
-                <span asp-validation-for="FurType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AgeType" class="control-label"></label>
-                <select asp-for="AgeType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumAgeType>()"></select>
-                <span asp-validation-for="AgeType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BehaviorType" class="control-label"></label>
-                <select asp-for="BehaviorType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumBehaviorType>()"></select>
-                <span asp-validation-for="BehaviorType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
+    .whitetext {
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
 
-            <div class="form-group">
-            <label asp-for="Photo" class="control-label"></label>
-            <input asp-for="Photo" type="file" accept=".png,.jpg,.jpeg,.gif,.tif" />
-            <span asp-validation-for="Photo" class="text-danger"></span>
+    .editar {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 3%;
+        color: #FFFFFF;
+    }
+
+    .form-create {
+    }
+
+    .creates {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .btnsalvar {
+        background-color: #02A69E;
+        text-transform: uppercase;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+        .btnsalvar:hover {
+            background-color: gray;
+            color: white;
+        }
+
+    .btnatualizar {
+        margin: 0 auto;
+        align-content: center;
+        display: table;
+    }
+</style>
+
+
+<div class="container-all">
+
+
+    div>
+    @{
+        var imgsrc = "";
+        
+       
+            var base64 = Convert.ToBase64String(Model.Photo);
+            imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+        
+    }
+
+    <div class="form-create">
+
+        <div class="creates">
+            <h2 class="editar">Editar Animal</h2>
+            <br />
+            
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <img src='@imgsrc' style="border-radius:10px;" class="animalimagesize" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label whitetext"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AnimalType" class="control-label whitetext"></label>
+                    <select asp-for="AnimalType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumAnimalType>()"></select>
+                    <span asp-validation-for="AnimalType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Gender" class="control-label whitetext"></label>
+                    <select asp-for="Gender" class="form-control" asp-items="@Html.GetEnumSelectList<EnumGenderType>()"></select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BirthDate" class="control-label whitetext"></label>
+                    <input asp-for="BirthDate" class="form-control" />
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BreedId" class="control-label whitetext"></label>
+                    <select asp-for="BreedId" class="form-control" asp-items="ViewBag.BreedId"></select>
+                    <a href="/AnimalBreeds/Create" class="elements"><span>Adicionar Raça |</span></a>
+                    
+                    <a href="/AnimalBreeds/Index" class="elements"><span>Editar Raças</span></a>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SizeType" class="control-label whitetext"></label>
+                    <select asp-for="SizeType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumSize>()"></select>
+                    <span asp-validation-for="SizeType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FurType" class="control-label whitetext"></label>
+                    <select asp-for="FurType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumFurType>()"></select>
+                    <span asp-validation-for="FurType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AgeType" class="control-label whitetext"></label>
+                    <select asp-for="AgeType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumAgeType>()"></select>
+                    <span asp-validation-for="AgeType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BehaviorType" class="control-label whitetext"></label>
+                    <select asp-for="BehaviorType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumBehaviorType>()"></select>
+                    <span asp-validation-for="BehaviorType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label whitetext"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label whitetext"></label>
+                    <input asp-for="Photo" type="file" accept=".png,.jpg,.jpeg,.gif,.tif" />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Adopted"  /> <span class="whitetext">@Html.DisplayNameFor(model => model.Adopted)</span>
+                    </label>
+                </div>
+
+                <div class="btnatualizar">
+                    <input type="submit" value="Atualizar" class="btnsalvar" />
+                   <br />
+                        <a asp-action="Index"  class="btnsalvar">Voltar</a>
+                    
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="checkbox">
-        <label>
-            <input asp-for="Adopted" /> @Html.DisplayNameFor(model => model.Adopted)
-        </label>
-    </div>
 
-    <div class="form-group">
-        <input type="submit" value="Save" class="btn btn-default" />
-    </div>
-    </form>
-</div>
+    
+
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

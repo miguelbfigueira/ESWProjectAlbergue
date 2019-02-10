@@ -158,11 +158,11 @@
                                 </div>
 
                                 <div class="cell" data-title="Full Name">
-                                    <a asp-controller="AdoptionForms" asp-action="Details" asp-route-id="@item.OrderId">Ver Pedido</a>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Atualizar Estado</a> 
                                 </div>
 
                                 <div class="cell" data-title="Full Name">
-                                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                                    
                                     <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
                                     <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
                                 </div>

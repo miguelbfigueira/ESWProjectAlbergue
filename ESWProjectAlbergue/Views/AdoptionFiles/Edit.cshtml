@@ -4,46 +4,120 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<style>
+    .container-all {
+        background-color: #333333;
+        padding: 20px;
+        padding-top: 6px;
+        border-style: solid;
+        border-width: 5px;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        display: inline-block;
+        background-color: #333333;
+        border-radius: 25px;
+        position: center;
+    }
 
-<h4>AdoptionFile</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="AnimalId" class="control-label"></label>
-                <input asp-for="AnimalId" class="form-control" style="display:none" />
-                @ViewData["AnimalName"]
-                <span asp-validation-for="AnimalId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApplicationUserId" class="control-label"></label>
-                <input asp-for="ApplicationUserId" class="form-control" style="display:none" />
-                @ViewData["UserName"]
-                <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="Date" class="form-control" style="display:none" /> 
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control" asp-items="@Html.GetEnumSelectList<EnumAdoptionStatus>()"></select>
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
+    .whitetext {
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
+
+    .editar {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 3%;
+        color: #FFFFFF;
+    }
+
+    .form-create {
+    }
+
+    .creates {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .btnsalvar {
+        background-color: #02A69E;
+        text-transform: uppercase;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+        .btnsalvar:hover {
+            background-color: gray;
+            color: white;
+        }
+
+    .btnatualizar {
+        margin: 0 auto;
+        align-content: center;
+        display: table;
+    }
+</style>
+
+<div class="container-all">
+
+    <<div class="form-create">
+
+        <div class="creates">
+            <h2 class="editar">Atualizar Ficha de Adoção</h2>
+            <br />
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="AnimalId" class="control-label whitetext"></label>
+                    <input asp-for="AnimalId" class="form-control" style="display:none" />
+                    <span class="whitetext">@ViewData["AnimalName"]</span>
+                    <span asp-validation-for="AnimalId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ApplicationUserId" class="control-label whitetext"></label>
+                    <input asp-for="ApplicationUserId" class="form-control whitetext" style="display:none" />
+                    <span class="whitetext">
+                        @ViewData["UserName"] </span>
+                        <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
+</div>
+                <div class="form-group">
+                    <input asp-for="Date" class="form-control whitetext" style="display:none" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label whitetext"></label>
+                    <select asp-for="Status" class="form-control" asp-items="@Html.GetEnumSelectList<EnumAdoptionStatus>()"></select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Atualizar" class="btnsalvar" />
+                    <a asp-action="Index" class="btnsalvar">Voltar</a>
+                </div>
+
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
+        
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
