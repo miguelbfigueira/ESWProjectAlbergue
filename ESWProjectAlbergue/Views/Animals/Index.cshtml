@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
+
     <style>
         .animalscontainer {
             display: inline;
@@ -215,6 +216,27 @@
             </div>
             <br>
         }
+
+        <div class="helpregisterbox centerdiv">
+            <a  style="color:white" class="btnhelpregister" href="#popup1"> <img src="~/images/info.png" width="25" height="25" /> Ajuda</a>
+        </div>
+        <br>
+
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2 class="bold">Ajuda- Lista de Animais</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+
+                    <p> Abaixo encontra-se a lista de animais para adoção</p>
+                    <p> As bordas à volta de cada fotografia simbolizam o género do animal (rosa = fêmea | azul = macho).</p>
+                    <p> Arraste o rato em cima de uma fotografia de um animal para descobrir o seu nome</p>
+                    <p> Para descobrir mais acerca de um animal ou adotar clique no nome do mesmo. </p>
+
+
+                </div>
+            </div>
+        </div>
         <div class="filteranimals centerdiv">
             <form asp-controller="Animals" asp-action="FiltrarNumero" method="post" class="whitetext filteranimalschildren">
                 <p class="whitetext filteranimalschildren">
@@ -324,23 +346,23 @@
                     }
                 }
 
-                    <a class="editdelete">
+                <a class="editdelete">
 
 
 
-                        @*<a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>*@
-                        @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
-                        {
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="whitetext"> Editar</a>
-                        }
-                        @if (User.IsInRole("admins"))
-                        {
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="whitetext"> | Eliminar</a>
-                        }
+                    @*<a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>*@
+                    @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="whitetext"> Editar</a>
+                    }
+                    @if (User.IsInRole("admins"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="whitetext"> | Eliminar</a>
+                    }
 
-                    </a>
+                </a>
 
-                }
+            }
             }
         </div>
     </div>

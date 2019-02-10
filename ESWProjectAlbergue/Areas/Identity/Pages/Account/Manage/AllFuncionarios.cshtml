@@ -3,8 +3,21 @@
 @{
     ViewData["Title"] = "Funcionários";
 }
+<style>
+    .whitetext {
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
 
+    .btn{
+        background-color:white;
+    }
 
+    .btn:hover{
+        background-color: dodgerblue;
+    }
+</style>
 
 <!DOCTYPE html>
 <html>
@@ -33,10 +46,10 @@
 <body>
 
     <div class="lembretestotal">
-        <h2 class="lembretes">Utilizadores</h2>
+        <h2 class="lembretes">Funcionários</h2>
         <br>
         <p class="text-center">
-            <href class="btnnovolembrete">@Html.ActionLink("Funcionários", "AllFuncionarios", "Identity/Account/Manage", null, null) </href>
+            <button class="btn whitetext">@Html.ActionLink("Registar Novo Funcionário", "RegisterFunc", "Identity/Account/", null, null) </button>
         </p>
 
 

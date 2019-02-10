@@ -32,27 +32,29 @@
 
             <div class="nav-black container navbar-collapse collapse navbar-fixed">
                 <ul class="nav navbar-nav ">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li> <a asp-area="" asp-controller="Home" asp-action="Index"><img class="logo" src="~/images/home.png" style="height:20px; width:20px;" /> &nbsp Home</a></li>
 
-                    <li><a asp-area="" asp-controller="PerfectAnimals" asp-action="Index">Animais Ideal</a></li>
+
 
                     @if (!User.IsInRole("admins") || User.IsInRole("funcionarios"))
                     {
-                        <li><a asp-area="" asp-controller="Animals" asp-action="Index">Animais Para Adoção</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contactos</a></li>
+                        <li> <a asp-area="" asp-controller="Animals" asp-action="Index"><img class="logo" src="~/images/animalpaw.png" style="height:20px; width:20px;" />&nbsp Animais Para Adoção</a></li>
+                        <li><a asp-area="" asp-controller="PerfectAnimals" asp-action="Index"><img class="logo" src="~/images/like.png" style="height:20px; width:20px;" />&nbsp Animal Ideal</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About"><img class="logo" src="~/images/info.png" style="height:20px; width:20px;" />&nbsp Sobre</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact"><img class="logo" src="~/images/contact.png" style="height:20px; width:20px;" />&nbsp Contactos</a></li>
 
                     }
                     @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
                     {
-                        <li><a asp-area="" asp-controller="Animals" asp-action="Index">Animais</a></li>
-                        <li><a asp-area="" asp-controller="Reminders" asp-action="Index">Lembretes</a></li>
-                        <li><a asp-area="" asp-controller="Visits" asp-action="Index">Visitas</a></li>
-                        <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers">Utilizadores</a></li>
-                        <li><a asp-area="" asp-controller="AdoptionFiles" asp-action="Index">Fichas de Adoção</a></li>
+                        <li><a asp-area="" asp-controller="Animals" asp-action="Index"><img class="logo" src="~/images/animalpaw.png" style="height:20px; width:20px;" /> &nbsp Animais</a></li>
+                        <li><a asp-area="" asp-controller="PerfectAnimals" asp-action="Index"><img class="logo" src="~/images/like.png" style="height:20px; width:20px;" /> &nbsp Animal Ideal</a></li>
+                        <li><a asp-area="" asp-controller="Reminders" asp-action="Index"><img class="logo" src="~/images/reminder.png" style="height:20px; width:20px;" />&nbsp Lembretes</a></li>
+                        <li><a asp-area="" asp-controller="Visits" asp-action="Index"><img class="logo" src="~/images/visit.png" style="height:20px; width:20px;" />&nbsp Visitas</a></li>
+                        <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers"><img class="logo" src="~/images/users.png" style="height:20px; width:20px;" />&nbsp Utilizadores</a></li>
+                        <li><a asp-area="" asp-controller="AdoptionFiles" asp-action="Index"><img class="logo" src="~/images/files.png" style="height:20px; width:20px;" />&nbsp Fichas de Adoção</a></li>
                     }
                 </ul>
-                <partial name="_LoginPartial" />
+                 <partial name="_LoginPartial" />
             </div>
 
         </nav>
@@ -108,7 +110,7 @@
         </div>
     </div>
 
-    <div class="footer-copyright text-center py-3">© 2018 Quinta do Mião
+    <div class="footer-copyright text-center py-3">© 2019 Quinta do Mião
 
     </div>
 

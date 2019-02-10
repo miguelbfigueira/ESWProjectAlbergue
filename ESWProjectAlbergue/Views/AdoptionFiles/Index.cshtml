@@ -4,71 +4,185 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 
-<form asp-controller="AdoptionFiles" asp-action="FiltrarRaca" method="post">
-    <p>
-        Raça: <select name="id" class="form-control" asp-items="ViewBag.BreedId"></select>
-        <input type="submit" value="Filtrar" />
-    </p>
-</form>
+<!DOCTYPE html>
+<html>
 
-<form asp-controller="AdoptionFiles" asp-action="FiltrarDate" method="post">
-    <p>
-        Data: <input type="date" name="date">
-        <input type="submit" value="Filtrar" />
-    </p>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/csstable.css">
+    <!--===============================================================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Animal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApplicationUser.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderId)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Animal.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApplicationUser.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a asp-controller="AdoptionForms" asp-action="Details" asp-route-id="@item.OrderId">Ver Pedido</a>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <style>
+        .centerdiv {
+            display: table;
+            margin: 0 auto;
+        }
+
+        .whitetext {
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .filteranimalschildren {
+            display: inline;
+        }
+
+        .centertext {
+            text-align: center;
+        }
+
+        .button1 {
+            background-color: #02A69E;
+            text-transform: uppercase;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+            .button1:hover {
+                background-color: gray;
+                color: white;
+            }
+
+        .button2 {
+            background-color: #02A69E;
+            text-transform: uppercase;
+            border: none;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            margin-right: 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+            .button2:hover {
+                background-color: gray;
+                color: white;
+            }
+
+    </style>
+
+</head>
+<body>
+    <div class="lembretestotal">
+        <h2 class="lembretes">Fichas de adoção</h2>
+        <br>
+        
+
+     
+        <div class="filteranimals centerdiv">
+            <form asp-controller="AdoptionFiles" asp-action="FiltrarRaca" method="post" class="whitetext filteranimalschildren">
+                <p class="whitetext filteranimalschildren">
+                    Raça: <select name="id" class="form-control" asp-items="ViewBag.BreedId"></select>
+                    <input type="submit"  class="button2" value="Filtrar" />
+                </p>
+            </form>
+
+            <form asp-controller="AdoptionFiles" asp-action="FiltrarDate" method="post" class="whitetext filteranimalschildren">
+                <p class="whitetext filteranimalschildren">
+                    Data: <input style="color:black" type="date" name="date">
+                    <input type="submit"  class="button2" value="Filtrar" />
+                </p>
+            </form>
+        </div>
+
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table">
+
+                        <div class="row header">
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Animal)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.ApplicationUser.Name)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Date)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Status)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.OrderId)
+                            </div>
+                        </div>
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="row">
+                                <div class="cell" data-title="Full Name">
+                                    @Html.DisplayFor(modelItem => item.Animal.Name)
+                                </div>
+
+                                <div class="cell" data-title="Full Name">
+                                    @Html.DisplayFor(modelItem => item.ApplicationUser.Name)
+                                </div>
+
+                                <div class="cell" data-title="Full Name">
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </div>
+
+                                <div class="cell" data-title="Full Name">
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </div>
+
+                                <div class="cell" data-title="Full Name">
+                                    <a asp-controller="AdoptionForms" asp-action="Details" asp-route-id="@item.OrderId">Ver Pedido</a>
+                                </div>
+
+                                <div class="cell" data-title="Full Name">
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--===============================================================================================-->
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
+
+</body>
+</html>

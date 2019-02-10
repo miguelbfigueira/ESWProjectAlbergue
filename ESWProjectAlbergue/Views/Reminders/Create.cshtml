@@ -4,65 +4,134 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
 
-<h4>Reminder</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-                <input asp-for="UserCreaterId" class="form-control"  style="display:none"/>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserReminderId" class="control-label"></label>
-                <select asp-for="UserReminderId" class="form-control" asp-items="ViewBag.UserReminderId"></select>
-            </div>
-            <div class="form-group">
+<style>
+    .container-all {
+        background-color: #333333;
+        padding: 20px;
+        padding-top: 6px;
+        border-style: solid;
+        border-width: 5px;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        display: inline-block;
+        background-color: #333333;
+        border-radius: 25px;
+        position: center;
+    }
 
-                <input asp-for="DateCreate" class="form-control" style="display:none" />
+    .whitetext {
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
 
-            </div>
-            <div class="form-group">
-                <label asp-for="DateEnd" class="control-label"></label>
-                <input asp-for="DateEnd" class="form-control" />
-                <span asp-validation-for="DateEnd" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="IsEvent" /> @Html.DisplayNameFor(model => model.IsEvent)
-                    </label>
+    .criar {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 3%;
+        color: #FFFFFF;
+    }
+
+    .form-create {
+    }
+
+    .creates {
+        margin: 0 auto;
+        width: fit-content;
+    }
+</style>
+
+
+
+<div class="container-all">
+    <h2 class="criar">Criar Lembrete</h2>
+
+
+    <div class="form-create">
+
+
+        <div class="creates">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+
+                    <input asp-for="UserCreaterId" class="form-control whitetext" style="display:none" />
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="IsDone" /> @Html.DisplayNameFor(model => model.IsDone)
-                    </label>
+                <div class="form-group">
+                    <label asp-for="UserReminderId" class="control-label whitetext"></label>
+                    <select asp-for="UserReminderId" class="form-control" asp-items="ViewBag.UserReminderId"></select>
                 </div>
-            </div>
+                <div class="form-group">
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+                    <input asp-for="DateCreate" class="form-control" style="display:none" />
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateEnd" class="control-label whitetext"></label>
+                    <input asp-for="DateEnd" class="form-control" />
+                    <span asp-validation-for="DateEnd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label whitetext"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label whitetext"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="IsEvent" />  <span class="whitetext">@Html.DisplayNameFor(model => model.IsEvent) </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="IsDone" />  <span class="whitetext"> @Html.DisplayNameFor(model => model.IsDone)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <input type="submit" value="Criar" class="btn btn-default" onclick="return Confirmmessage()" />
+
+                    <a asp-action="Index">Voltar</a>
+
+                </div>
+            </form>
+        </div>
     </div>
+
+
+
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+@Html.Raw(TempData["Success"])
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    function Confirmmessage() {
+        var alert = confirm("Tem a certeza que quer criar o lembrete?");
+        if (alert) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>

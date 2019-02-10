@@ -189,25 +189,15 @@
 </head>
 <body>
     <div class="allanimals">
-        <h2 class="Animais">Animais</h2>
+        <h2 class="Animais">Animal Ideal</h2>
+        <h4 class="centertext whitetext">Lista dos animais ideais e a sua respetiva percentagem</h4>
         <br>
      
-        <form asp-controller="PerfectAnimals" asp-action="Index" method="post">
-            <p>
-                <input type="submit" value="Voltar" />
-            </p>
-        </form>
+        
         <div class="filteranimals centerdiv">
-            <form asp-controller="Animals" asp-action="FiltrarNumero" method="post" class="whitetext filteranimalschildren">
-                <p class="whitetext filteranimalschildren">
-                    ID: <input type="number" name="id">
-                    <input type="submit" class="button2" value="Filtrar" />
-                </p>
-            </form>
-            <form asp-controller="Animals" asp-action="FiltrarNome" method="post" class="whitetext filteranimalschildren">
-                <p class="whitetext filteranimalschildren">
-                    Nome: <input type="text" name="name">
-                    <input type="submit" class="button2" value="Filtrar" />
+            <form asp-controller="PerfectAnimals" asp-action="Index" method="post">
+                <p>
+                    <input type="submit" value="Voltar" />
                 </p>
             </form>
         </div>

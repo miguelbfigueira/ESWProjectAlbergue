@@ -4,6 +4,15 @@
     ViewData["Title"] = "Utilizadores";
 }
 
+<style>
+    .btn {
+        background-color: white;
+    }
+
+        .btn:hover {
+            background-color: dodgerblue;
+        }
+</style>
 
 <!DOCTYPE html>
 <html>
@@ -30,14 +39,14 @@
 
 </head>
 <body>
-   
+
     <div class="lembretestotal">
         <h2 class="lembretes">Utilizadores</h2>
         <br>
         <p class="text-center">
-            <href class="btnnovolembrete">@Html.ActionLink("Funcionários", "AllFuncionarios", "Identity/Account/Manage", null, null) </href>
+            <href class="btn">@Html.ActionLink("Funcionários", "AllFuncionarios", "Identity/Account/Manage", null, null) </href>
         </p>
-        
+
 
         <div class="limiter">
             <div class="container-table100">

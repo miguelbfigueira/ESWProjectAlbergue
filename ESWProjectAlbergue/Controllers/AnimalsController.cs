@@ -93,6 +93,7 @@ namespace ESWProjectAlbergue.Controllers
         public IActionResult Create()
         {
             ViewData["BreedId"] = new SelectList(_context.Set<AnimalBreed>(), "Id", "Name");
+            
             return View();
         }
 
@@ -127,8 +128,9 @@ namespace ESWProjectAlbergue.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-          
-            
+
+            TempData["Success"] = "<script>alert('Animal resgistado com sucesso');</script>";
+            ModelState.Clear();
             return View(animal);
         }
 
