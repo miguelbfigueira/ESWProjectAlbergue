@@ -1,6 +1,7 @@
-﻿<!DOCTYPE html>
+﻿
 
-  
+<!DOCTYPE html>
+
 <head>
     <title>Dashboard</title>
     <script src="~/js/ChartJS.js"></script>
@@ -23,29 +24,31 @@
 <html>
 
 <body>
-<div id=" chart_container ">
-<canvas id="lineChart"></canvas>
-</div>
+    <h1>Estatísticas</h1>
+    <br />
+    <div><b>Número Total de animais no canil : </b> @ViewData["NúmeroAnimaisRegistados"]</div>
+    <div><b>Número Total de animais no canil : </b>  @ViewData["NúmeroAnimaisCanil"]</div>
+    <div><b>Número de Animas Adotados: </b> @ViewData["NúmeroAnimaisAdotados"]</div>
+    <div><b>Número de Utilizadores Registados: </b> @ViewData["NúmeroUtilizadoresRegistados"]</div>
 
-<script>
-    const CHART = document.getElementById("lineChart");
-    console.log(CHART); 
-
-    let lineChart = new Chart(CHART,
+    <div>
+        <b>Número de Animais por raça</b>
+        @foreach (KeyValuePair<string, int> i in @ViewBag.Lists)
         {
-            type: 'line',
-            data: {
-                labels: ["January", "February", "March", "April", "May"],
-                datasets: [
-                    {
-                        label: "Teste",
-                        fill: false,
-                        lineTension: 0.1,
-                        data: [10, 20, 30, 40]
-                    }]
-            }
-        });
-</script>
+            <tr>
+                <br />
+                <td>
+                    @Html.DisplayFor(modelItem => i.Key) -
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => i.Value)
+                </td>
+            </tr>
+        }
+    </div>
+
+    <div><b>Número de Tarefas Realizadas: </b> @ViewData["NúmeroTarefasRealizadas"]</div>
+
 </body>
 </html>
 
