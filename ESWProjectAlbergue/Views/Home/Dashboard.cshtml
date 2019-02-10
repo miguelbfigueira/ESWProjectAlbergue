@@ -18,37 +18,125 @@
         padding: 1px;
         border-radius: 4px;
     }
+
+    .container-all {
+        background-color: #333333;
+        padding: 20px;
+        padding-top: 6px;
+        border-style: solid;
+        border-width: 5px;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        display: inline-block;
+        background-color: #333333;
+        border-radius: 25px;
+        position: center;
+    }
+
+    .whitetext {
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
+
+    .stats {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 3%;
+        color: #FFFFFF;
+    }
+
+    .form-create {
+    }
+
+    .creates {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .btnsalvar {
+        background-color: #02A69E;
+        text-transform: uppercase;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+        .btnsalvar:hover {
+            background-color: gray;
+            color: white;
+        }
+
+    .btnatualizar {
+        margin: 0 auto;
+        align-content: center;
+        display: table;
+    }
+
+
 </style>
 
 
 <html>
 
+
 <body>
-    <h1>Estatísticas</h1>
-    <br />
-    <div><b>Número Total de animais no canil : </b> @ViewData["NúmeroAnimaisRegistados"]</div>
-    <div><b>Número Total de animais no canil : </b>  @ViewData["NúmeroAnimaisCanil"]</div>
-    <div><b>Número de Animas Adotados: </b> @ViewData["NúmeroAnimaisAdotados"]</div>
-    <div><b>Número de Utilizadores Registados: </b> @ViewData["NúmeroUtilizadoresRegistados"]</div>
+    <div class="container-all">
 
-    <div>
-        <b>Número de Animais por raça</b>
-        @foreach (KeyValuePair<string, int> i in @ViewBag.Lists)
-        {
-            <tr>
+        <<div class="form-create">
+
+            <div class="creates">
+               
                 <br />
-                <td>
-                    @Html.DisplayFor(modelItem => i.Key) -
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => i.Value)
-                </td>
-            </tr>
-        }
-    </div>
 
-    <div><b>Número de Tarefas Realizadas: </b> @ViewData["NúmeroTarefasRealizadas"]</div>
 
+
+                <h1 class="stats">Estatísticas</h1>
+                <br />
+                <div class="whitetext"><b>Número Total de animais no canil : </b> @ViewData["NúmeroAnimaisRegistados"]</div>
+                <br />
+                <div class="whitetext"><b>Número Total de animais no canil : </b>  @ViewData["NúmeroAnimaisCanil"]</div>
+                <br />
+                <div class="whitetext"><b>Número de Animas Adotados: </b> @ViewData["NúmeroAnimaisAdotados"]</div>
+                <br />
+                <div class="whitetext"><b>Número de Utilizadores Registados: </b> @ViewData["NúmeroUtilizadoresRegistados"]</div>
+                <br />
+
+                <div class="whitetext">
+                    <b>Número de Animais por raça</b>
+                    @foreach (KeyValuePair<string, int> i in @ViewBag.Lists)
+                    {
+                        <tr>
+                            <br />
+                            <td>
+                                @Html.DisplayFor(modelItem => i.Key) -
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.Value)
+                            </td>
+                        </tr>
+                    }
+                </div>
+                <br />
+                <div class="whitetext"><b>Número de Tarefas Realizadas: </b> @ViewData["NúmeroTarefasRealizadas"]</div>
+                </div>
+        </div>
+        </div>
 </body>
 </html>
 
