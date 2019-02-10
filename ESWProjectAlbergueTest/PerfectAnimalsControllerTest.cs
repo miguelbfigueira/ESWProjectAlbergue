@@ -54,7 +54,7 @@ namespace ESWProjectAlbergueTest
         }
 
         [Fact]
-        public void HowPerfect_ReturnsPercentagem()
+        public async Task HowPerfect_ReturnsPercentagem()
         {
             var controller = new PerfectAnimalsController(DbContext);
             PerfectAnimal perfectAnimal = new PerfectAnimal() { Age = EnumAgeType.BABY};
@@ -63,8 +63,8 @@ namespace ESWProjectAlbergueTest
 
             PerfectAnimal perfect = new PerfectAnimal() { Percentagem = 20 };
 
-
-             Assert.True(perfect.Percentagem.Equals(perfectAnimal.Percentagem));
+            Assert.Equal(perfect.Percentagem, perfectAnimal.Percentagem);
+            
         }
 
         [Fact]
