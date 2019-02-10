@@ -6,99 +6,154 @@
 
 
 
-<h4>Pedido de adoção</h4>
+<style>
+    .container-all {
+        background-color: #333333;
+        padding: 20px;
+        padding-top: 6px;
+        border-style: solid;
+        border-width: 5px;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        display: inline-block;
+        background-color: #333333;
+        border-radius: 25px;
+        position: center;
+    }
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AdoptionFormId" />
-            <input type="hidden" asp-for="AnimalId" />
-            <input type="hidden" asp-for="ApplicationUserId" />
-         <div class="form-group">
-                <label asp-for="ApplicationUser" class="control-label"></label>
-                @ViewBag.ApplicationUser
-            </div>
-            <div class="form-group" hidden>
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cc" class="control-label"></label>
-                <input asp-for="Cc" class="form-control" />
-                <span asp-validation-for="Cc" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Job" class="control-label"></label>
-                <input asp-for="Job" class="form-control" />
-                <span asp-validation-for="Job" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="MoreAnimals" /> @Html.DisplayNameFor(model => model.MoreAnimals)
-                    </label>
+    .whitetext {
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
+
+    .registar-animal {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 3%;
+        color: #FFFFFF;
+    }
+
+    .form-create {
+    }
+
+    .creates {
+        margin: 0 auto;
+        width: fit-content;
+    }
+</style>
+<div class="container-all">
+    <h2 class="registar-animal">Pedido de Adoção</h2>
+
+
+
+    <div class="form-create">
+
+
+        <div class="creates">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="AdoptionFormId" />
+                        <input type="hidden" asp-for="AnimalId" />
+                        <input type="hidden" asp-for="ApplicationUserId" />
+                        <div class="form-group">
+                            <label asp-for="ApplicationUser" class="control-label whitetext"></label>
+                            @ViewBag.ApplicationUser
+                        </div>
+                        <div class="form-group" hidden>
+                            <label asp-for="Date" class="control-label  whitetext"></label>
+                            <input asp-for="Date" class="form-control" />
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Cc" class="control-label  whitetext"></label>
+                            <input asp-for="Cc" class="form-control" />
+                            <span asp-validation-for="Cc" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Job" class="control-label  whitetext"></label>
+                            <input asp-for="Job" class="form-control" />
+                            <span asp-validation-for="Job" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input asp-for="MoreAnimals" /> <span class="whitetext">@Html.DisplayNameFor(model => model.MoreAnimals)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="HowMany" class="control-label  whitetext"></label>
+                            <input asp-for="HowMany" class="form-control" />
+                            <span asp-validation-for="HowMany" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AnimalTypes" class="control-label whitetext"></label>
+                            <input asp-for="AnimalTypes" class="form-control" />
+                            <span asp-validation-for="AnimalTypes" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input asp-for="FinanciallyStable" /> <span class="whitetext">@Html.DisplayNameFor(model => model.FinanciallyStable)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="HouseType" class="control-label whitetext" ></label>
+                            <select asp-for="HouseType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumHouseType>()"></select>
+                            <span asp-validation-for="HouseType" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NumberOfBedrooms" class="control-label whitetext"></label>
+                            <input asp-for="NumberOfBedrooms" class="form-control" />
+                            <span asp-validation-for="NumberOfBedrooms" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NumberOfPeople" class="control-label whitetext"></label>
+                            <input asp-for="NumberOfPeople" class="form-control" />
+                            <span asp-validation-for="NumberOfPeople" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AnimalTravel" class="control-label whitetext"></label>
+                            <input asp-for="AnimalTravel" class="form-control" />
+                            <span asp-validation-for="AnimalTravel" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LeaveHouse" class="control-label whitetext"></label>
+                            <select asp-for="LeaveHouse" class="form-control" asp-items="@Html.GetEnumSelectList<EnumLeaveHouse>()"></select>
+                            <span asp-validation-for="LeaveHouse" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input asp-for="Conscious" /> <span class="whitetext"> @Html.DisplayNameFor(model => model.Conscious)</span>
+</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Submeter" class="btn btn-default" />
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="HowMany" class="control-label"></label>
-                <input asp-for="HowMany" class="form-control" />
-                <span asp-validation-for="HowMany" class="text-danger"></span>
+
+            <div>
+                <a asp-action="Index">Voltar</a>
             </div>
-            <div class="form-group">
-                <label asp-for="AnimalTypes" class="control-label"></label>
-                <input asp-for="AnimalTypes" class="form-control" />
-                <span asp-validation-for="AnimalTypes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="FinanciallyStable" /> @Html.DisplayNameFor(model => model.FinanciallyStable)
-                    </label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="HouseType" class="control-label"></label>
-                <select asp-for="HouseType" class="form-control" asp-items="@Html.GetEnumSelectList<EnumHouseType>()"></select>
-                <span asp-validation-for="HouseType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NumberOfBedrooms" class="control-label"></label>
-                <input asp-for="NumberOfBedrooms" class="form-control" />
-                <span asp-validation-for="NumberOfBedrooms" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NumberOfPeople" class="control-label"></label>
-                <input asp-for="NumberOfPeople" class="form-control" />
-                <span asp-validation-for="NumberOfPeople" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AnimalTravel" class="control-label"></label>
-                <input asp-for="AnimalTravel" class="form-control" />
-                <span asp-validation-for="AnimalTravel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LeaveHouse" class="control-label"></label>
-                <select asp-for="LeaveHouse" class="form-control" asp-items="@Html.GetEnumSelectList<EnumLeaveHouse>()"></select>
-                <span asp-validation-for="LeaveHouse" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="Conscious" /> @Html.DisplayNameFor(model => model.Conscious)
-                    </label>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 

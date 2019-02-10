@@ -37,8 +37,7 @@ namespace ESWProjectAlbergue.Models
         /// <summary>
         /// The other
         /// </summary>
-        [Display(Name = "Outro")]
-        OTHER,
+        
        
 
     }

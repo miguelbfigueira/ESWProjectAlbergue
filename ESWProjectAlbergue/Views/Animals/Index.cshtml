@@ -238,15 +238,9 @@
             </div>
         </div>
         <div class="filteranimals centerdiv">
-            <form asp-controller="Animals" asp-action="FiltrarNumero" method="post" class="whitetext filteranimalschildren">
-                <p class="whitetext filteranimalschildren">
-                    ID: <input type="number" name="id">
-                    <input type="submit" class="button2" value="Filtrar" />
-                </p>
-            </form>
-            <form asp-controller="Animals" asp-action="FiltrarNome" method="post" class="whitetext filteranimalschildren">
-                <p class="whitetext filteranimalschildren">
-                    Nome: <input type="text" name="name">
+            <form asp-controller="Animals" asp-action="FiltrarNome" method="post" class="filteranimalschildren">
+                <p class=" filteranimalschildren">
+                    <span class="whitetext">Nome: </span><input type="text" name="name">
                     <input type="submit" class="button2" value="Filtrar" />
                 </p>
             </form>
