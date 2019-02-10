@@ -1,0 +1,137 @@
+﻿@page
+@model AllFuncionariosModel
+@{
+    ViewData["Title"] = "Funcionários";
+}
+<style>
+    .whitetext {
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+    }
+
+    .btn{
+        background-color:white;
+    }
+
+    .btn:hover{
+        background-color: dodgerblue;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/csstable.css">
+    <!--===============================================================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="lembretestotal">
+        <h2 class="lembretes">Funcionários</h2>
+        <br>
+        <p class="text-center">
+            <button class="btn whitetext">@Html.ActionLink("Registar Novo Funcionário", "RegisterFunc", "Identity/Account/", null, null) </button>
+        </p>
+
+
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table">
+
+                        <div class="row header">
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Input.Name)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Input.Email)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Input.BirthDate)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Input.Address)
+                            </div>
+                            <div class="cell">
+                                @Html.DisplayNameFor(model => model.Input.PhoneNumber)
+                            </div>
+                            <div class="cell">
+                                Acções
+                            </div>
+                        </div>
+                        @foreach (var item in Model.users)
+                        {
+                            @if (item.Role == "funcionarios")
+                            {
+                                <div class="row">
+                                    <div class="cell" data-title="Full Name">
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </div>
+                                    <div class="cell" data-title="Age">
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </div>
+                                    <div class="cell" data-title="Job Title">
+                                        @Html.DisplayFor(modelItem => item.BirthDate.Date)
+                                    </div>
+                                    <div class="cell" data-title="Location">
+                                        @Html.DisplayFor(modelItem => item.Address)
+                                    </div>
+                                    <div class="cell" data-title="Location">
+                                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                    </div>
+
+                                    <div class="cell" data-title="Location">
+                                        <form asp-action="Edit" asp-route-id="@item.Id">
+                                            <input type="hidden" asp-for="@item.Id" />
+                                            <input type="submit" value="Promover" class="btn-success" />
+                                        </form>
+                                        <form asp-action="Delete" asp-route-id="@item.Id">
+                                            <input type="hidden" asp-for="@item.Id" />
+                                            <input type="submit" value="Remover" class="btn btn-default" />
+                                        </form>
+                                    </div>
+
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

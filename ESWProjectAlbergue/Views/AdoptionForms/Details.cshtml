@@ -1,0 +1,109 @@
+﻿@model ESWProjectAlbergue.Models.AdoptionForm
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AdoptionForm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Animal.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUser)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUser.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Job)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MoreAnimals)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MoreAnimals)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HowMany)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HowMany)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalTypes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AnimalTypes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FinanciallyStable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FinanciallyStable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HouseType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfBedrooms)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfBedrooms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfPeople)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfPeople)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalTravel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AnimalTravel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveHouse)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LeaveHouse)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Conscious)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Conscious)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AdoptionFormId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

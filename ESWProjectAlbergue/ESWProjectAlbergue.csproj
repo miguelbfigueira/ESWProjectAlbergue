@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -6,26 +6,66 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Identity\Data\**" />
     <Compile Remove="Areas\Identity\Services\**" />
+    <Compile Remove="Views\Funcionario\**" />
+    <Content Remove="Areas\Identity\Data\**" />
     <Content Remove="Areas\Identity\Services\**" />
+    <Content Remove="Views\Funcionario\**" />
+    <EmbeddedResource Remove="Areas\Identity\Data\**" />
     <EmbeddedResource Remove="Areas\Identity\Services\**" />
+    <EmbeddedResource Remove="Views\Funcionario\**" />
+    <None Remove="Areas\Identity\Data\**" />
     <None Remove="Areas\Identity\Services\**" />
+    <None Remove="Views\Funcionario\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20181218174908_3.cs" />
+    <Compile Remove="Migrations\20181218174908_3.Designer.cs" />
+    <Compile Remove="Migrations\20181218175102_4.cs" />
+    <Compile Remove="Migrations\20181218175102_4.Designer.cs" />
+    <Compile Remove="Migrations\20181218175410_3.cs" />
+    <Compile Remove="Migrations\20181218175410_3.Designer.cs" />
+    <Compile Remove="Migrations\20181218175534_3.cs" />
+    <Compile Remove="Migrations\20181218175534_3.Designer.cs" />
+    <Compile Remove="Migrations\20181218201108_4.cs" />
+    <Compile Remove="Migrations\20181218201108_4.Designer.cs" />
+    <Compile Remove="Migrations\20190121155013_4.cs" />
+    <Compile Remove="Migrations\20190121155013_4.Designer.cs" />
+    <Compile Remove="Migrations\20190122171011_animaisfoto.cs" />
+    <Compile Remove="Migrations\20190122171011_animaisfoto.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\check.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Chart.js" Version="2.7.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="2.2.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" PrivateAssets="All" />
     <PackageReference Include="Sendgrid" Version="9.10.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Services\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Areas\Identity\Pages\Account\Manage\AllFuncionarios.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Areas\Identity\Pages\Account\Manage\AllUsers.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Identity\Pages\Account\RegisterFunc.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Identity\Pages\Account\RegisterFuncs.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

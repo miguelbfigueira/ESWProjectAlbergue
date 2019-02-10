@@ -1,0 +1,66 @@
+﻿@model ESWProjectAlbergue.Models.Reminder
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reminder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserCreater)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserCreater.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateCreate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateEnd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateEnd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEvent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsEvent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsDone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserReminder)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserReminder.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ReminderId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

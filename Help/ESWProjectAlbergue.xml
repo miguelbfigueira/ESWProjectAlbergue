@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESWProjectAlbergue</name>
+  </assembly>
+  <members>
+    <member name="T:ESWProjectAlbergue.Controllers.AdoptionFilesController">
+      <summary>
+   Class AdoptionFilesController.
+   Implements the <see cref="T:Microsoft.AspNetCore.Mvc.Controller" /></summary>
+      <seealso cref="T:Microsoft.AspNetCore.Mvc.Controller" />
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFilesController.#ctor(ESWProjectAlbergueContext,UserManager{ApplicationUser},IEmailSender)">
+      <summary>
+   Initializes a new instance of the <see cref="T:ESWProjectAlbergue.Controllers.AdoptionFilesController" /> class.
+   </summary>
+      <param name="context">The context.</param>
+      <param name="userManager">The user manager.</param>
+      <param name="emailSender">The email sender.</param>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFilesController.Details(System.Nullable{System.Int32})">
+      <summary>
+   Detailses the specified identifier.
+   </summary>
+      <param name="id">The identifier.</param>
+      <returns>Task&lt;IActionResult&gt;.</returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFilesController.Edit(System.Nullable{System.Int32})">
+      <summary>
+   Edits the specified identifier.
+   </summary>
+      <param name="id">The identifier.</param>
+      <returns>Task&lt;IActionResult&gt;.</returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFilesController.Edit(System.Int32,AdoptionFile)">
+      <summary>
+   Edita do ficheiro de adoção e envia um email com as alterações
+   </summary>
+      <param name="id">The identifier.</param>
+      <param name="adoptionFile">The adoption file.</param>
+      <returns>O ficheiro de adoção editado.</returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFilesController.Delete(System.Nullable{System.Int32})">
+      <summary>
+   Deletes the specified identifier.
+   </summary>
+      <param name="id">The identifier.</param>
+      <returns>Task&lt;IActionResult&gt;.</returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFilesController.DeleteConfirmed(System.Int32)">
+      <summary>
+   Deletes the confirmed.
+   </summary>
+      <param name="id">The identifier.</param>
+      <returns>Task&lt;IActionResult&gt;.</returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFilesController.FiltrarRaca(System.Nullable{System.Int32})">
+      <summary>
+   Filtrar as fichas de adoção pelas raças dos cães
+   </summary>
+      <param name="id">The identifier.</param>
+      <returns>Um view com os animais da raça selecionada</returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFilesController.FiltrarDate(System.Nullable{DateTime})">
+      <summary>
+   Filtrar as fichas de adoção pelas datas da adoção dos cães
+   </summary>
+      <param name="date">The date.</param>
+      <returns>Um view com os animais adotados na data selecionada</returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AdoptionFormsController.Edit(System.Int32,AdoptionForm)">
+      <summary>
+   Preenchimento do pedido de adoção e enio de um email de confirmação do pedido
+   </summary>
+      <returns>
+   O pedido de adoção editado.
+   </returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AnimalsController.FiltrarNumero(System.Nullable{System.Int32})">
+      <summary>
+   Filtrar os animais pelo seu número de identificação
+   </summary>
+      <returns>
+   Um view com o animal com o número de identificação selecionado
+   </returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.AnimalsController.FiltrarNome(System.String)">
+      <summary>
+        <font color="red">Badly formed XML comment.</font>
+      </summary>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.PerfectAnimalsController.GetAnimalIdeal(PerfectAnimal)">
+      <summary>
+   Filtrar os animais de acordo com as caracteristicas procuradas pelo utilizador
+   </summary>
+      <returns>
+   Um view com o animal  que for 100% o que o ulizador procura ou varios ordenados pelas percentagens de compatibilidade
+   </returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.PerfectAnimalsController.HowPerfect(PerfectAnimal,Animal)">
+      <summary>
+   Analisa os animais consoante as caracteristicas do utilizadpr
+   </summary>
+      <returns>
+   O animal com a sua percentagem de compatibilidade
+   </returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.RemindersController.Create(Reminder)">
+      <summary>
+   Cria um lembrete e envia um email com as informações
+   </summary>
+      <returns>
+   O lembrete
+   </returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.RemindersController.Edit(System.Int32,Reminder)">
+      <summary>
+   Edita um lembrete e envia um email com as informações
+   </summary>
+      <returns>
+   O lembrete
+   </returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.VisitsController.Create(Visit)">
+      <summary>
+   Cria uma visita e envia um email com as informações
+   </summary>
+      <returns>
+   A visita
+   </returns>
+    </member>
+    <member name="M:ESWProjectAlbergue.Controllers.VisitsController.Edit(System.Int32,Visit)">
+      <summary>
+   Editado uma visita e envia um email com as informações
+   </summary>
+      <returns>
+   A visita
+   </returns>
+    </member>
+  </members>
+</doc>

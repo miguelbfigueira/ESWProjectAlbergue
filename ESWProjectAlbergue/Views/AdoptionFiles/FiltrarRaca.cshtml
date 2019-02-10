@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ESWProjectAlbergue.Models.AdoptionFile>
+
+@{
+    ViewData["Title"] = "FiltrarRaca";
+}
+
+<h2>FiltrarRaca</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="AdoptionFiles" asp-action="FiltrarRaca" method="post">
+    <p>
+        Raça: <select name="id" class="form-control" asp-items="ViewBag.BreedId"></select>
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+
+<form asp-controller="AdoptionFiles" asp-action="FiltrarDate" method="post">
+    <p>
+        Data: <input type="date" name="date">
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUser.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

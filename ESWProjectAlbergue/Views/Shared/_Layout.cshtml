@@ -7,47 +7,74 @@
     <link rel="icon" type="png" href="~/images/favicon.png" />
     <link rel="stylesheet" href="~/css/StyleSheet.css" />
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 500px)" href="css/mobile.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 501px)" href="css/main.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+
 
 
 </head>
 <body>
-<div class="nav-green container-fluid center-block">
-    <img src="~/images/Quinta.jpg" />
-    <h1 style="display:inline-block; font-family:'Pacifico'; color:white;  "> Quinta do Mião</h1>
-</div>
-<nav>
-
-
-    <div class="nav-black container navbar-collapse collapse navbar-fixed">
-        <ul class="nav navbar-nav ">
-            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-        </ul>
-        <partial name="_LoginPartial" />
-    </div>
-
-</nav>
-
-<partial name="_CookieConsentPartial" />
-<div class="container">
-    @RenderBody()
-</div>
-<div class="container-fluid">
-
-    <hr />
-
-
-
+    <div class="nav">
         
 
-</div>
+    </div>
+        <div class="nav-green container-fluid center-block banner">
+            <img class="doglogo" src="~/images/doglogo.png" style="height:90px; width:90px;" />
+            <h1 class="Quintadomiao" style="display:inline-block; font-family:'Pacifico'; color:white;"><a asp-area="" asp-controller="Home" asp-action="Index" style="color:white;">Quinta do Mião</a></h1>
+            <img class="catlogo" src="~/images/catlogo2.png"  style="height:90px; width:90px;" />
+        </div>
+        <nav>
 
 
-@RenderSection("Scripts", required: false)
+            <div class="nav-black container navbar-collapse collapse navbar-fixed">
+                <ul class="nav navbar-nav ">
+                    <li> <a asp-area="" asp-controller="Home" asp-action="Index"><img class="logo" src="~/images/home.png" style="height:20px; width:20px;" /> &nbsp Home</a></li>
+
+
+
+                    @if (!User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                    {
+                        <li> <a asp-area="" asp-controller="Animals" asp-action="Index"><img class="logo" src="~/images/animalpaw.png" style="height:20px; width:20px;" />&nbsp Animais Para Adoção</a></li>
+                        <li><a asp-area="" asp-controller="PerfectAnimals" asp-action="Index"><img class="logo" src="~/images/like.png" style="height:20px; width:20px;" />&nbsp Animal Ideal</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About"><img class="logo" src="~/images/info.png" style="height:20px; width:20px;" />&nbsp Sobre</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact"><img class="logo" src="~/images/contact.png" style="height:20px; width:20px;" />&nbsp Contactos</a></li>
+
+                    }
+                    @if (User.IsInRole("admins") || User.IsInRole("funcionarios"))
+                    {
+                        <li><a asp-area="" asp-controller="Animals" asp-action="Index"><img class="logo" src="~/images/animalpaw.png" style="height:20px; width:20px;" /> &nbsp Animais</a></li>
+                        <li><a asp-area="" asp-controller="PerfectAnimals" asp-action="Index"><img class="logo" src="~/images/like.png" style="height:20px; width:20px;" /> &nbsp Animal Ideal</a></li>
+                        <li><a asp-area="" asp-controller="Reminders" asp-action="Index"><img class="logo" src="~/images/reminder.png" style="height:20px; width:20px;" />&nbsp Lembretes</a></li>
+                        <li><a asp-area="" asp-controller="Visits" asp-action="Index"><img class="logo" src="~/images/visit.png" style="height:20px; width:20px;" />&nbsp Visitas</a></li>
+                        <li><a asp-area="" asp-controller="Identity/Account/Manage" asp-action="AllUsers"><img class="logo" src="~/images/users.png" style="height:20px; width:20px;" />&nbsp Utilizadores</a></li>
+                        <li><a asp-area="" asp-controller="AdoptionFiles" asp-action="Index"><img class="logo" src="~/images/files.png" style="height:20px; width:20px;" />&nbsp Fichas de Adoção</a></li>
+                    }
+                </ul>
+                 <partial name="_LoginPartial" />
+            </div>
+
+        </nav>
+
+        <partial name="_CookieConsentPartial" />
+        <div class="container">
+            @RenderBody()
+        </div>
+        <div class="container-fluid">
+
+            <hr />
+
+
+
+
+
+        </div>
+
+
+        @RenderSection("Scripts", required: false)
 
 </body>
 
@@ -70,7 +97,6 @@
 
             </div>
 
-            <div class="vl" style="border-left: 6px solid #b2b2b2; height: 130px; position: absolute; left: 50%; bottom: 50px"> </div>
 
             <div class="col-md-6 mb-md-0 mb-3">
 
@@ -84,10 +110,9 @@
         </div>
     </div>
 
-    <div class="footer-copyright text-center py-3">© 2018 Quinta do Mião
-       
+    <div class="footer-copyright text-center py-3">© 2019 Quinta do Mião
+
     </div>
-  
 
 </footer>
 

@@ -2,8 +2,100 @@
 @{
     ViewData["Title"] = "About";
 }
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<h2>Sobre</h2>
 
-<p>Projeto que pertende que seja desenvolvida uma aplicação para dar suporte as atividades de um albergue de animais</p>
 
+<style>
+    .centerdiv {
+        display: table;
+        margin: 0 auto;
+    }
+
+    .container-all {
+        background-color: #333333;
+        padding: 20px;
+        padding-top: 6px;
+        border-style: solid;
+        border-width: 5px;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-top: 5px;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        display: inline-block;
+        background-color: #333333;
+        border-radius: 25px;
+        position: center;
+    }
+
+    .sobre {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        margin-top: 3%;
+        color: #FFFFFF;
+    }
+
+    .whitetext {
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+    }
+</style>
+
+
+
+
+
+
+<div class="container-all">
+    <h2 class="sobre">Sobre a associação</h2>
+    <div class="centerdiv">
+        <img style="border-radius:15px;" src="~/images/cartaz.jpg" />
+    </div>
+    <br />
+    <p class="whitetext">
+        Situada na Quinta das Rebelas, no concelho do Barreiro (junto ao Mercado Abastecedor),
+        a Quinta do Mião – Centro de Recolha de Animais Errantes do Barreiro e da Moita é uma obra assumida
+        pelos municípios da Moita e Barreiro que colaboraram, assim, na criação de instalações mais modernas
+        e adequadas do que as existentes até agora nos dois concelhos, repartindo as despesas de construção
+        do novo equipamento e partilhando recursos.
+    </p>
+
+    <p class="whitetext">
+        A “Quinta do Mião” tem 33 boxes para cães, celas de quarentena, um gatil, um espaço administrativo,
+        gabinete de veterinário, sala de tosquias e tratamentos e, neste seu primeiro dia de abertura, contou já
+        com a visita de duas turmas do Ensino Pré- Escolar (uma de cada concelho).
+    </p>
+    <br />
+    <div class="w3-container w3-teal">
+        <h1>Fotografias</h1>
+    </div>
+
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third">
+            <div class="w3-card">
+                <img style="max-height:250px;max-width:350px" src="~/images/album3.jpg" />
+
+            </div>
+        </div>
+
+
+
+        <div class="w3-third">
+            <div class="w3-card">
+                <img style="max-height:200px;max-width:400px" src="~/images/album1.jpg" />
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
