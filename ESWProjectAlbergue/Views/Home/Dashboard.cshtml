@@ -1,13 +1,55 @@
 ﻿
 
-
 <!DOCTYPE html>
 
-<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
     <title>Dashboard</title>
+    <script src="~/js/ChartJS.js"></script>
+
+
 </head>
+
+
+<style>
+    #chart_container {
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        padding: 1px;
+        border-radius: 4px;
+    }
+</style>
+
+
+<html>
+
 <body>
+    <h1>Estatísticas</h1>
+    <br />
+    <div><b>Número Total de animais no canil : </b> @ViewData["NúmeroAnimaisRegistados"]</div>
+    <div><b>Número Total de animais no canil : </b>  @ViewData["NúmeroAnimaisCanil"]</div>
+    <div><b>Número de Animas Adotados: </b> @ViewData["NúmeroAnimaisAdotados"]</div>
+    <div><b>Número de Utilizadores Registados: </b> @ViewData["NúmeroUtilizadoresRegistados"]</div>
+
+    <div>
+        <b>Número de Animais por raça</b>
+        @foreach (KeyValuePair<string, int> i in @ViewBag.Lists)
+        {
+            <tr>
+                <br />
+                <td>
+                    @Html.DisplayFor(modelItem => i.Key) -
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => i.Value)
+                </td>
+            </tr>
+        }
+    </div>
+
+    <div><b>Número de Tarefas Realizadas: </b> @ViewData["NúmeroTarefasRealizadas"]</div>
+
 </body>
 </html>
+
+

@@ -169,6 +169,39 @@ namespace ESWProjectAlbergue.Controllers
 
         public ActionResult Dashboard()
         {
+            var animaisAdotados = (from a in _context.Animal where a.Adopted == true select a);
+            var animais= (from a in _context.Animal select a);
+            var animaisCanil = (from a in _context.Animal where a.Adopted == false select a);
+            var utilizadores = from u in _context.User where u.EmailConfirmed == true select u;
+            var tarefasRealizadas = from u in _context.Reminder where u.IsDone == true select u;
+            ViewData["NúmeroAnimaisAdotados"] = animaisAdotados.Count();
+            ViewData["NúmeroUtilizadoresRegistados"] = utilizadores.Count();
+            ViewData["NúmeroAnimaisRegistados"] = animais.Count();
+            ViewData["NúmeroAnimaisCanil"] = animaisCanil.Count();
+            ViewData["NúmeroTarefasRealizadas"] = tarefasRealizadas.Count();
+            ViewBag.List = animaisAdotados;
+
+
+            //Animais por raça
+            var racas = from i in _context.AnimalBreed select i;
+            var dictionary = new Dictionary<string,int>();
+            ViewBag.racas = racas;
+            foreach( var raca in racas)  
+             {
+                var list = new List<Animal>();
+                foreach (var item in animais)
+                {
+                    if (item.BreedId == raca.Id)
+                    {
+                        list.Add(item);
+                    }
+                }
+                dictionary.Add(raca.Name, list.Count);
+                
+            }
+            ViewBag.Lists = dictionary;
+            
+
             return View();
         }
 

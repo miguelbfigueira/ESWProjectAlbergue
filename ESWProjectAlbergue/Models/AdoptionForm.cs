@@ -70,6 +70,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The cc.</value>
         [Display(Name = "Nº Cartão Cidadão")]
+        [Required]
         public int Cc { get; set; }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The job.</value>
         [Display(Name = "Profissão")]
+        [Required]
         public string Job { get; set; }
 
         /// <summary>
@@ -112,6 +114,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The type of the house.</value>
         [Display(Name = "Mora em que tipo de habitação?")]
+        [Required]
         public EnumHouseType HouseType { get; set; }
 
         /// <summary>
@@ -119,6 +122,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The number of bedrooms.</value>
         [Display(Name = "A sua habitação possui quantas divisões?")]
+        [Required]
         public int NumberOfBedrooms { get; set; }
 
         /// <summary>
@@ -126,6 +130,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The number of people.</value>
         [Display(Name = " Quantas pessoas constituem o seu agregado familiar?")]
+        [Required]
         public int NumberOfPeople { get; set; }
 
         /// <summary>
@@ -133,6 +138,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The animal travel.</value>
         [Display(Name = "Quando viajar, onde pensa deixar o animal?")]
+        [Required]
         public string AnimalTravel { get; set; }
 
         /// <summary>
@@ -140,6 +146,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The leave house.</value>
         [Display(Name = "Se mudar de residência o que fará com o animal?")]
+        [Required]
         public EnumLeaveHouse LeaveHouse { get; set; }
 
         /// <summary>
@@ -147,6 +154,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The conscious.</value>
         [Display(Name = "Tem consciência de que um animal pode viver até aos 10, 15, 18 anos? E que ao adoptá-lo, torna-se responsável por ele durante a sua vida toda ? ")]
+        [Required]
         public Boolean Conscious { get; set; }
 
 

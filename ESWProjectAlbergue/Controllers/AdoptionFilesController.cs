@@ -30,6 +30,7 @@ namespace ESWProjectAlbergue.Controllers
         /// The email sender
         /// </summary>
         private readonly IEmailSender _emailSender;
+      
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AdoptionFilesController" /> class.
@@ -43,6 +44,8 @@ namespace ESWProjectAlbergue.Controllers
             _userManager = userManager;
             _emailSender = emailSender;
         }
+
+       
 
         // GET: AdoptionFiles
         /// <summary>
