@@ -36,6 +36,7 @@ namespace ESWProjectAlbergue.Models
         /// </summary>
         /// <value>The name.</value>
         [Display(Name = "Nome")]
+        [StringLength(40, ErrorMessage = "Nome não pode conter mais de 30 letras")]
         public string Name { get; set; }
 
         /// <summary>

@@ -12,6 +12,21 @@
         .btn:hover {
             background-color: dodgerblue;
         }
+
+    
+
+    .title {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .color {
+        background-color: #002439;
+    }
+
 </style>
 
 <!DOCTYPE html>
@@ -41,10 +56,11 @@
 <body>
 
     <div class="lembretestotal">
-        <h2 class="lembretes">Utilizadores</h2>
+        <img src='~/images/users1.png' width="60" height="60" style="display: block; margin-left: auto; margin-right: auto;">
+        <h2 class="title">Utilizadores</h2>
         <br>
         <p class="text-center">
-            <href class="btn">@Html.ActionLink("Funcionários", "AllFuncionarios", "Identity/Account/Manage", null, null) </href>
+            <href class="btn" >@Html.ActionLink("Funcionários", "AllFuncionarios", "Identity/Account/Manage", null, null) </href>
         </p>
 
 
@@ -53,7 +69,7 @@
                 <div class="wrap-table100">
                     <div class="table">
 
-                        <div class="row header">
+                        <div class="row header color " style="background-color:	#0b5e56;">
                             <div class="cell">
                                 @Html.DisplayNameFor(model => model.Input.Name)
                             </div>
@@ -67,7 +83,7 @@
                                 @Html.DisplayNameFor(model => model.Input.Address)
                             </div>
                             <div class="cell">
-                                @Html.DisplayNameFor(model => model.Input.PhoneNumber)
+                                Número de Telefone
                             </div>
                             <div class="cell">
                                 Acções

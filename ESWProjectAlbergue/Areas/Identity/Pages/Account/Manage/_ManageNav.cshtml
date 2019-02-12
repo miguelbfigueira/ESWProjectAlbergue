@@ -14,5 +14,6 @@
     @if (User.IsInRole("admins"))
     {
         <li class="@ManageNavPages.AllUsersNavClass(ViewContext)"><a asp-page="./AllUsers">Todos Utilizadores</a></li>
+        <li class="" ><a asp-area="" asp-controller="Home" asp-action="Dashboard"><img class="logo" src="~/images/graph.png" style="height:20px; width:20px;" />&nbsp Estatísticas</a></li>
     }
 </ul>

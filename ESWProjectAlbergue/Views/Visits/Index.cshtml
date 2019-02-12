@@ -4,6 +4,25 @@
     ViewData["Title"] = "Index";
 }
 
+
+
+<style>
+
+    .title {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .color {
+        background-color: #9296ff;
+    }
+
+</style>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -30,10 +49,13 @@
 </head>
 <body>
     <div class="lembretestotal">
-        <h2 class="lembretes">Visitas</h2>
+
+        <img src='~/images/park.png' width="60" height="60" style="display: block; margin-left: auto; margin-right: auto;" >
+
+        <h2 class="title">Visitas</h2>
         <br>
         <p class="text-center">
-            <a asp-action="Create" class="btnnovolembrete">Agendar nova visita</a>
+            <a asp-action="Create" class="btnnovolembrete" style="background-color:#9296ff;">Agendar nova visita</a>
         </p>
 
         <div class="limiter">
@@ -41,41 +63,42 @@
                 <div class="wrap-table100">
                     <div class="table">
 
-                        <div class="row header">
+                        <div class="row header" style="background-color:#9296ff;">
                             <div class="cell">
-                                @Html.DisplayNameFor(model => model.Description)
-                            </div>
+                                <span style="text-align:center"> @Html.DisplayNameFor(model => model.Description) </span>
+</div>
                             <div class="cell">
                                 @Html.DisplayNameFor(model => model.UserToVisit)
                             </div>
                             <div class="cell">
                                 @Html.DisplayNameFor(model => model.Date)
-                            </div>                        
+                            </div>
+
                             <div class="cell">
                                 Acções
                             </div>
                         </div>
                         @foreach (var item in Model)
                         {
-                            <div class="row">
-                                <div class="cell" data-title="Full Name">
-                                    @Html.DisplayFor(modelItem => item.Description)
-                                </div>
-                                <div class="cell" data-title="Age">
-                                    @Html.DisplayFor(modelItem => item.UserToVisit.Name)
-                                </div>
-                                <div class="cell" data-title="Job Title">
-                                    @Html.DisplayFor(modelItem => item.Date)
-                                </div>
-                                
-                                
-                                <div class="cell" data-title="Location">
-                                    <a asp-action="Edit" asp-route-id="@item.VisitId">Editar</a>
-                                    <a asp-action="Details" asp-route-id="@item.VisitId">Visualizar</a>
-                                    <a asp-action="Delete" asp-route-id="@item.VisitId">Remover</a>
-
-                                </div>
+                        <div class="row">
+                            <div class="cell" data-title="Full Name">
+                                @Html.DisplayFor(modelItem => item.Description)
                             </div>
+                            <div class="cell" data-title="Age">
+                                @Html.DisplayFor(modelItem => item.UserToVisit.Name)
+                            </div>
+                            <div class="cell" data-title="Job Title">
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </div>
+
+
+                            <div class="cell" data-title="Location">
+                                <a asp-action="Edit" asp-route-id="@item.VisitId">Editar</a>
+                                <a asp-action="Details" asp-route-id="@item.VisitId">Visualizar</a>
+                                <a asp-action="Delete" asp-route-id="@item.VisitId">Remover</a>
+
+                            </div>
+                        </div>
                         }
                     </div>
                 </div>

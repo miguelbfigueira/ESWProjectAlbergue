@@ -17,6 +17,15 @@
     .btn:hover{
         background-color: dodgerblue;
     }
+
+    .title {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
 </style>
 
 <!DOCTYPE html>
@@ -45,9 +54,10 @@
 </head>
 <body>
 
-    <div class="lembretestotal">
-        <h2 class="lembretes">Funcionários</h2>
+    <div class="lembretestotal"><img src='~/images/man.png' width="70" height="70" style="display: block; margin-left: auto; margin-right: auto;">
+        <h2 class="title">Funcionários</h2>
         <br>
+
         <p class="text-center">
             <button class="btn whitetext">@Html.ActionLink("Registar Novo Funcionário", "RegisterFunc", "Identity/Account/", null, null) </button>
         </p>
@@ -58,7 +68,7 @@
                 <div class="wrap-table100">
                     <div class="table">
 
-                        <div class="row header">
+                        <div class="row header" style="background-color:#87b452;">
                             <div class="cell">
                                 @Html.DisplayNameFor(model => model.Input.Name)
                             </div>
