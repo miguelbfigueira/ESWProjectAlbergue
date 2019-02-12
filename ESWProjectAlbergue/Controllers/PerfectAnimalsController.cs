@@ -249,8 +249,8 @@ namespace ESWProjectAlbergue.Controllers
             }
             
             ViewData["BreedId"] = new SelectList(_context.AnimalBreed, "Id", "Name", perfectAnimal.BreedId);
-            animal.Distinct().ToList();
-            animal.OrderBy(u => u.Percentagem);
+            animal.Sort((x, y) => x.Percentagem.CompareTo(y.Percentagem));
+            animal.Reverse();
             return View(animal);
         }
 
