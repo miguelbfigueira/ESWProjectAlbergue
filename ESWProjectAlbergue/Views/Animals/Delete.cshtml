@@ -90,9 +90,11 @@
     @{
         var imgsrc = "";
 
-
-        var base64 = Convert.ToBase64String(Model.Photo);
-        imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+        if (Model.Photo != null)
+        {
+            var base64 = Convert.ToBase64String(Model.Photo);
+            imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+        }
 
     }
 

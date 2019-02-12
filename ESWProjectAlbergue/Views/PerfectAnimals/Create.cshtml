@@ -34,6 +34,9 @@
         font-size: 16px;
     }
 
+    .btn {
+        background-color: white;
+    }
     .registar-animal {
         font-family: "Pacifico";
         font-size: 40px;
@@ -50,73 +53,85 @@
         margin: 0 auto;
         width: fit-content;
     }
+
+    .title {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        color: #FFFFFF;
+    }
 </style> 
 
 
 <div class="container-all">
 
-    <h2 class="registar-animal">Animal ideal</h2>
-    <hr />
 
-    <div class="form-create">
+    <div class="lembretestotal">
+        <img src='~/images/paws.png' width="70" height="70" style="display: block; margin-left: auto; margin-right: auto;">
+        <h2 class="title">Animal ideal</h2>
 
-        <div class="creates">
+        <br>
+        <div class="form-create">
 
-            <div class="helpregisterbox">
-                <a class="btnhelpregister" href="#popup1"> <img src="~/images/info.png" width="25" height="25" /> Ajuda</a>
-            </div>
+            <div class="creates">
 
-            <div id="popup1" class="overlay">
-                <div class="popup">
-                    <h2 class="bold">Ajuda- Animal Ideal</h2>
-                    <a class="close" href="#">&times;</a>
-                    <div class="content">
+                <div class="helpregisterbox" style="text-align:center;">
+                    <a class="btnhelpregister" href="#popup1" style="text-align:center;"> <img src="~/images/info.png" width="25" height="25" /> Ajuda</a>
+                </div>
+                <br>
 
-                        <p> Não sabe qual o animal ideal para si? Preencha o formulário com as características que gostaria num animal e descubra baseado na sua percentagem.</p>
+                <div id="popup1" class="overlay">
+                    <div class="popup" style="margin:0 auto; display:block;">
+                        <h2 class="bold" style="text-align:center;">Ajuda- Animal Ideal</h2>
+                        <a class="close" href="#">&times;</a>
+                        <div class="content">
+
+                            <p> Não sabe qual o animal ideal para si? Preencha o formulário com as características que gostaria num animal e descubra baseado na sua percentagem.</p>
 
 
+                        </div>
                     </div>
                 </div>
+
+
+
+
+                <form asp-action="GetAnimalIdeal">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Type" class="control-label whitetext"></label>
+                        <select asp-for="Type" class="form-control " style="font-size:13pt;width:300px;" asp-items="@Html.GetEnumSelectList<EnumAnimalType>()"></select>
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Size" class="control-label whitetext"></label>
+                        <select asp-for="Size" class="form-control" style="font-size:13pt;width:300px;" asp-items="@Html.GetEnumSelectList<EnumSize>()"></select>
+                        <span asp-validation-for="Size" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label whitetext"></label>
+                        <select asp-for="Gender" class="form-control" style="font-size:13pt;width:300px;" asp-items="@Html.GetEnumSelectList<EnumGenderType>()"></select>
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BreedId" class="control-label whitetext"></label>
+                        <select asp-for="BreedId" class="form-control" style="font-size:13pt;width:300px;" asp-items="ViewBag.BreedId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Age" class="control-label whitetext"></label>
+                        <select asp-for="Age" class="form-control" style="font-size:13pt;width:300px;" asp-items="@Html.GetEnumSelectList<EnumAgeType>()"></select>
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Submeter" class="btn" />
+                        <a asp-action="Index">Voltar</a>
+                    </div>
+                </form>
             </div>
-
-
-
-
-            <form asp-action="GetAnimalIdeal">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Type" class="control-label whitetext"></label>
-                    <select asp-for="Type" class="form-control " style="font-size:13pt;width:300px;" asp-items="@Html.GetEnumSelectList<EnumAnimalType>()"></select>
-                    <span asp-validation-for="Type" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Size" class="control-label whitetext"></label>
-                    <select asp-for="Size" class="form-control" style="font-size:13pt;width:300px;" asp-items="@Html.GetEnumSelectList<EnumSize>()"></select>
-                    <span asp-validation-for="Size" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Gender" class="control-label whitetext"></label>
-                    <select asp-for="Gender" class="form-control" style="font-size:13pt;width:300px;" asp-items="@Html.GetEnumSelectList<EnumGenderType>()"></select>
-                    <span asp-validation-for="Gender" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="BreedId" class="control-label whitetext"></label>
-                    <select asp-for="BreedId" class="form-control" style="font-size:13pt;width:300px;" asp-items="ViewBag.BreedId"></select>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Age" class="control-label whitetext"></label>
-                    <select asp-for="Age" class="form-control" style="font-size:13pt;width:300px;" asp-items="@Html.GetEnumSelectList<EnumAgeType>()"></select>
-                    <span asp-validation-for="Age" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <input type="submit" value="Submeter" class="btn btn-default" />
-                    <a asp-action="Index">Voltar</a>
-                </div>
-            </form>
         </div>
+
+
+
     </div>
-
-
-
-</div>

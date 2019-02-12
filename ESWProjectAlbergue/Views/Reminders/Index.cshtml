@@ -4,6 +4,21 @@
     ViewData["Title"] = "Lembretes";
 }
 
+<style>
+    .title {
+        font-family: "Pacifico";
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .color {
+        background-color: #002439;
+    }
+</style>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -30,7 +45,9 @@
 </head>
 <body>
     <div class="lembretestotal">
-        <h2 class="lembretes">Lembretes</h2>
+        <img src='~/images/reminder1.png' width="60" height="60" style="display: block; margin-left: auto; margin-right: auto;">
+        <br>
+        <h2 class="title">Lembretes</h2>
         <br>
         <p class="text-center">
             <a asp-action="Create" class="btnnovolembrete">Criar Novo Lembrete</a>
@@ -130,15 +147,15 @@
 
 
 
-        <!--===============================================================================================-->
-        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-        <!--===============================================================================================-->
-        <script src="vendor/bootstrap/js/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <!--===============================================================================================-->
-        <script src="vendor/select2/select2.min.js"></script>
-        <!--===============================================================================================-->
-        <script src="js/main.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
 
 </body>
 </html>

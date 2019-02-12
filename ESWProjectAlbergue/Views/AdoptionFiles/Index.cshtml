@@ -89,28 +89,41 @@
                 color: white;
             }
 
+        .title {
+            font-family: "Pacifico";
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .color {
+            background-color: #002439;
+        }
+
     </style>
 
 </head>
 <body>
     <div class="lembretestotal">
-        <h2 class="lembretes">Fichas de adoção</h2>
+        <img src='~/images/notes.png' width="60" height="60" style="display: block; margin-left: auto; margin-right: auto;">
+        <h2 class="title">Fichas de adoção</h2>
         <br>
-        
 
-     
+
+
         <div class="filteranimals centerdiv">
             <form asp-controller="AdoptionFiles" asp-action="FiltrarRaca" method="post" class="whitetext filteranimalschildren">
                 <p class="whitetext filteranimalschildren">
                     Raça: <select name="id" class="form-control" asp-items="ViewBag.BreedId"></select>
-                    <input type="submit"  class="button2" value="Filtrar" />
+                    <input type="submit" class="button2" style="background-color:#F59A44;" value="Filtrar" />
                 </p>
             </form>
 
             <form asp-controller="AdoptionFiles" asp-action="FiltrarDate" method="post" class="whitetext filteranimalschildren">
                 <p class="whitetext filteranimalschildren">
                     Data: <input style="color:black" type="date" name="date">
-                    <input type="submit"  class="button2" value="Filtrar" />
+                    <input type="submit" class="button2" style="background-color:#F59A44;" value="Filtrar" />
                 </p>
             </form>
         </div>
@@ -120,7 +133,7 @@
                 <div class="wrap-table100">
                     <div class="table">
 
-                        <div class="row header">
+                        <div class="row header " style="background-color:	#F59A44;">
                             <div class="cell">
                                 @Html.DisplayNameFor(model => model.Animal)
                             </div>
@@ -135,6 +148,9 @@
                             </div>
                             <div class="cell">
                                 @Html.DisplayNameFor(model => model.OrderId)
+                            </div>
+                            <div class="cell">
+                                Ações
                             </div>
                         </div>
 
@@ -158,11 +174,11 @@
                                 </div>
 
                                 <div class="cell" data-title="Full Name">
-                                    <a asp-action="Edit" asp-route-id="@item.Id">Atualizar Estado</a> 
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Atualizar Estado</a>
                                 </div>
 
                                 <div class="cell" data-title="Full Name">
-                                    
+
                                     <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
                                     <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
                                 </div>
